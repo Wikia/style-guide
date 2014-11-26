@@ -116,25 +116,25 @@ $include-html-global-classes: $include-html-classes;
 // $black       : #000000;
 
 // Default user experience colors
-$blue-dark       : #092140;
-$blue-gray-light : #EEF1F4;
-$blue-gray       : #C7D1D8;
-$blue-light      : #0A5FA3
-$gray-dark       : #555555;
-$gray-light      : #9F9F9F;
-$gray            : #F7F7F7;
+$color-blue-dark       : #092140;
+$color-blue-gray-light : #EEF1F4;
+$color-blue-gray       : #C7D1D8;
+$color-blue-light      : #0A5FA3
+$color-gray-dark       : #555555;
+$color-gray-light      : #9F9F9F;
+$color-gray            : #F7F7F7;
 
 // Hub Colors
-$hub-comics-color    : #FF5400;
-$hub-games-color     : #94D11F;
-$hub-books-color     : #FF7F26;
-$hub-movies-color    : #09D3BF;
-$hub-lifestyle-color : #FFD000;
-$hub-music-color     : #C819AD;
-$hub-tv-color        : #00B7E0;
+$color-hub-comics    : #FF5400;
+$color-hub-games     : #94D11F;
+$color-hub-books     : #FF7F26;
+$color-hub-movies    : #09D3BF;
+$color-hub-lifestyle : #FFD000;
+$color-hub-music     : #C819AD;
+$color-hub-tv        : #00B7E0;
 
 // We use these as default colors throughout
-// $primary-color   : #008CBA;
+$primary-color   : $color-blue-dark;
 // $secondary-color : #e7e7e7;
 // $alert-color     : #f04124;
 // $success-color   : #43AC6A;
