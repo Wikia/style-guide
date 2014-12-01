@@ -1,4 +1,7 @@
-$site-nav-width: 238px;
+@import "../vendor/wikia-style-guide/src/scss/lib/components/global";
+
+$site-nav-width: 300px;
+$color-blue-gray: #c7d1d8;
 
 /**
  * Site header
@@ -27,14 +30,21 @@ $site-nav-width: 238px;
 
 .site-nav {
 	border-right: 1px solid #C7D1D3;
+	font-size: 14px;
 	height: 100%;
+	padding: 60px 0 0 30px;
 	position: fixed;
 	width: $site-nav-width;
-	line-height: 56px;
+	line-height: 37px;
 
-    a {
-        color: #9f9f9f; // TODO Change to "Light Gray" Wikia variable
-    }
+	a {
+		color: #9f9f9f; // TODO Change to "Light Gray" Wikia variable
+	}
+
+	.logo {
+		margin-bottom: 50px;
+		width: 92px;
+	}
 
 	ul {
 		list-style: none;
@@ -53,12 +63,6 @@ $site-nav-width: 238px;
 .footer-heading {
 	font-size: 18px;
 	margin-bottom: $spacing-unit / 2;
-}
-
-.contact-list,
-.social-media-list {
-	list-style: none;
-	margin-left: 0;
 }
 
 .footer-col-wrapper {
@@ -118,74 +122,65 @@ $site-nav-width: 238px;
 .page-content {
 	padding: $spacing-unit 0;
 	margin-left: $site-nav-width;
+
+	button {
+		margin-right: 60px;
+
+/*		&.hover {
+			background-color: $button-bg-hover;
+		}*/
+	}
+
+	div {
+		&.row {
+			background-color: #c6f1fe;
+			background-image: repeating-linear-gradient(90deg, transparent, transparent 7%, rgba(257,255,255,1) 7%, rgba(255,255,255,1) 8.4%);
+			height: 60px;
+		}
+	}
+
+	h1.header {
+		font-weight: 700;
+	}
+
+	h4 {
+		border-bottom: 1px solid $color-blue-gray;
+		margin-top: 60px;
+	}
+
+	header {
+		background: #fff url(../assets/images/bg_universe.png) center top;
+		color: #fff;
+		margin: -30px 0 0 -30px;
+		padding: 50px 30px;
+	}
+
+	p {
+		margin-top: 15px;
+	}
+
+	.metric {
+		float: left;
+		margin: 0 30px 30px 0;
+		width: 140px;
+
+		.value {
+			color: #a1a1a1;
+			font-size: 30px;
+
+			span {
+				font-size: 84px;
+				font-weight: bold;
+			}
+		}
+
+		.description {
+			color: #555;
+			text-transform: uppercase;
+		}
+	}
 }
 
 .page-heading {
 	font-size: 20px;
-}
-
-.post-list {
-	margin-left: 0;
-	list-style: none;
-
-	> li {
-		margin-bottom: $spacing-unit;
-	}
-}
-
-.post-meta {
-	font-size: $small-font-size;
-	color: $grey-color;
-}
-
-.post-link {
-	display: block;
-	font-size: 24px;
-}
-
-
-
-/**
- * Posts
- */
-.post-header {
-	margin-bottom: $spacing-unit;
-}
-
-.post-title {
-	font-size: 42px;
-	letter-spacing: -1px;
-	line-height: 1;
-
-	@include media-query($on-laptop) {
-		font-size: 36px;
-	}
-}
-
-.post-content {
-	margin-bottom: $spacing-unit;
-
-	h2 {
-		font-size: 32px;
-
-		@include media-query($on-laptop) {
-			font-size: 28px;
-		}
-	}
-
-	h3 {
-		font-size: 26px;
-
-		@include media-query($on-laptop) {
-			font-size: 22px;
-		}
-	}
-
-	h4 {
-		font-size: 20px;
-
-		@include media-query($on-laptop) {
-			font-size: 18px;
-		}
-	}
 }

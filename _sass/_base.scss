@@ -21,7 +21,6 @@ body {
     font-size: $base-font-size;
     font-weight: 300;
     line-height: $base-line-height;
-    margin: auto;
     width: 1024px;
 }
 
@@ -66,7 +65,7 @@ figcaption {
  * Lists
  */
 ul, ol {
-    margin-left: $spacing-unit;
+    margin-left: 0;
 }
 
 li {
@@ -158,8 +157,6 @@ pre {
 .wrapper {
     max-width: -webkit-calc(800px - (#{$spacing-unit} * 2));
     max-width:         calc(800px - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
     @extend %clearfix;
