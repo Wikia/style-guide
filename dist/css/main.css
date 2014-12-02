@@ -1336,19 +1336,19 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 0; }
 
 h1 {
-  font-size: rem-calc(54)-0; }
+  font-size: 3.375rem; }
 
 h2 {
-  font-size: rem-calc(40)-0; }
+  font-size: 2.5rem; }
 
 h3 {
-  font-size: rem-calc(36)-0; }
+  font-size: 2.25rem; }
 
 h4 {
-  font-size: rem-calc(27)-0; }
+  font-size: 1.6875rem; }
 
 h5 {
-  font-size: rem-calc(24)-0; }
+  font-size: 1.5rem; }
 
 h6 {
   font-size: 1rem; }
@@ -1495,15 +1495,15 @@ blockquote, blockquote p {
   h1, h2, h3, h4, h5, h6 {
     line-height: 1.4; }
   h1 {
-    font-size: rem-calc(54); }
+    font-size: 3.375rem; }
   h2 {
-    font-size: rem-calc(40); }
+    font-size: 2.5rem; }
   h3 {
-    font-size: rem-calc(36); }
+    font-size: 2.25rem; }
   h4 {
-    font-size: rem-calc(27); }
+    font-size: 1.6875rem; }
   h5 {
-    font-size: rem-calc(24); }
+    font-size: 1.5rem; }
   h6 {
     font-size: 1rem; } }
 
