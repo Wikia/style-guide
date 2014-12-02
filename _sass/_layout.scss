@@ -159,7 +159,7 @@ $color-blue-gray: #c7d1d8;
 		margin-top: 15px;
 	}
 
-	.metric {
+	li.metric {
 		float: left;
 		margin: 0 30px 30px 0;
 		width: 140px;
@@ -177,6 +177,10 @@ $color-blue-gray: #c7d1d8;
 		.description {
 			color: #555;
 			text-transform: uppercase;
+		}
+
+		&:last-of-type {
+			margin-right: 0;
 		}
 	}
 }
