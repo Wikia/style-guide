@@ -389,9 +389,6 @@ $cursor-text-value: text !default;
       @include box-sizing(border-box);
     }
 
-    html,
-    body { font-size: $base-font-size; }
-
     // Default body styles
     body {
       background: $body-bg;

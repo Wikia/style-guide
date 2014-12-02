@@ -189,6 +189,20 @@ $align-class-breakpoints:
     // Responsive Text alignment
     @include align-classes;
 
+    // Base font size for all screens up to xlarge
+    html,
+    body {
+        font-size: $base-font-size;
+    }
+
+    // Larger screens receive larger base font size
+    @media #{$xlarge-up} {
+        html,
+        body {
+            font-size: $base-font-size + 2;
+        }
+    }
+
     /* Typography resets */
     div,
     dl,
