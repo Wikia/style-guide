@@ -55,7 +55,7 @@
 $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-@import "lib/functions";
+// @import "lib/functions";
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
@@ -116,13 +116,14 @@ $font-weight-bold: bold !default;
 // $black       : #000000;
 
 // Default user experience colors
-$color-blue-dark       : #092140;
-$color-blue-gray-light : #EEF1F4;
-$color-blue-gray       : #C7D1D8;
-$color-blue-light      : #0A5FA3;
-$color-gray-dark       : #555555;
-$color-gray-light      : #9F9F9F;
-$color-gray            : #F7F7F7;
+$color-blue-dark       : #092344;
+$color-blue-light      : #1A5EB8;
+$color-gray-dark       : #39424D;
+$color-blue-gray-dark  : #656E78;
+$color-blue-gray       : #C5CED9;
+$color-blue-gray-light : #E6EBF2;
+$color-gray-light      : #F2F6FA;
+$color-white           : #FFFFFF;
 
 // Hub Colors
 $color-hub-comics    : #FF5400;

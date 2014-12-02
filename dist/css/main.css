@@ -1296,11 +1296,11 @@ div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, t
 
 /* Default Link Styles */
 a {
-  color: #092140;
+  color: #092344;
   text-decoration: none;
   line-height: inherit; }
   a:hover, a:focus {
-    color: #081d37; }
+    color: #081f3a; }
   a img {
     border: none; }
 
@@ -1323,7 +1323,7 @@ p {
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-weight: normal;
+  font-weight: bold;
   font-style: normal;
   color: #222222;
   text-rendering: optimizeLegibility;
@@ -1336,19 +1336,19 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 0; }
 
 h1 {
-  font-size: 2.75rem; }
+  font-size: rem-calc(54)-0; }
 
 h2 {
-  font-size: 1.875rem; }
+  font-size: rem-calc(40)-0; }
 
 h3 {
-  font-size: 1.9375rem; }
+  font-size: rem-calc(36)-0; }
 
 h4 {
-  font-size: 1.375rem; }
+  font-size: rem-calc(27)-0; }
 
 h5 {
-  font-size: 1.5rem; }
+  font-size: rem-calc(24)-0; }
 
 h6 {
   font-size: 1rem; }
@@ -1495,15 +1495,15 @@ blockquote, blockquote p {
   h1, h2, h3, h4, h5, h6 {
     line-height: 1.4; }
   h1 {
-    font-size: 3.375rem; }
+    font-size: rem-calc(54); }
   h2 {
-    font-size: 2.5rem; }
+    font-size: rem-calc(40); }
   h3 {
-    font-size: 2.25rem; }
+    font-size: rem-calc(36); }
   h4 {
-    font-size: 1.6875rem; }
+    font-size: rem-calc(27); }
   h5 {
-    font-size: 1.5rem; }
+    font-size: rem-calc(24); }
   h6 {
     font-size: 1rem; } }
 
