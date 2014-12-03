@@ -127,6 +127,11 @@ $color-blue-gray: #c7d1d8;
 
 	button {
 		margin-right: 60px;
+		vertical-align: top;
+
+		&.outline {
+			border-style: dashed;
+		}
 	}
 
 	div {
