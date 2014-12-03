@@ -13,16 +13,16 @@ $include-html-icon-bar-classes: $include-html-classes !default;
 // @variables
 
 // We use these to style the icon-bar and items
-$icon-bar-bg: $oil !default;
+$icon-bar-bg: transparent !default;
 $icon-bar-font-color: $white !default;
 $icon-bar-font-size: 1rem !default;
 $icon-bar-hover-color: $primary-color !default;
 $icon-bar-icon-color: $white !default;
 $icon-bar-icon-size: 1.875rem !default;
-$icon-bar-image-width: 1.875rem !default;
-$icon-bar-image-height: 1.875rem !default;
+$icon-bar-image-width: rem-calc(38) !default;
+$icon-bar-image-height: rem-calc(38) !default;
 $icon-bar-active-color: $primary-color !default;
-$icon-bar-item-padding: 1.25rem !default;
+$icon-bar-item-padding: rem-calc(5) !default;
 
 //
 // @mixins
@@ -39,7 +39,6 @@ $icon-bar-item-padding: 1.25rem !default;
 	& > * {
 		text-align: center;
 		font-size: $icon-bar-font-size;
-		width: 25%;
 		margin: 0 auto;
 		display: block;
 		padding: $icon-bar-item-padding;
@@ -165,7 +164,7 @@ $icon-bar-item-padding: 1.25rem !default;
 
 		& > * {
 
-			&:hover { background: $bar-hover-color; }
+			img:hover { fill: $bar-hover-color; }
 
 			label { color: $bar-font-color; }
 
