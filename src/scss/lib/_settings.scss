@@ -124,6 +124,7 @@ $color-blue-gray       : #C5CED9;
 $color-blue-gray-light : #E6EBF2;
 $color-gray-light      : #F2F6FA;
 $color-white           : #FFFFFF;
+$color-black           : #000000;
 
 // Hub Colors
 $color-hub-comics    : #FF5400;
@@ -247,7 +248,7 @@ $h6-font-reduction: 0 !default;
 // $subheader-bottom-margin: .5rem;
 
 // A general <small> styling
-$small-font-size: 75%;
+$small-font-size: .75em;
 // $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
@@ -274,7 +275,7 @@ $small-font-size: 75%;
 // We use these to style anchors
 // $anchor-text-decoration: none;
 // $anchor-text-decoration-hover: none;
-// $anchor-font-color: $primary-color;
+$anchor-font-color: $color-blue-light;
 // $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 
 // We use these to style the <hr> element
@@ -298,7 +299,7 @@ $small-font-size: 75%;
 // $definition-list-margin-bottom: rem-calc(12);
 
 // We use these to style blockquotes
-// $blockquote-font-color: scale-color($header-font-color, $lightness: 35%);
+$blockquote-font-color: $color-black;
 // $blockquote-padding: rem-calc(9 20 0 19);
 // $blockquote-border: 1px solid $gainsboro;
 // $blockquote-cite-font-size: rem-calc(13);

@@ -410,10 +410,38 @@ $align-class-breakpoints:
     }
 
     /* Blockquotes */
+
+    // border above blockquotes
+    blockquote:before {
+        border-bottom: 5px solid $blockquote-font-color;
+        content: '';
+        display: block;
+        font-size: 80px;
+        height: 31px;
+        left: 40px;
+        margin-bottom: 5px;
+        position: absolute;
+        top: 0;
+        width: 90%;
+    }
+
+    // decorative quote
+    blockquote:after {
+        content: '\201C';
+        display: block;
+        font-size: 100px;
+        left: 0;
+        margin-left: -5px;
+        margin-top: -40px;
+        position: absolute;
+        top: 0;
+    }
+
     blockquote {
-      margin: 0 0 $paragraph-margin-bottom;
-      padding: $blockquote-padding;
-      border-#{$default-float}: $blockquote-border;
+        display: block;
+        padding: 0;
+        padding-top: 40px;
+        position: relative;
 
       cite {
         display: block;
