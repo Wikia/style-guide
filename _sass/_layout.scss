@@ -142,15 +142,6 @@ $color-blue-gray: #c7d1d8;
 		}
 	}
 
-	h1.header {
-		font-weight: 700;
-	}
-
-	h4 {
-		border-bottom: 1px solid $color-blue-gray;
-		margin-top: 60px;
-	}
-
 	header {
 		background: #fff url(../assets/images/bg_universe.png) center top;
 		color: #fff;
@@ -252,8 +243,4 @@ $color-blue-gray: #c7d1d8;
 	.wrapper {
 		padding: 0 50px 50px 30px;
 	}
-}
-
-.page-heading {
-	font-size: 20px;
 }
