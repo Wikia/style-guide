@@ -32,22 +32,24 @@ $color-blue-gray: #c7d1d8;
 	border-right: 1px solid #C7D1D3;
 	font-size: 14px;
 	height: 100%;
-	padding: 60px 0 0 30px;
+	padding: 60px 0 0 50px;
 	position: fixed;
 	width: $site-nav-width;
-	line-height: 37px;
 
 	a {
-		color: #9f9f9f; // TODO Change to "Light Gray" Wikia variable
+		color: #9f9f9f;
 	}
 
 	.logo {
-		margin-bottom: 50px;
+		fill: #092344;
+		margin-bottom: 38px;
 		width: 92px;
 	}
 
 	ul {
+		line-height: 39px;
 		list-style: none;
+		margin: 0;
 	}
 }
 
@@ -125,10 +127,6 @@ $color-blue-gray: #c7d1d8;
 
 	button {
 		margin-right: 60px;
-
-/*		&.hover {
-			background-color: $button-bg-hover;
-		}*/
 	}
 
 	div {
@@ -155,8 +153,11 @@ $color-blue-gray: #c7d1d8;
 		padding: 50px 30px;
 	}
 
-	p {
-		margin-top: 15px;
+	.icon-btn {
+		float: left;
+		height: 38px;
+		margin-right: 10px;
+		width: 38px;
 	}
 
 	li.metric {
@@ -182,6 +183,69 @@ $color-blue-gray: #c7d1d8;
 		&:last-of-type {
 			margin-right: 0;
 		}
+	}
+
+	p {
+		margin-top: 20px;
+	}
+
+	.pagination {
+		div.active, div.inactive {
+			float: left;
+			width: 200px;
+
+			img {
+				height: 18px;
+				weight: 18px;
+			}
+		}
+
+		> div {
+			padding-bottom: 20px;
+		}
+
+		div.dot {
+			.page {
+				cursor: pointer;
+				float: left;
+				padding: 5px;
+
+				span {
+					border: 1px solid #ccc;
+					border-radius: 4px;
+					display: block;
+					height: 9px;
+					width: 9px;
+				}
+
+				&.selected span {
+					border: 1px solid #000;
+					background-color: #000;
+				}
+			}
+		}
+
+		div.numbered {
+			a, span {
+				float: left;
+				line-height: 18px;
+				text-align: center;
+				width: 34px;
+			}
+
+			img {
+				height: 18px;
+				weight: 18px;
+			}
+
+			span.page {
+				font-weight: bold;
+			}
+		}
+	}
+
+	.wrapper {
+		padding: 0 50px 50px 30px;
 	}
 }
 
