@@ -162,6 +162,10 @@ $color-blue-gray: #c7d1d8;
 		color: #fff;
 		margin: -30px 0 0 -30px;
 		padding: 50px 30px;
+
+		* {
+			color: #fff;
+		}
 	}
 
 	.icon-btn {
@@ -175,28 +179,32 @@ $color-blue-gray: #c7d1d8;
 		width: 300px;
 	}
 
-	li.metric {
-		float: left;
-		margin: 0 30px 30px 0;
-		width: 140px;
+	ul.metrics {
+		list-style: none;
 
-		.value {
-			color: #a1a1a1;
-			font-size: 30px;
+		li.metric {
+			float: left;
+			margin: 0 30px 30px 0;
+			width: 140px;
 
-			span {
-				font-size: 84px;
-				font-weight: bold;
+			.value {
+				color: #a1a1a1;
+				font-size: 30px;
+
+				span {
+					font-size: 84px;
+					font-weight: bold;
+				}
 			}
-		}
 
-		.description {
-			color: #555;
-			text-transform: uppercase;
-		}
+			.description {
+				color: #555;
+				text-transform: uppercase;
+			}
 
-		&:last-of-type {
-			margin-right: 0;
+			&:last-of-type {
+				margin-right: 0;
+			}
 		}
 	}
 
