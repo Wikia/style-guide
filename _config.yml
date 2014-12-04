@@ -10,4 +10,5 @@ url: "http://wikia.github.io/style-guide/" # the base hostname & protocol for yo
 
 # Build settings
 markdown: kramdown
-sass_dir: '_sass'
+sass:
+    sass_dir: '_sass'
