@@ -22,19 +22,19 @@ $form-label-font-color: scale-color($black, $lightness: 30%) !default;
 $form-label-small-transform: capitalize !default;
 $form-label-bottom-margin: 0 !default;
 $input-font-family: inherit !default;
-$input-font-color: rgba(0,0,0,0.75) !default;
+$input-font-color: $color-gray-dark !default;
 $input-font-size: rem-calc(14) !default;
-$input-bg-color: $white !default;
-$input-focus-bg-color: scale-color($white, $lightness: -2%) !default;
-$input-border-color: scale-color($white, $lightness: -20%) !default;
-$input-focus-border-color: scale-color($white, $lightness: -40%) !default;
+$input-bg-color: $color-gray-light !default;
+$input-focus-bg-color: $color-gray-light !default;
+$input-border-color: $color-gray-light !default;
+$input-focus-border-color: $color-gray-light !default;
 $input-border-style: solid !default;
 $input-border-width: 1px !default;
-$input-border-radius: $global-radius !default;
+$input-border-radius: 3px !default;
 $input-disabled-bg: $gainsboro !default;
 $input-disabled-cursor: $cursor-default-value !default;
 $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1) !default;
-$input-include-glowing-effect: true !default;
+$input-include-glowing-effect: false !default;
 
 // We use these to style the fieldset border and spacing.
 $fieldset-border-style: solid !default;
@@ -61,21 +61,22 @@ $input-prefix-font-color-alt: $white !default;
 $input-number-spinners: true !default;
 
 // We use these to style the error states for inputs and labels
-$input-error-message-padding: rem-calc(6 9 9) !default;
+$input-error-message-padding: rem-calc(6) 0 !default;
 $input-error-message-top: -1px !default;
 $input-error-message-font-size: rem-calc(12) !default;
 $input-error-message-font-weight: $font-weight-normal !default;
 $input-error-message-font-style: italic !default;
-$input-error-message-font-color: $white !default;
-$input-error-message-font-color-alt: $oil !default;
+$input-error-message-font-color: $alert-color !default;
+$input-error-message-font-color-alt: $alert-color !default;
 
 // We use this to style the glowing effect of inputs when focused
 $glowing-effect-fade-time: 0.45s !default;
 $glowing-effect-color: $input-focus-border-color !default;
 
 // Select variables
-$select-bg-color: $ghost !default;
-$select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%) !default;
+$select-bg-color: $color-blue-dark !default;
+$select-font-size: rem-calc(12);
+$select-hover-bg-color: $color-blue-dark !default;
 
 //
 // @MIXINS
@@ -115,8 +116,8 @@ $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%) !default;
     style: $input-border-style;
     width: $input-border-width;
     color: $input-border-color;
+    radius: $input-border-radius;
   }
-  box-shadow: $input-box-shadow;
   color: $input-font-color;
   display: block;
   font-size: $input-font-size;
@@ -311,13 +312,7 @@ $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%) !default;
   margin-bottom: $form-spacing;
   font-size: $input-error-message-font-size;
   font-weight: $input-error-message-font-weight;
-  font-style: $input-error-message-font-style;
-
-  // We can control the text color based on the brightness of the background.
-  $bg-lightness: lightness($bg);
-  background: $bg;
-  @if $bg-lightness < 70% or $bg == yellow { color: $input-error-message-font-color; }
-  @else { color: $input-error-message-font-color-alt; }
+  color: $input-error-message-font-color;
 }
 
 // We use this mixin to style select elements
@@ -325,6 +320,7 @@ $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%) !default;
   -webkit-appearance: none !important;
   -webkit-border-radius: 0px;
   background-color: $select-bg-color;
+  text-transform: uppercase;
 
   // Hide the dropdown arrow shown in newer IE versions
   &::-ms-expand {
@@ -345,9 +341,9 @@ $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%) !default;
     color: $input-border-color;
   }
   padding: $form-spacing / 2;
-  font-size: $input-font-size;
+  font-size: $select-font-size;
   font-family: $body-font-family;
-  color: $input-font-color;
+  color: $white;
   line-height: normal;
   @include radius(0);
   &.radius { @include radius($global-radius); }
@@ -492,7 +488,7 @@ $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%) !default;
     input[type="checkbox"],
     input[type="radio"],
     select {
-      margin: 0 0 $form-spacing 0;
+      margin: 0 rem-calc(7) $form-spacing 0;
     }
 
     input[type="checkbox"] + label,
@@ -578,6 +574,8 @@ $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%) !default;
     input.error,
     textarea.error,
     select.error {
+      border-color: $alert-color;
+      border-width: 2px;
       margin-bottom: 0;
     }
     label.error { @include form-label-error-color; }
