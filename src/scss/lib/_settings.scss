@@ -224,13 +224,24 @@ $header-font-weight: $font-weight-bold;
 // $header-bottom-margin: .5rem;
 // $header-text-rendering: optimizeLegibility;
 
+
+// Type Scale inspired by Medium's CSS
+// @source https : //medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06
+$type-jumbo      : rem-calc(54);
+$type-largest    : rem-calc(40);
+$type-larger     : rem-calc(36);
+$type-large      : rem-calc(27);
+$type-medium     : rem-calc(24);
+$type-base       : 1rem;
+$type-small      : 0.75rem;
+
 // We use these to control header font sizes
- $h1-font-size: rem-calc(54);
- $h2-font-size: rem-calc(40);
- $h3-font-size: rem-calc(36);
- $h4-font-size: rem-calc(27);
- $h5-font-size: rem-calc(24);
- $h6-font-size: 1rem;
+ $h1-font-size: $type-jumbo;
+ $h2-font-size: $type-largest;
+ $h3-font-size: $type-larger;
+ $h4-font-size: $type-large;
+ $h5-font-size: $type-medium;
+ $h6-font-size: $type-base;
 
 // We use these to control header size reduction on small screens
 $h1-font-reduction: 0 !default;
@@ -248,7 +259,7 @@ $h6-font-reduction: 0 !default;
 // $subheader-bottom-margin: .5rem;
 
 // A general <small> styling
-$small-font-size: .75em;
+$small-font-size: $type-small;
 // $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
@@ -299,12 +310,17 @@ $anchor-font-color: $color-blue-light;
 // $definition-list-margin-bottom: rem-calc(12);
 
 // We use these to style blockquotes
+$blockquote-font-size: $type-large;
 $blockquote-font-color: $color-black;
+$blockquote-font-weight: $font-weight-bold;
+$blockquote-line-height: 1.2;
 // $blockquote-padding: rem-calc(9 20 0 19);
 // $blockquote-border: 1px solid $gainsboro;
-// $blockquote-cite-font-size: rem-calc(13);
+$blockquote-cite-font-size: $type-medium;
+$blockquote-cite-font-style: normal;
+$blockquote-cite-font-weight: $font-weight-normal;
 // $blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%);
-// $blockquote-cite-link-color: $blockquote-cite-font-color;
+$blockquote-cite-link-color: $anchor-font-color;
 
 // Acronym styles
 // $acronym-underline: 1px dotted $gainsboro;

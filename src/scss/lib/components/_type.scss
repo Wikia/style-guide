@@ -429,15 +429,17 @@ $align-class-breakpoints:
     blockquote:after {
         content: '\201C';
         display: block;
-        font-size: 100px;
+        font-size: 70px;
         left: 0;
         margin-left: -5px;
-        margin-top: -40px;
+        margin-top: -10px;
         position: absolute;
         top: 0;
     }
 
     blockquote {
+        font-size: $blockquote-font-size;
+        font-weight: $blockquote-font-weight;
         display: block;
         padding: 0;
         padding-top: 40px;
@@ -446,6 +448,8 @@ $align-class-breakpoints:
       cite {
         display: block;
         font-size: $blockquote-cite-font-size;
+        font-weight: $blockquote-font-weight;
+        font-style: $blockquote-cite-font-style;
         color: $blockquote-cite-font-color;
         &:before {
           content: "\2014 \0020";
@@ -457,9 +461,10 @@ $align-class-breakpoints:
         }
       }
     }
+
     blockquote,
     blockquote p {
-      line-height: $paragraph-line-height;
+      line-height: $blockquote-line-height;
       color: $blockquote-font-color;
     }
 
