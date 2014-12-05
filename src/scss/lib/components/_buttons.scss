@@ -8,7 +8,6 @@
 // @variables
 //
 $include-html-button-classes: $include-html-classes !default;
-$color-button: $color-blue-dark;
 
 // We use these to build padding for buttons.
 $button-sml: rem-calc(30) !default;
@@ -35,11 +34,11 @@ $button-function-factor: -20% !default;
 // We use these to control button border styles.
 $button-border-width: 1px !default;
 $button-border-style: solid !default;
-$button-bg-color: $color-button;
+$button-bg-color: $color-blue-dark;
 $button-bg-hover: $color-blue-light;
-$button-border-color: $color-button;
+$button-border-color: $button-bg-color;
 $secondary-button-bg-hover: $color-white;
-$secondary-button-border-color: $color-button;
+$secondary-button-border-color: $button-bg-color;
 $success-button-bg-hover: scale-color($success-color, $lightness: $button-function-factor) !default;
 $success-button-border-color: $success-button-bg-hover !default;
 $alert-button-bg-hover: scale-color($alert-color, $lightness: $button-function-factor) !default;
