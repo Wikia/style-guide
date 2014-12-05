@@ -119,6 +119,11 @@ $color-blue-gray: #c7d1d8;
 /**
  * Page content
  */
+
+.section-header {
+    border-bottom: 1px solid gray;
+    margin-top: 40px;
+}
 .page-content {
 	padding: $spacing-unit 0;
 	margin-left: $site-nav-width;

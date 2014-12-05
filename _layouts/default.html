@@ -3,12 +3,12 @@
 
   {% include head.html %}
 
-  <body>
+  <body class="page-{{page.class}}">
 
     {% include sidenav.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
+    <div class="page-content row">
+      <div class="large-12 columns">
         {{ content }}
       </div>
     </div>
