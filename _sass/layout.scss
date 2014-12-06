@@ -1,5 +1,5 @@
+$avatar-size: 36px;
 $site-nav-width: 300px;
-$color-blue-gray: #c7d1d8;
 
 /**
  * Site header
@@ -128,6 +128,22 @@ $color-blue-gray: #c7d1d8;
 	padding: $spacing-unit 0;
 	margin-left: $site-nav-width;
 
+	.avatar {
+		background-color: #ddf7fe;
+		border: 1px solid #c7c7c7;
+		border-radius: 50%;
+		height: $avatar-size;
+		width: $avatar-size;
+	}
+
+	.avatar-width {
+		border: 1px dashed #c7c7c7;
+		border-width: 0 1px;
+		height: $avatar-size;
+		margin-top: -18px;
+		width: $avatar-size;
+	}
+
 	button {
 		margin-right: 60px;
 		vertical-align: top;
@@ -141,6 +157,67 @@ $color-blue-gray: #c7d1d8;
 		label {
 			float: left;
 			width: 250px;
+		}
+	}
+
+	.image-columns {
+		background-image: repeating-linear-gradient(90deg, #fff, #ddf7fe 10px, #ddf7fe 50px, #fff 60px);
+		border: 1px solid #c7c7c7;
+
+		&.image-landscape {
+			&.twelve {
+				height: 405px;
+				width: 720px;
+			}
+
+			&.eight {
+				height: 270px;
+				width: 480px;
+			}
+
+			&.six {
+				height: 203px;
+				width: 360px;
+			}
+
+			&.four {
+				height: 135px;
+				width: 240px;
+			}
+
+			&.three {
+				height: 101px;
+				width: 180px;
+			}
+
+			&.two {
+				height: 68px;
+				width: 120px;
+			}
+		}
+
+		&.image-portrait {
+			&.four {
+				height: 336px;
+				width: 240px;
+			}
+
+			&.three {
+				height: 252px;
+				width: 180px;
+			}
+
+			&.two {
+				height: 168px;
+				width: 120px;
+			}
+		}
+
+		&.image-custom {
+			&.twelve {
+				height: 180px;
+				width: 720px;
+			}
 		}
 	}
 
