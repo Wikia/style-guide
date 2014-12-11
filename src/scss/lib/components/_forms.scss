@@ -74,7 +74,7 @@ $glowing-effect-fade-time: 0.45s !default;
 $glowing-effect-color: $input-focus-border-color !default;
 
 // Select variables
-$select-bg-color: $color-blue-dark !default;
+$select-bg-color: $button-bg-color !default;
 $select-font-size: rem-calc(12);
 $select-hover-bg-color: $color-blue-dark !default;
 
@@ -343,7 +343,7 @@ $select-hover-bg-color: $color-blue-dark !default;
   padding: $form-spacing / 2;
   font-size: $select-font-size;
   font-family: $body-font-family;
-  color: $white;
+  color: $button-font-color;
   line-height: normal;
   @include radius(0);
   &.radius { @include radius($global-radius); }
@@ -355,6 +355,12 @@ $select-hover-bg-color: $color-blue-dark !default;
   &:disabled {
     background-color: $input-disabled-bg;
     cursor: $input-disabled-cursor;
+  }
+
+  &.secondary {
+    background-color: transparent;
+    border-color: $button-bg-color;
+    color: $button-bg-color;
   }
 }
 
