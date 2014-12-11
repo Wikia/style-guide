@@ -5,10 +5,11 @@
 
   <body class="page-{{page.class}}">
 
-    {% include sidenav.html %}
-
-    <div class="page-content row">
-      <div class="large-12 columns">
+    <div class="row">
+      <div class="large-3 columns">
+        {% include sidenav.html %}
+      </div>
+      <div class="page-content large-9 columns">
         {{ content }}
       </div>
     </div>

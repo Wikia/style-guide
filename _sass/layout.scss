@@ -30,9 +30,8 @@ $site-nav-width: 300px;
 	border-right: 1px solid #C7D1D3;
 	font-size: 14px;
 	height: 100%;
-	padding: 60px 0 0 50px;
+	padding: 60px 30px 0 0;
 	position: fixed;
-	width: $site-nav-width;
 
 	a {
 		color: #9f9f9f;
@@ -115,6 +114,9 @@ $site-nav-width: 300px;
 }
 
 
+@mixin column-background($columns) {
+	background-image: repeating-linear-gradient(90deg, #fff, #ddf7fe 50%/$columns, #ddf7fe, #fff 100%/$columns) !important;
+}
 
 /**
  * Page content
@@ -126,7 +128,6 @@ $site-nav-width: 300px;
 }
 .page-content {
 	padding: $spacing-unit 0;
-	margin-left: $site-nav-width;
 
 	.avatar {
 		background-color: #ddf7fe;
@@ -153,71 +154,224 @@ $site-nav-width: 300px;
 		}
 	}
 
-	.checkboxes, .radio-buttons {
-		label {
-			float: left;
-			width: 250px;
+	figure {
+		margin: 0;
+
+		a {
+			border: 1px solid #c7c7c7;
+			display: block;
+		}
+
+		&.landscape, &.video {
+			&.xlarge {
+				width: 720px;
+
+				a {
+					@include column-background(12);
+					height: 405px;
+				}
+			}
+
+			&.large {
+				width: 480px;
+
+				a {
+					@include column-background(8);
+					height: 270px;
+				}
+			}
+
+			&.medium {
+				width: 360px;
+
+				a {
+					@include column-background(6);
+					height: 203px;
+				}
+			}
+
+			&.small {
+				width: 240px;
+
+				a {
+					@include column-background(4);
+					height: 135px;
+				}
+			}
+
+			&.xsmall {
+				width: 180px;
+
+				a {
+					@include column-background(3);
+					height: 101px;
+				}
+			}
+
+			&.thumb {
+				width: 120px;
+
+				a {
+					@include column-background(2);
+					height: 68px;
+				}
+			}
+		}
+
+		&.portrait {
+			&.medium {
+				width: 240px;
+
+				a {
+					@include column-background(4);
+					height: 336px;
+				}
+			}
+
+			&.small {
+				width: 180px;
+
+				a {
+					@include column-background(3);
+					height: 252px;
+				}
+			}
+
+			&.thumb {
+				width: 120px;
+
+				a {
+					@include column-background(2);
+					height: 168px;
+				}
+			}
+		}
+
+		&.custom {
+			width: 720px;
+
+			a {
+				@include column-background(12);
+				height: 180px;
+			}
+		}
+
+		&.video {
+			a {
+				position: relative;
+
+				&.example {
+					background-color: #dff7fe;
+					background-image: none !important;
+				}
+			}
+
+			.play-icon {
+				background-image: url(../assets/images/icons/icon_play.svg);
+				display: block;
+				position: absolute;
+			}
+
+			&.xlarge {
+				a.example {
+					background-image: linear-gradient(0deg, #c0c0c0, transparent 40%) !important;
+				}
+
+				figcaption {
+					color: #fff;
+					font-size: 26px;
+					height: 62px;
+					left: 125px;
+					line-height: 32px;
+					margin-top: -85px;
+					overflow-y: hidden;
+					position: absolute;
+					text-shadow: #999 1px 1px;
+					width: 590px;
+				}
+
+				.play-icon {
+					background-size: 76px 76px;
+					bottom: 18px;
+					height: 76px;
+					left: 18px;
+					width: 76px;
+				}
+			}
+
+			&.large {
+				figcaption {
+					color: #656E78;
+					font-size: 14px;
+					line-height: 1.4;
+					padding: 15px;
+					text-align: justify;
+
+					span {
+						color: #1A5EB8;
+						font-size: 24px;
+						font-weight: bold;
+					}
+				}
+
+				.play-icon {
+					background-size: 51px 51px;
+					bottom: 10px;
+					height: 51px;
+					left: 10px;
+					width: 51px;
+				}
+			}
+
+			&.medium .play-icon {
+				background-size: 38px 38px;
+				bottom: 10px;
+				height: 38px;
+				left: 10px;
+				width: 38px;
+			}
+
+			&.small {
+				figcaption {
+					color: #1A5EB8;
+					font-size: 14px;
+					padding: 10px;
+				}
+
+				.play-icon {
+					background-size: 30px 30px;
+					bottom: 9px;
+					height: 30px;
+					left: 9px;
+					width: 30px;
+				}
+			}
+
+			&.xsmall .play-icon {
+				background-size: 25px 25px;
+				bottom: 7px;
+				height: 25px;
+				left: 7px;
+				width: 25px;
+			}
+
+			&.thumb .play-icon {
+				background-size: 25px 25px;
+				bottom: 5px;
+				height: 25px;
+				left: 5px;
+				width: 25px;
+			}
 		}
 	}
 
-	.image-columns {
-		background-image: repeating-linear-gradient(90deg, #fff, #ddf7fe 10px, #ddf7fe 50px, #fff 60px);
-		border: 1px solid #c7c7c7;
+	.legacy-video {
+		border: 1px dashed #999;
+		width: 240px;
 
-		&.image-landscape {
-			&.twelve {
-				height: 405px;
-				width: 720px;
-			}
-
-			&.eight {
-				height: 270px;
-				width: 480px;
-			}
-
-			&.six {
-				height: 203px;
-				width: 360px;
-			}
-
-			&.four {
-				height: 135px;
-				width: 240px;
-			}
-
-			&.three {
-				height: 101px;
-				width: 180px;
-			}
-
-			&.two {
-				height: 68px;
-				width: 120px;
-			}
-		}
-
-		&.image-portrait {
-			&.four {
-				height: 336px;
-				width: 240px;
-			}
-
-			&.three {
-				height: 252px;
-				width: 180px;
-			}
-
-			&.two {
-				height: 168px;
-				width: 120px;
-			}
-		}
-
-		&.image-custom {
-			&.twelve {
-				height: 180px;
-				width: 720px;
-			}
+		figure.video {
+			margin: auto;
+			width: 180px;
 		}
 	}
 
@@ -273,10 +427,6 @@ $site-nav-width: 300px;
 		}
 	}
 
-	.input-container {
-		width: 300px;
-	}
-
 	p {
 		margin-top: 20px;
 	}
@@ -285,11 +435,6 @@ $site-nav-width: 300px;
 		div.active, div.inactive {
 			float: left;
 			width: 200px;
-
-			img {
-				height: 18px;
-				weight: 18px;
-			}
 		}
 
 		> div {
@@ -325,21 +470,10 @@ $site-nav-width: 300px;
 				width: 34px;
 			}
 
-			img {
-				height: 18px;
-				weight: 18px;
-			}
-
 			span.page {
 				font-weight: bold;
 			}
 		}
-	}
-
-	.selects > div {
-		float: left;
-		margin-right: 80px;
-		width: 170px;
 	}
 
 	ul {
@@ -381,4 +515,32 @@ $site-nav-width: 300px;
 	.wrapper {
 		padding: 0 50px 50px 30px;
 	}
+}
+
+aside {
+	background-color: #EFF8E9;
+	margin: 20px 0;
+	padding: 7px;
+}
+
+@mixin page-chevron($direction) {
+	@if $direction == left {
+		background-image: url(../assets/images/icons/icon_left.svg);
+	} @else {
+		background-image: url(../assets/images/icons/icon_right.svg);
+	}
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	float: left;
+	height: 18px;
+	width: 18px;
+}
+
+.page-next {
+	@include page-chevron(right);
+}
+
+.page-previous {
+	@include page-chevron(left);
 }

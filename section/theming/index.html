@@ -73,9 +73,9 @@ layout: default
 	To set the minimum contrast, use <strong>color contrast</strong>
 </p>
 
-<button>CLICK ME</button>
-<button class="hover">CLICK ME</button>
-<button disabled>INACTIVE</button>
+<button class="secondary">CLICK ME</button>
+<button class="secondary hover">CLICK ME</button>
+<button class="secondary" disabled>INACTIVE</button>
 <aside>
 	Normal &mdash; background: <strong>transparent</strong>, stroke: <strong>color-button</strong>, text color: <strong>color-button</strong>
 </aside>
@@ -102,7 +102,17 @@ layout: default
 <p>
 	<strong>Dot pagination</strong>
 </p>
-<!-- dot pagination -->
+<div class="pagination">
+	<p>Dot pagination</p>
+	<div class="dot clearfix">
+		<span class="page selected"><span></span></span>
+		<span class="page"><span></span></span>
+		<span class="page"><span></span></span>
+		<span class="page"><span></span></span>
+		<span class="page"><span></span></span>
+		<span class="page"><span></span></span>
+	</div>
+</div>
 <aside>
 	Normal &mdash; background: <strong>color-page</strong>, stroke: 80% <strong>color-page</strong> + 20% <strong>#000000</strong>
 </aside>
@@ -113,8 +123,10 @@ layout: default
 <p>
 	<strong>Pager</strong>
 </p>
-<img><!-- left page arrow -->
-<img><!-- right page arrow -->
+<div class="clearfix">
+	<span class="page-previous"></span>
+	<span class="page-next"></span>
+</div>
 <aside>
 	Active / Normal &mdash; <strong>color-button</strong>
 </aside>
@@ -128,7 +140,19 @@ layout: default
 <p>
 	<strong>Numerical pagination</strong>
 </p>
-<!-- TO DO numbered pagination -->
+<div class="pagination">
+	<div class="numbered clearfix">
+		<a class="page-previous inactive"></a>
+		<span class="page">1</span>
+		<a class="page">2</a>
+		<a class="page">3</a>
+		<a class="page">4</a>
+		<a class="page">5</a>
+		<span>...</span>
+		<a class="page">12</a>
+		<a class="page-next active"></a>
+	</div>
+</div>
 <aside>
 	Active / Normal &mdash; <strong>color-button</strong>
 </aside>
@@ -136,19 +160,27 @@ layout: default
 	Normal &mdash; <strong>link-color</strong>
 </aside>
 
-<h4>Forms & dropdowns</h4>
+<h4>Forms &amp; dropdowns</h4>
 <p>
 	<strong>Text inputs</strong>
 </p>
-<input type="text" placeholder="Muppets, Iron Man, Moon">
-<input type="search" placeholder="Search for cool things">
+<div class="row">
+	<div class="small-4 column">
+		<input type="text" placeholder="Muppets, Iron Man, Moon">
+		<input type="search" placeholder="Search for cool things">
+	</div>
+</div>
 <aside>
 	Background: 10% <strong>#000000</strong> + 90% <strong>color-page</strong>, text-color: 30% <strong>color-page</strong> + 70% <strong>color-text</strong>, icon: <strong>color-button</strong>
 </aside>
 <p>
 	<strong>Text areas</strong>
-	<textarea placeholder="You can write here"></textarea>
 </p>
+<div class="row">
+	<div class="small-4 column">
+		<textarea placeholder="You can write here"></textarea>
+	</div>
+</div>
 <aside>
 	Background: 10% <strong>#000000</strong> + 90% <strong>color-page</strong>, text-color: 30% <strong>color-page</strong> + 70% <strong>color-text</strong>
 </aside>
@@ -156,15 +188,11 @@ layout: default
 <p>
 	<strong>Checkbox buttons fields</strong>
 </p>
-<label>
-	<input type="checkbox" checked> Checked checkbox
-</label>
-<label>
-	<input type="checkbox"> Unchecked checkbox
-</label>
-<label>
-	<input type="checkbox" checked disabled> Disabled checkbox
-</label>
+<div class="row">
+	<label class="large-4 column"><input type="checkbox" checked> Checked checkbox</label>
+	<label class="large-4 column"><input type="checkbox"> Unchecked checkbox</label>
+	<label class="large-4 column"><input type="checkbox" checked disabled> Disabled checkbox</label>
+</div>
 <aside>
 	Active &mdash; background: <strong>color-button</strong>, icon: <strong>#FFFFFF</strong>, text: <strong>#3A3A3A</strong>
 </aside>
@@ -178,9 +206,11 @@ layout: default
 <p>
 	<strong>Radio buttons</strong>
 </p>
-<label><input type="radio" checked> Checked radio button</label>
-<label><input type="radio"> Unchecked radio button</label>
-<label><input type="radio" checked disabled> Disabled radio button</label>
+<div class="row">
+	<label class="large-4 column"><input type="radio" checked> Checked radio button</label>
+	<label class="large-4 column"><input type="radio"> Unchecked radio button</label>
+	<label class="large-4 column"><input type="radio" checked disabled> Disabled radio button</label>
+</div>
 <aside>
 	Active &mdash; background: <strong>color-button</strong>, stroke: <strong>color-button</strong>
 </aside>
@@ -196,14 +226,15 @@ layout: default
 </p>
 
 <span>Primary</span>
-<div>
-	<span>Dropdown label</span>
-	<ul>
-		<li>Menu 1</li>
-		<li>Menu 2</li>
-		<li>Menu 3</li>
-		<li>Menu 4</li>
-	</ul>
+<div class="row">
+	<div class="large-3 column end">
+		<select>
+			<option>Menu 1</option>
+			<option>Menu 2</option>
+			<option>Menu 3</option>
+			<option>Menu 4</option>
+		</select>
+	</div>
 </div>
 
 <p>
@@ -240,14 +271,15 @@ layout: default
 </aside>
 
 <span>Secondary</span>
-<div>
-	<span>Dropdown label</span>
-	<ul>
-		<li>Menu 1</li>
-		<li>Menu 2</li>
-		<li>Menu 3</li>
-		<li>Menu 4</li>
-	</ul>
+<div class="row">
+	<div class="large-3 column end">
+		<select class="secondary">
+			<option>Menu 1</option>
+			<option>Menu 2</option>
+			<option>Menu 3</option>
+			<option>Menu 4</option>
+		</select>
+	</div>
 </div>
 
 <p>
@@ -279,13 +311,13 @@ layout: default
 <p>
 	<strong>Icon dropdown (flyout)</strong>
 </p>
-<div>
-	<img><!-- icon -->
-	<ul>
-		<li>Menu 1</li>
-		<li>Menu 2</li>
-		<li>Menu 3</li>
-		<li>Menu 4</li>
+<div class="icon-dropdown">
+	<img class="dropdown" data-dropdown="icon-drop" src="{{site.assets_path}}images/icons/icon_avatar.svg" alt="">
+	<ul id="icon-drop" class="f-dropdown">
+		<li><a>Menu 1</a></li>
+		<li><a>Menu 2</a></li>
+		<li><a>Menu 3</a></li>
+		<li><a>Menu 4</a></li>
 	</ul>
 </div>
 <aside>
@@ -298,15 +330,16 @@ layout: default
 <p>
 	<strong>Left side navigation (flyout)</strong>
 </p>
-<div>
-	<img><!-- icon -->
-	<ul>
-		<li>History</li>
-		<li>Personality</li>
-		<li>Powers &amp; Abilities</li>
-		<li>Paraphernalia</li>
-		<li>Notes</li>
-		<li>Trivia</li>
+<div class="icon-navigation clearfix">
+	<img class="dropdown" data-dropdown="icon-nav" src="{{site.assets_path}}images/icons/icon_menu.svg" alt="">
+	<ul id="icon-nav" class="f-dropdown nav">
+		<li><a>History</a></li>
+		<li><a>Personality</a></li>
+		<li><a>Powers &amp; Abilities</a></li>
+		<li><a>Paraphernalia</a></li>
+		<li><a>Notes</a></li>
+		<li><a>Trivia</a></li>
+		<li><a>Links</a></li>
 	</ul>
 </div>
 <p>
@@ -336,12 +369,12 @@ layout: default
 <p>
 	<strong>Large thumbnail</strong>
 </p>
-<figure>
-	<img><!-- play icon -->
-	<figcaption>
-		<span>I Gots the Claws, Son!</span><br>
-		Cosby sweater meggings quinoa, try-hard food truck bitters direct trade mumblecore before they sold out tousled scenester keffiyeh church-key slow-carb, Austin DIY try-hard, Portland Schlitz.
-	</figcaption>
+<figure class="large video">
+	<a class="example">
+		<img src="" alt="">
+		<span class="play-icon"></span>
+	</a>
+	<figcaption><span>I Gots the Claws, Son!</span><br>Cosby sweater meggings quinoa, try-hard food truck bitters direct trade mumblecore before they sold out tousled scenester keffiyeh church-key slow-carb. Austin DIY try-hard, Portland Schlitz.</figcaption>
 </figure>
 <aside>
 	Active / Normal &mdash; <strong>color-button</strong>
@@ -350,8 +383,11 @@ layout: default
 <p>
 	<strong>Small thumbnail</strong>
 </p>
-<figure>
-	<img><!-- play icon -->
+<figure class="small video">
+	<a class="example">
+		<img src="" alt="">
+		<span class="play-icon"></span>
+	</a>
 	<figcaption>Marvel Heroes Dyestruction Trailer</figcaption>
 </figure>
 <aside>

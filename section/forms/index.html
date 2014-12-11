@@ -10,54 +10,60 @@ layout: default
 <p>
 	<strong>Text inputs</strong> span a wide variety of types. They may contain persistent text elements (such as % or USD) where appropriate.
 </p>
-<p class="input-container">
-	Form title<br>
-	<input type="text" placeholder="Muppets, Iron Man, Moon"><br>
-	<input type="search" placeholder="Search for cool things">
-</p>
+<div class="row">
+	<div class="small-4 column">
+		Form title<br>
+		<input type="text" placeholder="Muppets, Iron Man, Moon"><br>
+		<input type="search" placeholder="Search for cool things">
+	</div>
+</div>
 <p>
 	<strong>Text areas</strong> are large inputs where users can type and view larger blocks of text. They can also have buttons attached at the bottom.
 </p>
-<p class="input-container">
-	<textarea placeholder="You can write here"></textarea>
-</p>
+<div class="row">
+	<div class="small-4 column">
+		<textarea placeholder="You can write here"></textarea>
+	</div>
+</div>
 
 <h4>Form states</h4>
-<p class="input-container">
-	Focus<br>
-	<input type="text" placeholder="You can type here"><br>
+<div class="row">
+	<div class="small-4 column">
+		Focus<br>
+		<input type="text" placeholder="You can type here"><br>
 
-	Error/warning<br>
-	<input type="text" class="error">
-	<small class="error">I think something is wrong.</small>
-</p>
+		Error/warning<br>
+		<input type="text" class="error">
+		<small class="error">I think something is wrong.</small>
+	</div>
+</div>
 
 <h4>Checkbox button fields</h4>
 <p>
 	Checkboxes allow the user to choose between several options, and are used in place of picklists when seeing all of the options listed at the top level is extremely important, such as on a poll.
 </p>
-<div class="checkboxes clearfix">
-	<label><input type="checkbox" checked> Checked checkbox</label>
-	<label><input type="checkbox"> Unchecked checkbox</label>
-	<label><input type="checkbox" checked disabled> Disabled checkbox</label>
+<div class="row">
+	<label class="large-4 column"><input type="checkbox" checked> Checked checkbox</label>
+	<label class="large-4 column"><input type="checkbox"> Unchecked checkbox</label>
+	<label class="large-4 column"><input type="checkbox" checked disabled> Disabled checkbox</label>
 </div>
 
 <h4>Radio buttons fields</h4>
 <p>
 	Radio buttons are visual representations of a boolean field, where the value is either true or false.
 </p>
-<div class="radio-buttons clearfix">
-	<label><input type="radio" checked> Checked radio button</label>
-	<label><input type="radio"> Unchecked radio button</label>
-	<label><input type="radio" checked disabled> Disabled radio button</label>
+<div class="row">
+	<label class="large-4 column"><input type="radio" checked> Checked radio button</label>
+	<label class="large-4 column"><input type="radio"> Unchecked radio button</label>
+	<label class="large-4 column"><input type="radio" checked disabled> Disabled radio button</label>
 </div>
 
 <h4>Dropdown</h4>
 <p>
 	Picklists allow the user to select a value from a list of options. They can either restrict the user to one option or allow the user to pick multiple options.
 </p>
-<div class="selects clearfix">
-	<div>
+<div class="row">
+	<div class="large-3 column">
 		Primary<br>
 		<select>
 			<option>Menu 1</option>
@@ -66,7 +72,7 @@ layout: default
 			<option>Menu 4</option>
 		</select>
 	</div>
-	<div>
+	<div class="large-3 column large-offset-1 end">
 		Secondary<br>
 		<select class="secondary">
 			<option>Menu 1</option>
