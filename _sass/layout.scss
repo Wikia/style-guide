@@ -27,11 +27,8 @@ $site-nav-width: 300px;
 }
 
 .site-nav {
-	border-right: 1px solid #C7D1D3;
 	font-size: 14px;
-	height: 100%;
-	padding: 60px 30px 0 0;
-	position: fixed;
+    padding-top: 30px;
 
 	a {
 		color: #9f9f9f;
@@ -127,8 +124,18 @@ $site-nav-width: 300px;
     margin-top: 40px;
 }
 .page-content {
-	padding: $spacing-unit 0;
+    border-left: 1px solid #c7c7c7;
 
+	.hero {
+		background: #fff url(../assets/images/bg_universe.png) center top;
+		color: #fff;
+        margin-bottom: 20px;
+		padding: 50px 30px;
+
+		* {
+			color: #fff;
+		}
+	}
 	.avatar {
 		background-color: #ddf7fe;
 		border: 1px solid #c7c7c7;
@@ -393,16 +400,6 @@ $site-nav-width: 300px;
 		}
 	}
 
-	header {
-		background: #fff url(../assets/images/bg_universe.png) center top;
-		color: #fff;
-		margin: -30px 0 0 -30px;
-		padding: 50px 30px;
-
-		* {
-			color: #fff;
-		}
-	}
 
 	.icon-btn {
 		float: left;
