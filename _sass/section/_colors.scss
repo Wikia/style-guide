@@ -21,13 +21,23 @@ $color-hub-music     : #C819AD;
 $color-hub-tv        : #00B7E0;
 
 .color {
-    text-align: center;
+    padding-bottom: 20px;
+
+    .name {
+        text-transform: uppercase;
+        margin: 10px 0;
+    }
+
+    .description {
+        font-size: 14px;
+        padding-top: 20px;
+    }
 }
+
 .swatch {
     background: black;
     width: 100px;
     height: 100px;
-    margin: 0 auto;
     border-radius: 50%;
 
     // Marketing Colors
@@ -37,7 +47,7 @@ $color-hub-tv        : #00B7E0;
     &.winterfell { background: $color-blue-gray; }
     &.walter-white {
         background: $color-white;
-        border: 1px solid $color-gray-light;
+        border: 1px solid $color-blue-gray
     }
 
     // Hub Colors
