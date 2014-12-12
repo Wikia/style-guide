@@ -5,20 +5,6 @@ $site-nav-width: 300px;
 	background-image: repeating-linear-gradient(90deg, #fff, #ddf7fe 50%/$columns, #ddf7fe, #fff 100%/$columns) !important;
 }
 
-@mixin page-chevron($direction) {
-	@if $direction == left {
-		background-image: url(../assets/images/icons/icon_left.svg);
-	} @else {
-		background-image: url(../assets/images/icons/icon_right.svg);
-	}
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 18px 18px;
-	float: left;
-	height: 18px;
-	width: 18px;
-}
-
 /**
  * Site header
  */
@@ -384,13 +370,11 @@ $site-nav-width: 300px;
 	}
 
 	.pagination {
+		margin-bottom: 0;
+
 		div.active, div.inactive {
 			float: left;
 			width: 200px;
-		}
-
-		> div {
-			padding-bottom: 20px;
 		}
 
 		div.dot {
@@ -411,19 +395,6 @@ $site-nav-width: 300px;
 					border: 1px solid #000;
 					background-color: #000;
 				}
-			}
-		}
-
-		div.numbered {
-			a, span {
-				float: left;
-				line-height: 18px;
-				text-align: center;
-				width: 34px;
-			}
-
-			span.page {
-				font-weight: bold;
 			}
 		}
 	}
@@ -473,12 +444,4 @@ aside {
 	background-color: #EFF8E9;
 	margin: 20px 0;
 	padding: 7px;
-}
-
-.page-next {
-	@include page-chevron(right);
-}
-
-.page-previous {
-	@include page-chevron(left);
 }

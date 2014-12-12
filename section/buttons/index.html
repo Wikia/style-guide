@@ -11,21 +11,18 @@ layout: default
 	<strong>Wikia corporate buttons</strong> are used in most cases when the interface calls for a button.
 </p>
 <button>Default</button>
-<button class="hover">Hover</button>
 <button disabled>Inactive</button>
 
 <p>
 	<strong>Secondary buttons</strong> are only used when there is an exceedingly distinct and clear call-to-action. An example of this is the Vote button on a poll, or a Send.
 </p>
 <button class="secondary">Default</button>
-<button class="secondary">Hover</button>
 <button class="secondary" disabled>Inactive</button>
 
 <p>
 	<strong>Themed community buttons</strong> are similar to Wikia corporate buttons, but they they use different color rules (go into <a href="/section/theming">theming</a> to check the rules).
 </p>
 <button class="themed">Default</button>
-<button class="themed">Hover</button>
 <button class="themed" disabled>Inactive</button>
 
 <p>
@@ -80,26 +77,31 @@ layout: default
 <div class="clearfix">
 	<div class="active">
 		<p>Active pager</p>
-		<span class="page-previous"></span>
+		<ul class="pagination">
+			<li class="arrow-left"><a></a></li>
+		</ul>
 	</div>
 	<div class="inactive">
 		<p>Inactive pager</p>
-		<span class="page-previous"></span>
+		<ul class="pagination">
+			<li class="arrow-left unavailable"><a></a></li>
+		</ul>
 	</div>
 </div>
 <div class="clearfix">
 	<p>Numerical pagination</p>
-	<div class="numbered clearfix">
-		<a class="page-previous inactive"></a>
-		<span class="page">1</span>
-		<a class="page">2</a>
-		<a class="page">3</a>
-		<a class="page">4</a>
-		<a class="page">5</a>
-		<span>...</span>
-		<a class="page">12</a>
-		<a class="page-next active"></a>
-	</div>
+	<ul class="pagination">
+		<li class="arrow-left unavailable"><a></a></li>
+		<li class="current"><a href="">1</a></li>
+		<li><a href="">2</a></li>
+		<li><a href="">3</a></li>
+		<li><a href="">4</a></li>
+		<li><a href="">5</a></li>
+		<li class="unavailable"><a href="">&hellip;</a></li>
+		<li><a href="">12</a></li>
+		<li><a href="">13</a></li>
+		<li class="arrow-right"><a href=""></a></li>
+	</ul>
 </div>
 </div>
 
