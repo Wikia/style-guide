@@ -121,10 +121,10 @@ layout: default
 <p>
 	<strong>Pager</strong>
 </p>
-<div class="clearfix">
-	<span class="page-previous"></span>
-	<span class="page-next"></span>
-</div>
+<ul class="pagination">
+	<li class="arrow-left"><a></a></li>
+	<li class="arrow-right"><a></a></li>
+</ul>
 <aside>
 	Active / Normal &mdash; <strong>color-button</strong>
 </aside>
@@ -138,19 +138,18 @@ layout: default
 <p>
 	<strong>Numerical pagination</strong>
 </p>
-<div class="pagination">
-	<div class="numbered clearfix">
-		<a class="page-previous inactive"></a>
-		<span class="page">1</span>
-		<a class="page">2</a>
-		<a class="page">3</a>
-		<a class="page">4</a>
-		<a class="page">5</a>
-		<span>...</span>
-		<a class="page">12</a>
-		<a class="page-next active"></a>
-	</div>
-</div>
+<ul class="pagination">
+	<li class="arrow-left unavailable"><a></a></li>
+	<li class="current"><a href="">1</a></li>
+	<li><a href="">2</a></li>
+	<li><a href="">3</a></li>
+	<li><a href="">4</a></li>
+	<li><a href="">5</a></li>
+	<li class="unavailable"><a href="">&hellip;</a></li>
+	<li><a href="">12</a></li>
+	<li><a href="">13</a></li>
+	<li class="arrow-right"><a href=""></a></li>
+</ul>
 <aside>
 	Active / Normal &mdash; <strong>color-button</strong>
 </aside>
