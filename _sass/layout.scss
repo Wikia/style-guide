@@ -94,9 +94,6 @@ $site-nav-width: 300px;
 	}
 
 	button {
-		margin-right: 60px;
-		vertical-align: top;
-
 		&.outline {
 			border-style: dashed;
 		}
@@ -444,4 +441,14 @@ aside {
 	background-color: #EFF8E9;
 	margin: 20px 0;
 	padding: 7px;
+	text-align: justify;
+
+	&.note {
+		font-size: 12px;
+	}
 }
+
+pre > code {
+	display: block;
+}
+
