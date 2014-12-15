@@ -1,5 +1,6 @@
-// Foundation by ZURB
-// foundation.zurb.com
+// Wikia Style Guide
+// http://wikia.github.io/style-guide/
+// Originally based on a fork Zurb Foundation 5 (http://foundation.zurb.com/)
 // Licensed under MIT Open Source
 
 @import "global";
@@ -38,6 +39,18 @@ $pagination-link-current-cursor: default !default;
 $pagination-link-current-active-bg: $primary-color !default;
 
 // @mixins
+@mixin page-chevron($direction) {
+  @if $direction == left {
+    background-image: url(../../svg/chevron_left.svg);
+  } @else {
+    background-image: url(../../svg/chevron_right.svg);
+  }
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+}
+
+// @mixins
 //
 // Style the pagination container. Currently only used when centering elements.
 // $center - Default: false, Options: true
@@ -59,6 +72,7 @@ $pagination-link-current-active-bg: $primary-color !default;
   & button:focus
   { background: $pagination-link-unavailable-bg-active; }
 }
+
 // @mixins
 // Style the current list item. Do not assume that the current item has
 // an anchor <a> element.
@@ -102,10 +116,11 @@ $pagination-link-current-active-bg: $primary-color !default;
     margin-#{$default-float}: $pagination-margin;
 
     li {
-      height: $pagination-li-height;
       color: $pagination-li-font-color;
       font-size: $pagination-li-font-size;
-      margin-#{$default-float}: $pagination-li-margin;
+      line-height: $pagination-li-height;
+      margin: $pagination-li-margin;
+      text-align: center;
 
       a, button {
         display: block;
@@ -115,7 +130,8 @@ $pagination-link-current-active-bg: $primary-color !default;
         @include radius;
         font-weight: normal;
         font-size: 1em;
-        line-height: inherit;
+        height: $pagination-li-height;
+        width: $pagination-li-height;
         @include single-transition(background-color);
       }
 
@@ -128,6 +144,14 @@ $pagination-link-current-active-bg: $primary-color !default;
       @if $use-default-classes {
         &.unavailable { @include pagination-unavailable-item(); }
         &.current { @include pagination-current-item(); }
+      }
+
+      &.arrow-left {
+        @include page-chevron(left);
+      }
+
+      &.arrow-right {
+        @include page-chevron(right);
       }
     }
   }

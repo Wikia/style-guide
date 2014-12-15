@@ -15,11 +15,11 @@
     "tests"
   ],
   "dependencies": {},
-  "_release": "79905bb210",
+  "_release": "9c428dfb42",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "79905bb210a5777c75cbb7dfa8eecffde4bdc3ee"
+    "commit": "9c428dfb422566b77a30b9184f5791ca6f34cadb"
   },
   "_source": "git@github.com:Wikia/style-guide.git",
   "_target": "*",

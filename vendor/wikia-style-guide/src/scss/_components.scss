@@ -1,6 +1,7 @@
 @charset "UTF-8";
-// lib by ZURB
-// lib.zurb.com
+// Wikia Style Guide
+// http://wikia.github.io/style-guide/
+// Originally based on a fork Zurb Foundation 5 (http://foundation.zurb.com/)
 // Licensed under MIT Open Source
 
 // Make sure the charset is set appropriately
@@ -25,7 +26,7 @@
   // @import "lib/components/labels";
   // @import "lib/components/magellan";
   // @import "lib/components/orbit";
-  // @import "lib/components/pagination";
+  @import "lib/components/pagination";
   // @import "lib/components/panels";
   // @import "lib/components/pricing-tables";
   // @import "lib/components/progress-bars";
