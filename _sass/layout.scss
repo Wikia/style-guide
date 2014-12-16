@@ -57,8 +57,8 @@ $site-nav-width: 300px;
 
 .section-header {
     border-bottom: 1px solid gray;
-    margin-top: 30px;
-	margin-bottom: 30px;
+    margin-top: 40px;
+	margin-bottom: 25px;
 	padding-bottom: 10px;
 }
 
@@ -338,6 +338,10 @@ $site-nav-width: 300px;
 		}
 	}
 
+	hr.break {
+		border-color: transparent;
+		margin: 25px 0;
+	}
 
 	.icon-btn {
 		float: left;
@@ -363,7 +367,7 @@ $site-nav-width: 300px;
 	}
 
 	p {
-		margin-top: 20px;
+		margin-top: 10px;
 	}
 
 	.pagination {
@@ -441,7 +445,6 @@ aside {
 	background-color: #EFF8E9;
 	margin: 20px 0;
 	padding: 7px;
-	text-align: justify;
 
 	&.note {
 		font-size: 12px;
@@ -451,4 +454,3 @@ aside {
 pre > code {
 	display: block;
 }
-
