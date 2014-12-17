@@ -98,13 +98,26 @@ class: 'typography'
 <h4 class="section-header">Text</h4>
 <section class="row">
     <div class="large-12 columns">
-        <h5>Headlines and body text</h5>
+        <h6>Headlines and body text</h6>
         <h4>History</h4>
         <p>As Dog lay unconscious, Logan unsheathed his claws, for the first time in public (to the shock of everyone watching), and was about to deal the deathblow, when Rose leaped in to stop him, but was accidentally impaled by his claws. Horrified, Logan held her in his arms as she died. Stricken with grief and guilt for the death of his first love, Logan fled into the nearby woods, where he lived in self-imposed exile in a feral state with a pack of wolves for months, if not years.</p>
-        <h5>Links</h5>
-        <a href="#">This is a nice link</a>
-        <p><strong>Red links</strong> are links that link to "create new page/article" page. They are made on purpose, not by accident.</p>
-        <a href="#" class="redlink">Superman</a>
+        <h6>HTML</h6>
+        <pre><code>&lt;h4&gt;History&lt;/h4&gt;
+&lt;p&gt;As Dog lay unconscious, Logan unsheathed...&lt;/p&gt;</code></pre>
+        <hr class="break">
+        <h6>Links</h6>
+        <p>
+            <a href="#">This is a nice link</a>
+        </p>
+        <h6>HTML</h6>
+        <pre><code>&lt;a href="/wiki/Nice_link"&gt;This is a nice link&lt;/a&gt;</code></pre>
+        <hr class="break">
+        <p><strong>Red links</strong> are links to wiki articles that don't yet exist. Historically in Mediawiki, they have been colored red, but community theme colors may present them differently. Any red links should contain the <code>redlink</code> class.</p>
+        <p>
+            <a href="#" class="redlink">Superman</a>
+        </p>
+        <h6>HTML</h6>
+        <pre><code>&lt;a href="/wiki/Superman" class="redlink"&gt;Superman&lt;/a&gt;</code></pre>
     </div>
 </section>
 
