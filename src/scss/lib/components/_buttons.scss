@@ -11,9 +11,10 @@
 $include-html-button-classes: $include-html-classes !default;
 
 // We use these to build padding for buttons.
-$button-sml: rem-calc(30) !default;
-$button-med: rem-calc(40) !default;
-$button-lrg: rem-calc(50) !default;
+$button-tny: rem-calc(10) !default;
+$button-sml: rem-calc(14) !default;
+$button-med: rem-calc(16) !default;
+$button-lrg: rem-calc(18) !default;
 
 // We use this to control the display property.
 $button-display: inline-block !default;
@@ -23,6 +24,7 @@ $button-margin-bottom: rem-calc(20) !default;
 $button-font-family: $body-font-family !default;
 $button-font-color: $white !default;
 $button-font-color-alt: $oil !default;
+$button-font-tny: rem-calc(11) !default;
 $button-font-sml: rem-calc(13) !default;
 $button-font-med: rem-calc(16) !default;
 $button-font-lrg: rem-calc(20) !default;
@@ -33,13 +35,13 @@ $button-font-align: center !default;
 $button-function-factor: -20% !default;
 
 // We use these to control button border styles.
-$button-border-width: 1px !default;
+$button-border-width: 0px !default;
 $button-border-style: solid !default;
-$button-bg-color: $color-blue-dark;
-$button-bg-hover: $color-blue-light;
-$button-border-color: $button-bg-color;
-$secondary-button-bg-hover: $color-white;
-$secondary-button-border-color: $button-bg-color;
+$button-bg-color: $primary-color !default;
+$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor) !default;
+$button-border-color: $button-bg-hover !default;
+$secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor) !default;
+$secondary-button-border-color: $secondary-button-bg-hover !default;
 $success-button-bg-hover: scale-color($success-color, $lightness: $button-function-factor) !default;
 $success-button-border-color: $success-button-bg-hover !default;
 $alert-button-bg-hover: scale-color($alert-color, $lightness: $button-function-factor) !default;
@@ -54,9 +56,8 @@ $button-radius: $global-radius !default;
 $button-round: $global-rounded !default;
 
 // We use this to set default opacity and cursor for disabled buttons.
-$button-disabled-opacity: 0.6 !default;
+$button-disabled-opacity: 0.7 !default;
 $button-disabled-cursor: $cursor-default-value !default;
-
 
 //
 // @MIXIN
@@ -100,6 +101,7 @@ $button-disabled-cursor: $cursor-default-value !default;
   // these can be turned off by setting $padding:false
   @if $size {
     height: $size;
+    line-height: $size;
   }
 
   // We can set $full-width:true to remove side padding extend width.
@@ -150,6 +152,7 @@ $button-disabled-cursor: $cursor-default-value !default;
       &:focus {
         background-color: $bg-hover;
         border-color: $button-bg-hover;
+        color: $button-font-color;
 
         &.secondary {
           color: $button-bg-hover;
