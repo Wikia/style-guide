@@ -29,7 +29,7 @@ layout: default
 </code></pre>
 
 <p>
-	Additionally, any <code>a</code> element will be styled as a button when given the <code>button</code> class. To disable such buttons, the <code>disabled</code> class needs to be used instead of the native <em>disabled</em> attribute. The following markup will produce the same styled buttons as the markup above.
+	Additionally, any <code>a</code> element will be styled as a button when given the <code>button</code> class. To disable such buttons, the <code>disabled</code> class needs to be used instead of the native <em>disabled</em> attribute. The following markup will produce the same styled buttons as the markup above:
 </p>
 
 <h6>HTML</h6>
@@ -126,14 +126,14 @@ layout: default
 <div class="pagination">
 <div class="clearfix">
 	<p>Dot pagination</p>
-	<div class="dot clearfix">
-		<span class="page selected"><span></span></span>
-		<span class="page"><span></span></span>
-		<span class="page"><span></span></span>
-		<span class="page"><span></span></span>
-		<span class="page"><span></span></span>
-		<span class="page"><span></span></span>
-	</div>
+	<ul class="dot-pagination clearfix">
+		<li class="current"><span></span></li>
+		<li><span></span></li>
+		<li><span></span></li>
+		<li><span></span></li>
+		<li><span></span></li>
+		<li><span></span></li>
+	</ul>
 </div>
 <div class="clearfix">
 	<div class="active">

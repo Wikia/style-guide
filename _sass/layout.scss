@@ -377,27 +377,6 @@ $site-nav-width: 300px;
 			float: left;
 			width: 200px;
 		}
-
-		div.dot {
-			.page {
-				cursor: pointer;
-				float: left;
-				padding: 5px;
-
-				span {
-					border: 1px solid #ccc;
-					border-radius: 4px;
-					display: block;
-					height: 9px;
-					width: 9px;
-				}
-
-				&.selected span {
-					border: 1px solid #000;
-					background-color: #000;
-				}
-			}
-		}
 	}
 
 	ul {
