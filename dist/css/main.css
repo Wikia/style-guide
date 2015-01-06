@@ -2586,6 +2586,24 @@ ul.pagination {
     float: none;
     display: inline-block; }
 
+ul.dot-pagination {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  ul.dot-pagination li {
+    cursor: pointer;
+    float: left;
+    padding: 5px; }
+    ul.dot-pagination li > * {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: block;
+      height: 9px;
+      width: 9px; }
+    ul.dot-pagination li.current > * {
+      border: 1px solid #000;
+      background-color: #000; }
+
 /* small displays */
 @media only screen {
   .show-for-small-only, .show-for-small-up, .show-for-small, .show-for-small-down, .hide-for-medium-only, .hide-for-medium-up, .hide-for-medium, .show-for-medium-down, .hide-for-large-only, .hide-for-large-up, .hide-for-large, .show-for-large-down, .hide-for-xlarge-only, .hide-for-xlarge-up, .hide-for-xxlarge-only, .hide-for-xxlarge-up {
