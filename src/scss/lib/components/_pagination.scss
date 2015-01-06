@@ -184,3 +184,28 @@ $pagination-link-current-active-bg: $primary-color !default;
     }
   }
 }
+
+ul.dot-pagination {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    cursor: pointer;
+    float: left;
+    padding: 5px;
+
+    > * {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: block;
+      height: 9px;
+      width: 9px;
+    }
+
+    &.current > * {
+      border: 1px solid #000;
+      background-color: #000;
+    }
+  }
+}
