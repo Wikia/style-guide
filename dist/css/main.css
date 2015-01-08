@@ -2530,6 +2530,56 @@ label.error {
   .icon-bar.six-up.large-vertical .item {
     width: auto; } }
 
+figure {
+  margin: 0; }
+  figure.avatar {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px; }
+  figure.landscape.xlarge, figure.video.xlarge {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%; }
+  figure.landscape.large, figure.video.large {
+    padding-left: 0;
+    padding-right: 0;
+    width: 66.66667%; }
+  figure.landscape.medium, figure.video.medium {
+    padding-left: 0;
+    padding-right: 0;
+    width: 50%; }
+  figure.landscape.small, figure.video.small {
+    padding-left: 0;
+    padding-right: 0;
+    width: 33.33333%; }
+  figure.landscape.xsmall, figure.video.xsmall {
+    padding-left: 0;
+    padding-right: 0;
+    width: 25%; }
+  figure.landscape.thumb, figure.video.thumb {
+    padding-left: 0;
+    padding-right: 0;
+    width: 16.66667%; }
+  figure.portrait.medium {
+    padding-left: 0;
+    padding-right: 0;
+    width: 33.33333%; }
+  figure.portrait.small {
+    padding-left: 0;
+    padding-right: 0;
+    width: 25%; }
+  figure.portrait.thumb {
+    padding-left: 0;
+    padding-right: 0;
+    width: 16.66667%; }
+  figure.custom {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%; }
+  figure img {
+    width: 100%; }
+
 ul.pagination {
   display: block;
   min-height: 1.5rem;

@@ -1,0 +1,66 @@
+// Wikia Style Guide
+// http://wikia.github.io/style-guide/
+
+@import "global";
+
+$avatar-size: 36px;
+
+figure {
+	margin: 0;
+
+	// User avatars
+	&.avatar {
+		border: 2px solid #fff;
+		border-radius: 50%;
+		height: $avatar-size;
+		width: $avatar-size;
+	}
+
+	&.landscape, &.video {
+		&.xlarge {
+			@include grid-column($columns:12, $collapse:true, $float:false);
+		}
+
+		&.large {
+			@include grid-column($columns:8, $collapse:true, $float:false);
+		}
+
+		&.medium {
+			@include grid-column($columns:6, $collapse:true, $float:false);
+		}
+
+		&.small {
+			@include grid-column($columns:4, $collapse:true, $float:false);
+		}
+
+		&.xsmall {
+			@include grid-column($columns:3, $collapse:true, $float:false);
+		}
+
+		&.thumb {
+			@include grid-column($columns:2, $collapse:true, $float:false);
+		}
+	}
+
+	&.portrait {
+		&.medium {
+			@include grid-column($columns:4, $collapse:true, $float:false);
+		}
+
+		&.small {
+			@include grid-column($columns:3, $collapse:true, $float:false);
+		}
+
+		&.thumb {
+			@include grid-column($columns:2, $collapse:true, $float:false);
+		}
+	}
+
+	&.custom {
+		@include grid-column($columns:12, $collapse:true, $float:false);
+	}
+
+	img {
+		width: 100%;
+	}
+}
