@@ -6,3 +6,8 @@ gulp.task('sass', function () {
 		.pipe(sass())
 		.pipe(gulp.dest('./dist/css'));
 });
+
+gulp.task('svg', function () {
+	gulp.src('./src/svg/*.svg')
+		.pipe(gulp.dest('./dist/svg'));
+});
