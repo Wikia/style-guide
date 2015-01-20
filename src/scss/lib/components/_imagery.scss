@@ -3,6 +3,107 @@
 
 @import "global";
 
+$landscape-height-ratio: 0.5625; // 16:9
+$portrait-height-ratio: 1.4; // 5:7
+
+$image-size-thumb:  1;
+$image-size-xsmall: 2;
+$image-size-small:  3;
+$image-size-medium: 4;
+$image-size-large:  5;
+$image-size-xlarge: 6;
+
+$landscape-image-columns: 2, 3, 4, 6, 8, 12;
+$portrait-image-columns: 2, 3, 4;
+
+$landscape-column-width-small:   26px;
+$landscape-column-width-medium:  30px;
+$landscape-column-width-large:   40px;
+$landscape-column-width-xlarge:  50px;
+$landscape-column-width-xxlarge: 60px;
+
+$portrait-column-width-small:   26px;
+$portrait-column-width-medium:  30px;
+$portrait-column-width-large:   40px;
+$portrait-column-width-xlarge:  50px;
+$portrait-column-width-xxlarge: 60px;
+
+@mixin landscape-image-dimensions($image-size) {
+	@media #{$small-only} {
+		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-small);
+		width: $image-width;
+		img {
+			height: $image-width * $landscape-height-ratio;
+		}
+	}
+	@media #{$medium-only} {
+		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-medium);
+		width: $image-width;
+		img {
+			height: $image-width * $landscape-height-ratio;
+		}
+	}
+	@media #{$large-only} {
+		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-large);
+		width: $image-width;
+		img {
+			height: $image-width * $landscape-height-ratio;
+		}
+	}
+	@media #{$xlarge-only} {
+		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-xlarge);
+		width: $image-width;
+		img {
+			height: $image-width * $landscape-height-ratio;
+		}
+	}
+	@media #{$xxlarge-up} {
+		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-xxlarge);
+		width: $image-width;
+		img {
+			height: $image-width * $landscape-height-ratio;
+		}
+	}
+}
+
+@mixin portrait-image-dimensions($image-size) {
+	@media #{$small-only} {
+		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-small);
+		width: $image-width;
+		img {
+			height: $image-width * $portrait-height-ratio;
+		}
+	}
+	@media #{$medium-only} {
+		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-medium);
+		width: $image-width;
+		img {
+			height: $image-width * $portrait-height-ratio;
+		}
+	}
+	@media #{$large-only} {
+		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-large);
+		width: $image-width;
+		img {
+			height: $image-width * $portrait-height-ratio;
+		}
+	}
+	@media #{$xlarge-only} {
+		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-xlarge);
+		width: $image-width;
+		img {
+			height: $image-width * $portrait-height-ratio;
+		}
+	}
+	@media #{$xxlarge-up} {
+		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-xxlarge);
+		width: $image-width;
+		img {
+			height: $image-width * $portrait-height-ratio;
+		}
+	}
+}
+
 $avatar-size: 36px;
 
 figure {
@@ -18,41 +119,41 @@ figure {
 
 	&.landscape, &.video {
 		&.xlarge {
-			@include grid-column($columns:12, $collapse:true, $float:false);
+			@include landscape-image-dimensions($image-size-xlarge);
 		}
 
 		&.large {
-			@include grid-column($columns:8, $collapse:true, $float:false);
+			@include landscape-image-dimensions($image-size-large);
 		}
 
 		&.medium {
-			@include grid-column($columns:6, $collapse:true, $float:false);
+			@include landscape-image-dimensions($image-size-medium);
 		}
 
 		&.small {
-			@include grid-column($columns:4, $collapse:true, $float:false);
+			@include landscape-image-dimensions($image-size-small);
 		}
 
 		&.xsmall {
-			@include grid-column($columns:3, $collapse:true, $float:false);
+			@include landscape-image-dimensions($image-size-xsmall);
 		}
 
 		&.thumb {
-			@include grid-column($columns:2, $collapse:true, $float:false);
+			@include landscape-image-dimensions($image-size-thumb);
 		}
 	}
 
 	&.portrait {
 		&.medium {
-			@include grid-column($columns:4, $collapse:true, $float:false);
+			@include portrait-image-dimensions($image-size-small);
 		}
 
 		&.small {
-			@include grid-column($columns:3, $collapse:true, $float:false);
+			@include portrait-image-dimensions($image-size-xsmall);
 		}
 
 		&.thumb {
-			@include grid-column($columns:2, $collapse:true, $float:false);
+			@include portrait-image-dimensions($image-size-thumb);
 		}
 	}
 
