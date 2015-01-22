@@ -25,8 +25,6 @@ build/
 /.bundle/
 /lib/bundler/man/
 /.sass-cache
-/_site
-/css
 /node_modules
 *.log
 /src/vendor/
