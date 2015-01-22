@@ -1,5 +1,6 @@
 #!/bin/bash
 
+curr_git_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 env -i git push origin :gh-pages
 env -i git branch -D gh-pages
 env -i git checkout -b gh-pages
@@ -10,4 +11,4 @@ env -i rm -rf gh-pages/
 env -i git add --all 
 env -i git commit -m 'Updated gh-pages from dev'
 env -i git push origin gh-pages
-env -i git checkout dev
+env -i git checkout $curr_git_branch
