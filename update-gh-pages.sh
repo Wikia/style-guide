@@ -14,15 +14,11 @@ env -i git branch -D gh-pages
 env -i git checkout -b gh-pages
 
 # Remove contents of pwd
-while true; do
-    echo "You are about to remove all the contents of: $(pwd)."
-    read -p "Continue? Enter 'y' or 'n': " input
-    case $input in
-        [Yy]* ) env -i rm -rf *; break;;
-        [Nn]* ) env -i git checkout $curr_git_branch; exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
+if [ -d "gh-pages" ]; then
+    env -i rm -rf *;
+else 
+    echo "It doesn't look like you're in the right folder, please check that you're in the root of your style-guide repo"
+fi
 
 # Copy the contents of gh-pages/ from your dev branch
 env -i git checkout dev -- gh-pages/
