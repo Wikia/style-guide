@@ -177,6 +177,10 @@ figure {
 				text-shadow: #999 1px 1px;
 				width: 80%;
 			}
+
+			.overlay {
+				background-image: linear-gradient(0deg, #c0c0c0, transparent 40%);
+			}
 		}
 
 		&.large {

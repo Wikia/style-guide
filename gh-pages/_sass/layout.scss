@@ -1,10 +1,6 @@
 $avatar-size: 36px;
 $site-nav-width: 300px;
 
-@mixin column-background($columns) {
-	background-image: repeating-linear-gradient(90deg, #fff, #bbf0ff 50%/$columns, #bbf0ff, #fff 100%/$columns) !important;
-}
-
 /**
  * Site header
  */
@@ -104,67 +100,8 @@ $site-nav-width: 300px;
 			margin-bottom: 40px;
 		}
 
-		&.landscape, &.video {
-			&.xlarge {
-				img {
-					@include column-background(12);
-				}
-			}
-
-			&.large {
-				img {
-					@include column-background(8);
-				}
-			}
-
-			&.medium {
-				img {
-					@include column-background(6);
-				}
-			}
-
-			&.small {
-				img {
-					@include column-background(4);
-				}
-			}
-
-			&.xsmall {
-				img {
-					@include column-background(3);
-				}
-			}
-
-			&.thumb {
-				img {
-					@include column-background(2);
-				}
-			}
-		}
-
-		&.portrait {
-			&.medium {
-				img {
-					@include column-background(4);
-				}
-			}
-
-			&.small {
-				img {
-					@include column-background(3);
-				}
-			}
-
-			&.thumb {
-				img {
-					@include column-background(2);
-				}
-			}
-		}
-
 		&.custom {
 			img {
-				@include column-background(12);
 				height: 180px;
 			}
 		}
@@ -175,10 +112,6 @@ $site-nav-width: 300px;
 			}
 
 			&.xlarge {
-				.overlay {
-					background-image: linear-gradient(0deg, #c0c0c0, transparent 40%) !important;
-				}
-
 				.icon-play {
 					background-size: 76px 76px;
 					bottom: 18px;

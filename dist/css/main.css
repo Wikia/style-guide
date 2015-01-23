@@ -2779,6 +2779,8 @@ figure {
       position: absolute;
       text-shadow: #999 1px 1px;
       width: 80%; }
+    figure.video.xlarge .overlay {
+      background-image: linear-gradient(0deg, #c0c0c0, transparent 40%); }
     figure.video.large figcaption {
       color: #656E78;
       font-size: 14px;
