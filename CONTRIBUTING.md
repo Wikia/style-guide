@@ -16,6 +16,6 @@ Before submitting your pull request, please make sure that all of the following 
 * You have linked to the [original issue](https://github.com/Wikia/style-guide/issues) from within your PR description
 * For new components, make sure your source lives [here](https://github.com/Wikia/style-guide/tree/master/src/scss/lib/components)
 * Make sure your code is linted and follows the [Wikia SCSS guidelines](https://github.com/Wikia/guidelines/tree/master/SCSS)
-* As this is a living style guide, make sure you add an entry or section for your component in the [Jekyll GitHub Pages site](https://github.com/Wikia/style-guide/tree/gh-pages)
+* As this is a living style guide, make sure you add an entry or section for your component in the [Jekyll GitHub Pages site](https://github.com/Wikia/style-guide/tree/gh-pages) and update the gh-pages branch using: `$ bash update-gh-pages.sh` to see [http://wikia.github.io/style-guide](http://wikia.github.io/style-guide) updated
 
 
