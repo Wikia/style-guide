@@ -14,7 +14,15 @@ env -i git branch -D gh-pages
 env -i git checkout -b gh-pages
 
 # Remove contents of pwd
-env -i rm -rf *
+while true; do
+    echo "You are about to remove all the contents of: $(pwd)."
+    read -p "Continue? Enter 'y' or 'n': " input
+    case $input in
+        [Yy]* ) env -i rm -rf *; break;;
+        [Nn]* ) env -i git checkout $curr_git_branch; exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 
 # Copy the contents of gh-pages/ from your dev branch
 env -i git checkout dev -- gh-pages/
