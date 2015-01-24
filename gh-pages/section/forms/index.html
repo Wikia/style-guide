@@ -140,7 +140,7 @@ layout: default
 	<strong>Icon dropdown</strong>
 </p>
 <div class="icon-dropdown">
-	<img class="dropdown" data-dropdown="icon-drop" src="{{site.assets_path}}images/icons/icon_avatar.svg" alt="">
+	<img class="dropdown" data-dropdown="icon-drop" src="{{ site.assets_path | prepend: site.baseurl }}/images/icons/icon_avatar.svg" alt="">
 	<ul id="icon-drop" class="f-dropdown">
 		<li><a>Menu 1</a></li>
 		<li><a>Menu 2</a></li>
@@ -163,7 +163,7 @@ layout: default
 	<strong>Left side navigation</strong> is a special case of an icon button. Behavior and interaction are the same.
 </p>
 <div class="icon-navigation clearfix">
-	<img class="dropdown" data-dropdown="icon-nav" src="{{site.assets_path}}images/icons/icon_menu.svg" alt="">
+	<img class="dropdown" data-dropdown="icon-nav" src="{{ site.assets_path | prepend: site.baseurl }}/images/icons/icon_menu.svg" alt="">
 	<ul id="icon-nav" class="f-dropdown nav">
 		<li><a>History</a></li>
 		<li><a>Personality</a></li>
