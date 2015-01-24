@@ -5,6 +5,13 @@
 
 # Parse and save current branch
 curr_git_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+has_uncommited_changes=`git status -s`
+
+if [ -z "$has_uncommited_changes" ]; then
+    echo "no changes" && exit 0
+else
+    echo "has changes" && exit 1
+fi
 
 # Delete remote and local 'gh-pages' branches
 env -i git push origin :gh-pages
