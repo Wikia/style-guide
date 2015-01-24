@@ -17,51 +17,105 @@ $landscape-image-columns: 2, 3, 4, 6, 8, 12;
 $portrait-image-columns: 2, 3, 4;
 
 $landscape-column-width-small:   26px;
-$landscape-column-width-medium:  30px;
-$landscape-column-width-large:   40px;
-$landscape-column-width-xlarge:  50px;
-$landscape-column-width-xxlarge: 60px;
+$landscape-column-width-medium:  50px;
+$landscape-column-width-large:   60px;
+$landscape-column-width-xlarge:  80px;
+$landscape-column-width-xxlarge: 90px;
 
 $portrait-column-width-small:   26px;
-$portrait-column-width-medium:  30px;
-$portrait-column-width-large:   40px;
-$portrait-column-width-xlarge:  50px;
-$portrait-column-width-xxlarge: 60px;
+$portrait-column-width-medium:  50px;
+$portrait-column-width-large:   60px;
+$portrait-column-width-xlarge:  80px;
+$portrait-column-width-xxlarge: 90px;
 
 @mixin landscape-image-dimensions($image-size) {
 	@media #{$small-only} {
 		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-small);
+		$icon-size: $image-width * 0.1;
+
 		width: $image-width;
-		img {
+
+		img, .overlay {
 			height: $image-width * $landscape-height-ratio;
 		}
+
+		.icon-play {
+			bottom: $icon-size / 3;
+			height: $icon-size;
+			left: $icon-size / 3;
+			width: $icon-size;
+		}
 	}
+
 	@media #{$medium-only} {
 		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-medium);
+		$icon-size: $image-width * 0.1;
+
 		width: $image-width;
-		img {
+
+		img, .overlay {
 			height: $image-width * $landscape-height-ratio;
 		}
+
+		.icon-play {
+			bottom: $icon-size / 3;
+			height: $icon-size;
+			left: $icon-size / 3;
+			width: $icon-size;
+		}
 	}
+
 	@media #{$large-only} {
 		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-large);
+		$icon-size: $image-width * 0.1;
+
 		width: $image-width;
-		img {
+
+		img, .overlay {
 			height: $image-width * $landscape-height-ratio;
 		}
+
+		.icon-play {
+			bottom: $icon-size / 3;
+			height: $icon-size;
+			left: $icon-size / 3;
+			width: $icon-size;
+		}
 	}
+
 	@media #{$xlarge-only} {
 		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-xlarge);
+		$icon-size: $image-width * 0.1;
+
 		width: $image-width;
-		img {
+
+		img, .overlay {
 			height: $image-width * $landscape-height-ratio;
 		}
+
+		.icon-play {
+			bottom: $icon-size / 3;
+			height: $icon-size;
+			left: $icon-size / 3;
+			width: $icon-size;
+		}
 	}
+
 	@media #{$xxlarge-up} {
 		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-xxlarge);
+		$icon-size: $image-width * 0.1;
+
 		width: $image-width;
-		img {
+
+		img, .overlay {
 			height: $image-width * $landscape-height-ratio;
+		}
+
+		.icon-play {
+			bottom: $icon-size / 3;
+			height: $icon-size;
+			left: $icon-size / 3;
+			width: $icon-size;
 		}
 	}
 }
@@ -69,36 +123,50 @@ $portrait-column-width-xxlarge: 60px;
 @mixin portrait-image-dimensions($image-size) {
 	@media #{$small-only} {
 		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-small);
+
 		width: $image-width;
-		img {
+
+		img, .overlay {
 			height: $image-width * $portrait-height-ratio;
 		}
 	}
+
 	@media #{$medium-only} {
 		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-medium);
+
 		width: $image-width;
-		img {
+
+		img, .overlay {
 			height: $image-width * $portrait-height-ratio;
 		}
 	}
+
 	@media #{$large-only} {
 		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-large);
+
 		width: $image-width;
-		img {
+
+		img, .overlay {
 			height: $image-width * $portrait-height-ratio;
 		}
 	}
+
 	@media #{$xlarge-only} {
 		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-xlarge);
+
 		width: $image-width;
-		img {
+
+		img, .overlay {
 			height: $image-width * $portrait-height-ratio;
 		}
 	}
+
 	@media #{$xxlarge-up} {
 		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-xxlarge);
+
 		width: $image-width;
-		img {
+
+		img, .overlay {
 			height: $image-width * $portrait-height-ratio;
 		}
 	}
@@ -164,13 +232,13 @@ figure {
 	&.video {
 		position: relative;
 
-		&.xlarge {
+		&.large {
 			figcaption {
-				bottom: 22px;
+				bottom: 7%;
 				color: #fff;
 				font-size: 26px;
 				height: 62px;
-				left: 115px;
+				left: 16%;
 				line-height: 32px;
 				overflow-y: hidden;
 				position: absolute;
@@ -183,7 +251,7 @@ figure {
 			}
 		}
 
-		&.large {
+		&.medium {
 			figcaption {
 				color: $color-blue-gray-dark;
 				font-size: 14px;
@@ -206,16 +274,15 @@ figure {
 			}
 		}
 
-		.icon-play {
+		.icon-play,
+		.overlay {
 			display: block;
 			position: absolute;
 		}
 
-		.overlay {
-			display: block;
-			position: absolute;
-			width: 100%;
-			height: 100%;
+		.icon-play {
+		    background-image: url(../../dist/icons/icon_play.svg);
+			background-size: cover;
 		}
 	}
 

@@ -41,9 +41,9 @@ $pagination-link-current-active-bg: $primary-color !default;
 // @mixins
 @mixin page-chevron($direction) {
   @if $direction == left {
-    background-image: url(../../dist/svg/chevron_left.svg);
+    background-image: url(../../dist/icons/icon_page_left.svg);
   } @else {
-    background-image: url(../../dist/svg/chevron_right.svg);
+    background-image: url(../../dist/icons/icon_page_right.svg);
   }
   background-position: center;
   background-repeat: no-repeat;

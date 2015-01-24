@@ -243,6 +243,12 @@ $align-class-breakpoints:
       }
 
       img { border:none; }
+
+      &.redlink {
+        background-color: $redlink-background-color;
+        color: $body-font-color;
+        padding: 2px 5px;
+      }
     }
 
     /* Default paragraph styles */
@@ -423,7 +429,7 @@ $align-class-breakpoints:
         margin-bottom: 5px;
         position: absolute;
         top: 0;
-        width: 90%;
+        width: 93%;
     }
 
     // decorative quote
@@ -448,8 +454,8 @@ $align-class-breakpoints:
 
       cite {
         display: block;
-        font-size: $blockquote-cite-font-size;
-        font-weight: $blockquote-font-weight;
+        font-size: $blockquote-cite-font-size * 0.9;
+        font-weight: normal;
         font-style: $blockquote-cite-font-style;
         color: $blockquote-cite-font-color;
         &:before {

@@ -10,8 +10,8 @@ gulp.task('sass', function () {
 });
 
 gulp.task('svg', function () {
-	gulp.src('./src/svg/*.svg')
-		.pipe(gulp.dest('./dist/svg'));
+	gulp.src('./src/icons/*.svg')
+		.pipe(gulp.dest('./dist/icons'));
 });
 
 gulp.task('update-static', function () {
