@@ -16,6 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "wikia-style-guide": "git@github.com:Wikia/style-guide.git"
+    "wikia-style-guide": "git@github.com:Wikia/style-guide.git#dev"
   }
 }

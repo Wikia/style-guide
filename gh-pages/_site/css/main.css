@@ -56,7 +56,6 @@
   .page-content .avatar {
     background-color: #ddf7fe;
     border: 1px solid #c7c7c7;
-    border-radius: 50%;
     height: 36px;
     width: 36px; }
   .page-content .avatar-width {
@@ -67,112 +66,10 @@
     width: 36px; }
   .page-content button.outline {
     border-style: dashed; }
-  .page-content figure {
+  .page-content figure.landscape, .page-content figure.portrait, .page-content figure.custom, .page-content figure.video {
     margin-bottom: 40px; }
-    .page-content figure a {
-      display: block; }
-    .page-content figure.landscape.xlarge img, .page-content figure.video.xlarge img {
-      background-image: repeating-linear-gradient(90deg, #fff, #bbf0ff 4.16667%, #bbf0ff, #fff 8.33333%) !important;
-      height: 405px; }
-    .page-content figure.landscape.large img, .page-content figure.video.large img {
-      background-image: repeating-linear-gradient(90deg, #fff, #bbf0ff 6.25%, #bbf0ff, #fff 12.5%) !important;
-      height: 270px; }
-    .page-content figure.landscape.medium img, .page-content figure.video.medium img {
-      background-image: repeating-linear-gradient(90deg, #fff, #bbf0ff 8.33333%, #bbf0ff, #fff 16.66667%) !important;
-      height: 203px; }
-    .page-content figure.landscape.small img, .page-content figure.video.small img {
-      background-image: repeating-linear-gradient(90deg, #fff, #bbf0ff 12.5%, #bbf0ff, #fff 25%) !important;
-      height: 135px; }
-    .page-content figure.landscape.xsmall img, .page-content figure.video.xsmall img {
-      background-image: repeating-linear-gradient(90deg, #fff, #bbf0ff 16.66667%, #bbf0ff, #fff 33.33333%) !important;
-      height: 101px; }
-    .page-content figure.landscape.thumb img, .page-content figure.video.thumb img {
-      background-image: repeating-linear-gradient(90deg, #fff, #bbf0ff 25%, #bbf0ff, #fff 50%) !important;
-      height: 68px; }
-    .page-content figure.portrait.medium img {
-      background-image: repeating-linear-gradient(90deg, #fff, #bbf0ff 12.5%, #bbf0ff, #fff 25%) !important;
-      height: 336px; }
-    .page-content figure.portrait.small img {
-      background-image: repeating-linear-gradient(90deg, #fff, #bbf0ff 16.66667%, #bbf0ff, #fff 33.33333%) !important;
-      height: 252px; }
-    .page-content figure.portrait.thumb img {
-      background-image: repeating-linear-gradient(90deg, #fff, #bbf0ff 25%, #bbf0ff, #fff 50%) !important;
-      height: 168px; }
-    .page-content figure.custom img {
-      background-image: repeating-linear-gradient(90deg, #fff, #bbf0ff 4.16667%, #bbf0ff, #fff 8.33333%) !important;
-      height: 180px; }
-    .page-content figure.video a {
-      position: relative; }
-      .page-content figure.video a.example img {
-        background-color: #dff7fe;
-        background-image: none !important; }
-    .page-content figure.video .play-icon {
-      background-image: url(../assets/images/icons/icon_play.svg);
-      display: block;
-      position: absolute; }
-    .page-content figure.video.xlarge a.example img {
-      background-image: linear-gradient(0deg, #c0c0c0, transparent 40%) !important; }
-    .page-content figure.video.xlarge figcaption {
-      color: #fff;
-      font-size: 26px;
-      height: 62px;
-      left: 125px;
-      line-height: 32px;
-      margin-top: -85px;
-      overflow-y: hidden;
-      position: absolute;
-      text-shadow: #999 1px 1px;
-      width: 590px; }
-    .page-content figure.video.xlarge .play-icon {
-      background-size: 76px 76px;
-      bottom: 18px;
-      height: 76px;
-      left: 18px;
-      width: 76px; }
-    .page-content figure.video.large figcaption {
-      color: #656E78;
-      font-size: 14px;
-      line-height: 1.4;
-      padding: 15px;
-      text-align: justify; }
-      .page-content figure.video.large figcaption span {
-        color: #1A5EB8;
-        font-size: 24px;
-        font-weight: bold; }
-    .page-content figure.video.large .play-icon {
-      background-size: 51px 51px;
-      bottom: 10px;
-      height: 51px;
-      left: 10px;
-      width: 51px; }
-    .page-content figure.video.medium .play-icon {
-      background-size: 38px 38px;
-      bottom: 10px;
-      height: 38px;
-      left: 10px;
-      width: 38px; }
-    .page-content figure.video.small figcaption {
-      color: #1A5EB8;
-      font-size: 14px;
-      padding: 10px; }
-    .page-content figure.video.small .play-icon {
-      background-size: 30px 30px;
-      bottom: 9px;
-      height: 30px;
-      left: 9px;
-      width: 30px; }
-    .page-content figure.video.xsmall .play-icon {
-      background-size: 25px 25px;
-      bottom: 7px;
-      height: 25px;
-      left: 7px;
-      width: 25px; }
-    .page-content figure.video.thumb .play-icon {
-      background-size: 25px 25px;
-      bottom: 5px;
-      height: 25px;
-      left: 5px;
-      width: 25px; }
+  .page-content figure.custom img {
+    height: 180px; }
   .page-content .legacy-video {
     border: 1px dashed #999;
     width: 240px; }

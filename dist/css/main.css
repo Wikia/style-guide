@@ -2952,6 +2952,7 @@ figure {
       display: block;
       position: absolute; }
     figure.video .icon-play {
+      background-image: url(../../dist/icons/icon_play.svg);
       background-size: cover; }
   figure img {
     width: 100%; }
@@ -2992,12 +2993,12 @@ ul.pagination {
       ul.pagination li.current a:hover, ul.pagination li.current a:focus, ul.pagination li.current button:hover, ul.pagination li.current button:focus {
         background: transparent; }
     ul.pagination li.arrow-left {
-      background-image: url(../../dist/svg/chevron_left.svg);
+      background-image: url(../../dist/icons/icon_page_left.svg);
       background-position: center;
       background-repeat: no-repeat;
       background-size: 18px 18px; }
     ul.pagination li.arrow-right {
-      background-image: url(../../dist/svg/chevron_right.svg);
+      background-image: url(../../dist/icons/icon_page_right.svg);
       background-position: center;
       background-repeat: no-repeat;
       background-size: 18px 18px; }
