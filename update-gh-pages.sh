@@ -7,10 +7,8 @@
 curr_git_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 has_uncommited_changes=`git status -s`
 
-if [ -z "$has_uncommited_changes" ]; then
-    echo "no changes" && exit 0
-else
-    echo "has changes" && exit 1
+if [ ! -z "$has_uncommited_changes" ]; then
+    echo "Sorry, this update script won't run until you've taken care of those uncommitted changes. It's FOR YOUR OWN GOOD." && exit 1
 fi
 
 # Delete remote and local 'gh-pages' branches
