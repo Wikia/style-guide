@@ -10,7 +10,7 @@ If you find a bug in the style guide, have a feature request or have any other t
 ## Submitting a Pull Request
 If your pull request fixes an existing issue, please reference that issue from within your pull request.
 
-As the coverage of our style guide grows, developers from all teams are encouraged to helm the responsibility of building new components for the style guide. Before submitting a pull request, [open an issue](https://github.com/Wikia/style-guide/issues/new) for the new component. This allows other developers to enagae in a discussion that may be useful to your development.
+As the coverage of our style guide grows, developers from all teams are encouraged to helm the responsibility of building new components for the style guide. Before submitting a pull request, [open an issue](https://github.com/Wikia/style-guide/issues/new) for the new component. This allows other developers to engage in a discussion that may be useful to your development.
 Before submitting your pull request, please make sure that all of the following are true:
 * Your pull request has a comprehensive description of the new component/feature being added
 * You have linked to the [original issue](https://github.com/Wikia/style-guide/issues) from within your PR description
