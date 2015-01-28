@@ -26,7 +26,7 @@ else
 fi
 
 # Copy the contents of gh-pages/ from your dev branch
-env -i git checkout dev -- gh-pages/
+env -i git checkout $curr_git_branch -- gh-pages/
 # and make it's contents top level for the directory (GitHub pages requires this)
 env -i cp -R gh-pages/* ./
 # remove the cruft
