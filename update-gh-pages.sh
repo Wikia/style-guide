@@ -20,7 +20,7 @@ env -i git checkout -b gh-pages
 
 # Remove contents of pwd
 if [ -d "gh-pages" ]; then
-    env -i rm -rf *;
+    find * -maxdepth 0 -name 'node_modules' -prune -o -exec echo '{}' ';'
 else 
     echo "It doesn't look like you're in the right folder, please check that you're in the root of your style-guide repo"
 fi
