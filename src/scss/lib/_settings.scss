@@ -210,13 +210,27 @@ $type-medium     : rem-calc(24);
 $type-base       : 1rem;
 $type-small      : 0.75rem;
 
+$line-height-jumbo   : rem-calc(54);
+$line-height-largest : rem-calc(40);
+$line-height-larger  : rem-calc(36);
+$line-height-large   : rem-calc(32);
+$line-height-medium  : rem-calc(28);
+$line-height-base    : rem-calc(28);
+
 // We use these to control header font sizes
- $h1-font-size: $type-jumbo;
- $h2-font-size: $type-largest;
- $h3-font-size: $type-larger;
- $h4-font-size: $type-large;
- $h5-font-size: $type-medium;
- $h6-font-size: $type-base;
+$h1-font-size: $type-jumbo;
+$h2-font-size: $type-largest;
+$h3-font-size: $type-larger;
+$h4-font-size: $type-large;
+$h5-font-size: $type-medium;
+$h6-font-size: $type-base;
+
+$h1-line-height: $line-height-jumbo;
+$h2-line-height: $line-height-largest;
+$h3-line-height: $line-height-larger;
+$h4-line-height: $line-height-large;
+$h5-line-height: $line-height-medium;
+$h6-line-height: $line-height-base;
 
 // We use these to control header size reduction on small screens
 $h1-font-reduction: 0 !default;
