@@ -61,7 +61,7 @@ $site-nav-width: 300px;
 
 .page-content {
 	background: white;
-	margin: 46px 0 40px 0;
+	margin: 96px 0 40px 0;
 	padding-bottom: 40px;
 
 	.hero {
@@ -176,13 +176,6 @@ $site-nav-width: 300px;
 
 	.dot-pagination {
 		margin-bottom: 20px;
-	}
-
-	ul {
-		&.f-dropdown {
-			display: block;
-			position: static;
-		}
 	}
 
 	.wrapper {
