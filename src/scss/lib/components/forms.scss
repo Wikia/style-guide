@@ -23,12 +23,12 @@ $form-label-font-color: scale-color($black, $lightness: 30%) !default;
 $form-label-small-transform: capitalize !default;
 $form-label-bottom-margin: 0 !default;
 $input-font-family: inherit !default;
-$input-font-color: $color-gray-dark !default;
+$input-font-color: $black !default;
 $input-font-size: rem-calc(14) !default;
-$input-bg-color: $color-gray-light !default;
-$input-focus-bg-color: $color-gray-light !default;
-$input-border-color: $color-gray-light !default;
-$input-focus-border-color: $color-gray-light !default;
+$input-bg-color: $ghost !default;
+$input-focus-bg-color: $ghost !default;
+$input-border-color: $ghost !default;
+$input-focus-border-color: $ghost !default;
 $input-border-style: solid !default;
 $input-border-width: 1px !default;
 $input-border-radius: 3px !default;
@@ -77,7 +77,7 @@ $glowing-effect-color: $input-focus-border-color !default;
 // Select variables
 $select-bg-color: $button-bg-color !default;
 $select-font-size: rem-calc(12);
-$select-hover-bg-color: $color-blue-dark !default;
+$select-hover-bg-color: $button-bg-color !default;
 
 //
 // @MIXINS

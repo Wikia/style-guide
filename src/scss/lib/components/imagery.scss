@@ -1,32 +1,35 @@
 // Wikia Style Guide
 // http://wikia.github.io/style-guide/
 
-@import "global";
+@import 'global';
 
-$landscape-height-ratio: 0.5625; // 16:9
-$portrait-height-ratio: 1.4; // 5:7
+$landscape-height-ratio: 0.5625 !default; // 16:9
+$portrait-height-ratio: 1.4 !default; // 5:7
 
-$image-size-thumb:  1;
-$image-size-xsmall: 2;
-$image-size-small:  3;
-$image-size-medium: 4;
-$image-size-large:  5;
-$image-size-xlarge: 6;
+$image-size-thumb:  1 !default;
+$image-size-xsmall: 2 !default;
+$image-size-small:  3 !default;
+$image-size-medium: 4 !default;
+$image-size-large:  5 !default;
+$image-size-xlarge: 6 !default;
 
-$landscape-image-columns: 2, 3, 4, 6, 8, 12;
-$portrait-image-columns: 2, 3, 4;
+$landscape-image-columns: 2, 3, 4, 6, 8, 12 !default;
+$portrait-image-columns: 2, 3, 4 !default;
 
-$landscape-column-width-small:   26px;
-$landscape-column-width-medium:  50px;
-$landscape-column-width-large:   60px;
-$landscape-column-width-xlarge:  80px;
-$landscape-column-width-xxlarge: 90px;
+$landscape-column-width-small:   26px !default;
+$landscape-column-width-medium:  50px !default;
+$landscape-column-width-large:   60px !default;
+$landscape-column-width-xlarge:  80px !default;
+$landscape-column-width-xxlarge: 90px !default;
 
-$portrait-column-width-small:   26px;
-$portrait-column-width-medium:  50px;
-$portrait-column-width-large:   60px;
-$portrait-column-width-xlarge:  80px;
-$portrait-column-width-xxlarge: 90px;
+$portrait-column-width-small:   26px !default;
+$portrait-column-width-medium:  50px !default;
+$portrait-column-width-large:   60px !default;
+$portrait-column-width-xlarge:  80px !default;
+$portrait-column-width-xxlarge: 90px !default;
+
+$imagery-cite-font-color: pink !default;
+$imagery-title-font-color: pink !default;
 
 @mixin landscape-image-dimensions($image-size) {
 	@media #{$small-only} {
@@ -225,10 +228,6 @@ figure {
 		}
 	}
 
-	&.custom {
-		@include grid-column($columns:12, $collapse:true, $float:false);
-	}
-
 	&.video {
 		position: relative;
 
@@ -253,7 +252,7 @@ figure {
 
 		&.medium {
 			figcaption {
-				color: $color-blue-gray-dark;
+				color: $imagery-cite-font-color;
 				font-size: 14px;
 				line-height: 1.4;
 				padding: 15px;
@@ -261,14 +260,14 @@ figure {
 			}
 
 			h5 {
-				color: $color-blue-light;
+				color: $imagery-title-font-color;
 				margin: 0;
 			}
 		}
 
 		&.small {
 			figcaption {
-				color: $color-blue-light;
+				color: $imagery-title-font-color;
 				font-size: 14px;
 				padding: 10px;
 			}

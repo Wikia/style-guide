@@ -33,6 +33,13 @@ $h4-font-reduction: rem-calc(5) !default;
 $h5-font-reduction: 0 !default;
 $h6-font-reduction: 0 !default;
 
+$h1-line-height: $header-line-height !default;
+$h2-line-height: $header-line-height !default;
+$h3-line-height: $header-line-height !default;
+$h4-line-height: $header-line-height !default;
+$h5-line-height: $header-line-height !default;
+$h6-line-height: $header-line-height !default;
+
 // These control how subheaders are styled.
 $subheader-line-height: 1.4 !default;
 $subheader-font-color: scale-color($header-font-color, $lightness: 35%) !default;
@@ -68,8 +75,9 @@ $code-padding: rem-calc(2) rem-calc(5) rem-calc(1) !default;
 // We use these to style anchors
 $anchor-text-decoration: none !default;
 $anchor-text-decoration-hover: none !default;
-$anchor-font-color: $color-blue-light !default;
+$anchor-font-color: $gainsboro !default;
 $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%) !default;
+$redlink-background-color: $warning-color !default;
 
 // We use these to style the <hr> element
 $hr-border-width: 1px !default;
@@ -92,11 +100,15 @@ $definition-list-header-margin-bottom: .3rem !default;
 $definition-list-margin-bottom: rem-calc(12) !default;
 
 // We use these to style blockquotes
+$blockquote-font-size: $paragraph-font-size !default;
 $blockquote-font-color: scale-color($header-font-color, $lightness: 35%) !default;
+$blockquote-font-weight: normal !default;
+$blockquote-line-height: $paragraph-line-height !default;
 $blockquote-padding: rem-calc(9 20 0 19) !default;
 $blockquote-border: 1px solid $gainsboro !default;
 $blockquote-cite-font-size: rem-calc(13) !default;
 $blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%) !default;
+$blockquote-cite-font-style: normal !default;
 $blockquote-cite-link-color: $blockquote-cite-font-color !default;
 
 // Acronym styles
