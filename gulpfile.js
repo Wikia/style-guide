@@ -4,8 +4,10 @@ var gulp = require('gulp'),
 	del = require('del');
 
 gulp.task('sass', function () {
-	gulp.src('./src/scss/*.scss')
-		.pipe(sass())
+	gulp.src('./src/scss/**/*.scss')
+		.pipe(sass({
+			errLogToConsole: true
+		}))
 		.pipe(gulp.dest('./dist/css'));
 });
 

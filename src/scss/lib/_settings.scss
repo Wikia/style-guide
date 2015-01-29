@@ -20,6 +20,7 @@
 // 06. Icon Bar
 // 07. Pagination
 // 08. Visibility Classes
+// 09. Imagery
 
 // a. Base
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -397,6 +398,8 @@ $secondary-button-border-color: $button-bg-color;
 // $button-round: $global-rounded;
 
 // We use this to set default opacity and cursor for disabled buttons.
+$button-disabled-font-color: $color-blue-gray-dark;
+$button-disabled-border-color: $button-disabled-font-color;
 $button-disabled-opacity: 0.5;
 // $button-disabled-cursor: $cursor-default-value;
 
@@ -506,12 +509,12 @@ $button-disabled-opacity: 0.5;
 // $form-label-small-transform: capitalize;
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
-// $input-font-color: rgba(0,0,0,0.75);
+$input-font-color: $color-gray-dark;
 // $input-font-size: rem-calc(14);
-// $input-bg-color: $white;
-// $input-focus-bg-color: scale-color($white, $lightness: -2%);
-// $input-border-color: scale-color($white, $lightness: -20%);
-// $input-focus-border-color: scale-color($white, $lightness: -40%);
+$input-bg-color: $color-gray-light;
+$input-focus-bg-color: $color-gray-light;
+$input-border-color: $color-gray-light;
+$input-focus-border-color: $color-gray-light;
 // $input-border-style: solid;
 // $input-border-width: 1px;
 // $input-border-radius: $global-radius;
@@ -559,7 +562,7 @@ $button-disabled-opacity: 0.5;
 
 // Select variables
 // $select-bg-color: $ghost;
-// $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%);
+$select-hover-bg-color: $color-blue-dark;
 
 // 06. Icon Bar
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -610,10 +613,40 @@ $pagination-link-current-font-color: $body-font-color;
 // $pagination-link-current-cursor: default;
 $pagination-link-current-active-bg: transparent;
 
-// 36. Visibility Classes
+// 08. Visibility Classes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // $include-html-visibility-classes: $include-html-classes;
 // $include-table-visibility-classes: true;
 // $include-legacy-visibility-classes: true;
 // $include-accessibility-classes: true;
+
+// 01. Imagery
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$landscape-height-ratio: 0.5625; // 16:9
+$portrait-height-ratio: 1.4; // 5:7
+
+$image-size-thumb:  1;
+$image-size-xsmall: 2;
+$image-size-small:  3;
+$image-size-medium: 4;
+$image-size-large:  5;
+$image-size-xlarge: 6;
+
+$landscape-image-columns: 2, 3, 4, 6, 8, 12;
+$portrait-image-columns: 2, 3, 4;
+
+$landscape-column-width-small:   26px;
+$landscape-column-width-medium:  50px;
+$landscape-column-width-large:   60px;
+$landscape-column-width-xlarge:  80px;
+$landscape-column-width-xxlarge: 90px;
+
+$portrait-column-width-small:   26px;
+$portrait-column-width-medium:  50px;
+$portrait-column-width-large:   60px;
+$portrait-column-width-xlarge:  80px;
+$portrait-column-width-xxlarge: 90px;
+
+$imagery-cite-font-color: $color-blue-gray-dark;
+$imagery-title-font-color: $color-blue-light;
