@@ -288,6 +288,9 @@ $f-dropdown-radius: $global-radius !default;
   }
 }
 
-img.dropdown, svg.dropdown {
+.dropdown-icon {
   cursor: pointer;
+  display: block;
+  height: 38px;
+  width: 38px;
 }

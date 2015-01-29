@@ -2034,8 +2034,11 @@ blockquote, blockquote p {
         background-color: #1A5EB8;
         color: #FFFFFF; }
 
-img.dropdown, svg.dropdown {
-  cursor: pointer; }
+.dropdown-icon {
+  cursor: pointer;
+  display: block;
+  height: 38px;
+  width: 38px; }
 
 .dropdown.button, button.dropdown {
   position: relative;
@@ -2414,6 +2417,25 @@ input.error, textarea.error, select.error {
 
 label.error {
   color: #ff3500; }
+
+.global-navigation {
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 0 0 #999;
+  height: 46px;
+  position: fixed;
+  width: 100%;
+  z-index: 9999999; }
+  .global-navigation .menu-icon {
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20height%3D"16"%20width%3D"16"%20xmlns%3Axlink%3D"http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink"%20version%3D"1.1"%20x%3D"0px"%20y%3D"0px"%20viewBox%3D"0%200%2016%2016"%20enable-background%3D"new%200%200%2016%2016"%20xml%3Aspace%3D"preserve"><g><rect%20x%3D"0"%20y%3D"0"%20fill%3D"%23CFCFCF"%20width%3D"16.5"%20height%3D"3"%2F><rect%20x%3D"0"%20y%3D"5.9"%20fill%3D"%23CFCFCF"%20width%3D"16.5"%20height%3D"3"%2F><rect%20x%3D"0"%20y%3D"11.8"%20fill%3D"%23CFCFCF"%20width%3D"16.5"%20height%3D"3"%2F><%2Fg><%2Fsvg>');
+    height: 16px;
+    width: 16px; }
+    .global-navigation .menu-icon::after {
+      float: left;
+      border: 5px solid white;
+      border-top-color: #c8d2d7;
+      content: ' ';
+      display: inline-block;
+      margin: 5px 0 0 22px; }
 
 .icon-bar {
   width: 100%;

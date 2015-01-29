@@ -26,24 +26,25 @@ $site-nav-width: 300px;
 	}
 }
 
-.site-nav {
-	font-size: 14px;
-	padding-top: 30px;
-
-	a {
-		color: #9f9f9f;
-	}
-
+.global-navigation {
 	.logo {
 		fill: #092344;
-		margin-bottom: 38px;
-		width: 92px;
+		margin: 10px 20px 10px 0;
+		width: 82px;
 	}
 
-	ul {
-		line-height: 39px;
-		list-style: none;
-		margin: 0;
+	.menu-icon {
+		margin-top: 17px;
+	}
+
+	.title {
+		border-left: 1px solid #bbb;
+		color: #656e78;
+		font-size: 24px;
+		height: 24px;
+		line-height: 24px;
+		margin: 12px 0 0 30px;
+		padding-left: 10px;
 	}
 }
 
@@ -60,7 +61,7 @@ $site-nav-width: 300px;
 
 .page-content {
 	background: white;
-	margin: 40px 0;
+	margin: 46px 0 40px 0;
 	padding-bottom: 40px;
 
 	.hero {
