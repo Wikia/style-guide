@@ -355,14 +355,14 @@ html, body {
   box-sizing: border-box; }
 
 body {
-  background: #fff;
+  background: #FFFFFF;
   color: #000000;
   padding: 0;
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
-  line-height: 1.5;
+  line-height: 150%;
   position: relative;
   cursor: auto; }
 
@@ -1496,7 +1496,7 @@ a {
   text-decoration: none;
   line-height: inherit; }
   a:hover, a:focus {
-    color: #16519e; }
+    color: #081e3a; }
   a img {
     border: none; }
   a.redlink {
@@ -1953,7 +1953,7 @@ blockquote, blockquote p {
     line-height: 1.125rem;
     margin: 0; }
     .f-dropdown li:hover, .f-dropdown li:focus {
-      background: #1A5EB8;
+      background: #EEEEEE;
       color: #FFFFFF; }
     .f-dropdown li.radius {
       border-radius: 3px; }
@@ -2179,13 +2179,13 @@ span.postfix, label.postfix {
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
-  background-color: #F2F6FA;
+  background-color: #FFFFFF;
   font-family: inherit;
   border-style: solid;
   border-width: 1px;
-  border-color: #F2F6FA;
+  border-color: #cccccc;
   border-radius: 3px;
-  color: #39424D;
+  color: rgba(0, 0, 0, 0.75);
   display: block;
   font-size: 0.875rem;
   margin: 0 0 1rem 0;
@@ -2195,10 +2195,13 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  transition: all 0.15s linear; }
+  transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
   input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="color"]:focus, textarea:focus {
-    background: #F2F6FA;
-    border-color: #F2F6FA;
+    box-shadow: 0 0 5px #999999;
+    border-color: #999999; }
+  input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="color"]:focus, textarea:focus {
+    background: #fafafa;
+    border-color: #999999;
     outline: none; }
   input[type="text"]:disabled, input[type="password"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="month"]:disabled, input[type="week"]:disabled, input[type="email"]:disabled, input[type="number"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="color"]:disabled, textarea:disabled {
     background-color: #DDDDDD;
@@ -2274,14 +2277,14 @@ textarea {
 select {
   -webkit-appearance: none !important;
   -webkit-border-radius: 0px;
-  background-color: #092344;
+  background-color: #FAFAFA;
   text-transform: uppercase;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
   background-position: 100% center;
   background-repeat: no-repeat;
   border-style: solid;
   border-width: 1px;
-  border-color: #F2F6FA;
+  border-color: #cccccc;
   padding: 0.5rem;
   font-size: 0.75rem;
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -2294,8 +2297,8 @@ select {
   select.radius {
     border-radius: 3px; }
   select:hover {
-    background-color: #092344;
-    border-color: #F2F6FA; }
+    background-color: #f3f3f3;
+    border-color: #999999; }
   select:disabled {
     background-color: #DDDDDD;
     cursor: default; }
@@ -2335,7 +2338,7 @@ fieldset {
 /* Error Handling */
 [data-abide] .error small.error, [data-abide] .error span.error, [data-abide] span.error, [data-abide] small.error {
   display: block;
-  padding: 0.375rem 0;
+  padding: 0.375rem 0.5625rem 0.5625rem;
   margin-top: -1px;
   margin-bottom: 1rem;
   font-size: 0.75rem;
@@ -2346,7 +2349,7 @@ fieldset {
 
 span.error, small.error {
   display: block;
-  padding: 0.375rem 0;
+  padding: 0.375rem 0.5625rem 0.5625rem;
   margin-top: -1px;
   margin-bottom: 1rem;
   font-size: 0.75rem;
@@ -2361,7 +2364,7 @@ span.error, small.error {
   color: #ff3500; }
 .error small.error {
   display: block;
-  padding: 0.375rem 0;
+  padding: 0.375rem 0.5625rem 0.5625rem;
   margin-top: -1px;
   margin-bottom: 1rem;
   font-size: 0.75rem;
@@ -2391,13 +2394,13 @@ label.error {
   width: 100%;
   font-size: 0;
   display: inline-block;
-  background: transparent; }
+  background: #333333; }
   .icon-bar > * {
     text-align: center;
     font-size: 1rem;
     margin: 0 auto;
     display: block;
-    padding: 0.3125rem;
+    padding: 1.25rem;
     float: left; }
     .icon-bar > * i, .icon-bar > * img {
       display: block;
@@ -2408,8 +2411,8 @@ label.error {
       font-size: 1.875rem;
       vertical-align: middle; }
     .icon-bar > * img {
-      width: 2.375rem;
-      height: 2.375rem; }
+      width: 1.875rem;
+      height: 1.875rem; }
   .icon-bar.label-right > * i, .icon-bar.label-right > * img {
     margin: 0 .0625rem 0 0;
     display: inline-block; }
@@ -2444,14 +2447,14 @@ label.error {
         float: none; } }
   .icon-bar > * {
     font-size: 1rem;
-    padding: 0.3125rem; }
+    padding: 1.25rem; }
     .icon-bar > * i + label, .icon-bar > * img + label {
       margin-top: .0625rem; }
     .icon-bar > * i {
       font-size: 1.875rem; }
     .icon-bar > * img {
-      width: 2.375rem;
-      height: 2.375rem; }
+      width: 1.875rem;
+      height: 1.875rem; }
   .icon-bar > * img:hover {
     fill: #092344; }
   .icon-bar > * label {
@@ -2892,10 +2895,6 @@ figure {
       width: 180px; }
       figure.portrait.thumb img, figure.portrait.thumb .overlay {
         height: 252px; } }
-  figure.custom {
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%; }
   figure.video {
     position: relative; }
     figure.video.large figcaption {
