@@ -1,3 +1,9 @@
+/*
+ * This is TEMPORARY JavaScript code for the icon dropdown component
+ * and is intended to be replaced by something else, once we decide
+ * how to implement UI components across the Wikia Style Guide. Please
+ * do not re-use this code.
+ */
 'use strict';
 
 (function(){
