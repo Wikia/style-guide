@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bump-major": "bower version major",
-    "bump-minor": "bower version minor",
-    "bump-patch": "bower version patch"
+    "bump-major": "bower version major && git push --tags",
+    "bump-minor": "bower version minor && git push --tags",
+    "bump-patch": "bower version patch && git push --tags"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,17 @@
 Wikia Style Guide
 ===========
 
+1. [Using the Style Guide in your projects](#using-the-style-guide-in-your-projects)
+2. [Development Workflow](#development-workflow)
+
+## Using the Style Guide in your projects
+This style guide has been built to easily integrate into your applications through [bower](http://bower.io/) or manually as a compiled package of all the components, individual components or as SCSS source files. We recommend using bower, as then your application will gain access to easy dependency management, versioning and future upgrades will be predictable and easy to integrate.
+
+### Installing using bower
+To add this package as a bower dependency, simply run `$ bower install --save Wikia/style-guide` and this will fetch the latest from our development branch. If you prefer a simple version, run something like `$ bower install --save Wikia/style-guide#v0.2.0` or for a specific branch `$ bower install --save Wikia/style-guide#feature-branch`.
+
+After installation, you’ll find the style guide in the `wikia-style-guide/` folder of your `bower_components` (this is the default bower components destination) folder. At that point, how you use the style guide is up to your specific application.
+
 ## Development Workflow
 Development for the style guide is comprised of two main activities:
 * Writing the source for your components and modules
