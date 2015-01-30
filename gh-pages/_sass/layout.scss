@@ -27,6 +27,19 @@ $site-nav-width: 300px;
 }
 
 .global-navigation {
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+	height: 46px;
+	position: fixed;
+	width: 100%;
+	z-index: 9999999;
+
+	li a {
+		height: 50px;
+		line-height: 50px;
+		padding: 0 20px;
+	}
+
 	.logo {
 		fill: #092344;
 		margin: 10px 20px 10px 0;
@@ -183,7 +196,7 @@ $site-nav-width: 300px;
 	}
 
 	p {
-		margin-top: 10px;
+		margin-top: 15px;
 	}
 
 	.pagination {

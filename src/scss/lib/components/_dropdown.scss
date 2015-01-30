@@ -63,7 +63,7 @@ $f-dropdown-radius: $global-radius !default;
 // NOTE: Make default max-width change between list and content types. Can add more width with classes, maybe .small, .medium, .large, etc.;
 // We use this to style the dropdown container element.
 // $content-list - Sets list-style. Default: list. Options: [list, content]
-// $triangle - Sets if dropdown has triangle. Default:true.
+// $triangle - Sets if dropdown has triangle.
 // $max-width - Default: $f-dropdown-max-width || 200px.
 @mixin dropdown-container($content:list, $triangle:false, $max-width:$f-dropdown-max-width) {
   position: absolute;
@@ -202,7 +202,7 @@ $f-dropdown-radius: $global-radius !default;
 // We use this to style the list elements or content inside the dropdown.
 
 @mixin dropdown-style {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $color-blue-gray-light;
   font-size: $f-dropdown-font-size;
   cursor: $cursor-pointer-value;
 
@@ -246,7 +246,7 @@ $f-dropdown-radius: $global-radius !default;
 
     /* Foundation Dropdowns */
     .f-dropdown {
-      @include dropdown-container(list, bottom);
+      @include dropdown-container(list, false);
 
       &.drop-#{$opposite-direction} {
         @include dropdown-container(list, #{$default-float});
@@ -264,7 +264,7 @@ $f-dropdown-radius: $global-radius !default;
       li { @include dropdown-style; }
 
       // You can also put custom content in these dropdowns
-      &.content { @include dropdown-container(content, $triangle:false); }
+      &.content { @include dropdown-container(content, false); }
 
       // Sizes
       &.tiny    { max-width: 200px; }

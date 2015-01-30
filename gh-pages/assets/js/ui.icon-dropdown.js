@@ -44,15 +44,18 @@
 						list.style.display = 'none';
 						elem.removeAttribute('data-active');
 					}
-				}, 1000);
+				}, 1500);
 			});
+
+			list.addEventListener('mouseover', function () {
+				list.setAttribute('data-active', 'true');
+			}, false);
 
 			var listItems = list.querySelectorAll('li');
 
 			Array.prototype.forEach.call(listItems, function (li) {
 				li.addEventListener('mouseout', function (event) {
 					var toElement = event.toElement || event.relatedTarget;
-					list.setAttribute('data-active', 'true');
 					if (isDescendant(toElement, list) === false) {
 						listStyle.display = 'none';
 						list.removeAttribute('data-active');
