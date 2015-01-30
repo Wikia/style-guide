@@ -34,6 +34,7 @@
 				listStyle.left = (elem.offsetLeft + parseInt(list.getAttribute('data-offset-x'))) + 'px';
 				listStyle.display = 'block';
 				list.setAttribute('data-active', 'true');
+				elem.setAttribute('data-active', 'true');
 			}, false);
 
 			elem.addEventListener('mouseout', function () {
@@ -41,8 +42,9 @@
 				window.setTimeout(function () {
 					if (!list.hasAttribute('data-active')) {
 						list.style.display = 'none';
+						elem.removeAttribute('data-active');
 					}
-				}, 1500);
+				}, 1000);
 			});
 
 			var listItems = list.querySelectorAll('li');
@@ -54,6 +56,7 @@
 					if (isDescendant(toElement, list) === false) {
 						listStyle.display = 'none';
 						list.removeAttribute('data-active');
+						elem.removeAttribute('data-active');
 					}
 				}, false);
 			});
