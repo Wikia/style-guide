@@ -11,6 +11,9 @@ if [ ! -z "$has_uncommited_changes" ]; then
     echo "Sorry, this update script won't run until you've taken care of those uncommitted changes. It's FOR YOUR OWN GOOD." && exit 1
 fi
 
+# Kill the Jekyll process
+kill -9 `ps -ef | grep jekyll | grep -v grep | tr -s " " | cut -d " " -f3`
+
 # Delete remote and local 'gh-pages' branches
 env -i git push origin :gh-pages
 env -i git branch -D gh-pages
@@ -39,3 +42,6 @@ env -i git push origin gh-pages
 
 # Return to to working branch
 env -i git checkout $curr_git_branch
+
+# Reminder to restart Jekyll server
+echo "Your Jekyll server process has been killed as part of this update, remember to restart to continue local development :D"

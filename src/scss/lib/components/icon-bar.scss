@@ -5,26 +5,6 @@
 
 @import "global";
 
-
-// @name
-// @dependencies _global.scss
-
-$include-html-icon-bar-classes: $include-html-classes !default;
-
-// @variables
-
-// We use these to style the icon-bar and items
-$icon-bar-bg: transparent !default;
-$icon-bar-font-color: $white !default;
-$icon-bar-font-size: 1rem !default;
-$icon-bar-hover-color: $primary-color !default;
-$icon-bar-icon-color: $white !default;
-$icon-bar-icon-size: 1.875rem !default;
-$icon-bar-image-width: rem-calc(38) !default;
-$icon-bar-image-height: rem-calc(38) !default;
-$icon-bar-active-color: $primary-color !default;
-$icon-bar-item-padding: rem-calc(5) !default;
-
 //
 // @mixins
 //
@@ -83,7 +63,7 @@ $icon-bar-item-padding: rem-calc(5) !default;
 		text-align: left;
 	}
 
-	&.vertical, &.small-vertical{
+	&.vertical, &.small-vertical {
 		height: 100%;
 		width: auto;
 
