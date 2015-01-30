@@ -16,8 +16,7 @@ After installation, you’ll find the style guide in the `wikia-style-guide/` fo
 ## Development Workflow
 Development for the style guide is comprised of two main activities:
 * Writing the source for your components and modules
-* Updating the living documentation
-To reduce the cognitive load on the developer, we’ve added a few tools to aid in this process.
+* Updating the living documentation. To reduce the cognitive load on the developer, we’ve added a few tools to aid in this process.
 
 Development involves the following:
 * [Living Documentation](#living-documentation)
