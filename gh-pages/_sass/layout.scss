@@ -26,24 +26,57 @@ $site-nav-width: 300px;
 	}
 }
 
-.site-nav {
-	font-size: 14px;
-	padding-top: 30px;
+.global-navigation {
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+	height: 46px;
+	position: fixed;
+	width: 100%;
+	z-index: 9999999;
 
-	a {
-		color: #9f9f9f;
+	li a {
+		height: 50px;
+		line-height: 50px;
+		padding: 0 20px;
 	}
 
 	.logo {
 		fill: #092344;
-		margin-bottom: 38px;
-		width: 92px;
+		margin: 10px 20px 10px 0;
+		width: 82px;
 	}
 
-	ul {
-		line-height: 39px;
-		list-style: none;
-		margin: 0;
+	.menu-icon {
+		height: 16px;
+		line-height: 16px;
+		margin-top: 17px;
+		width: 16px;
+
+		&::after {
+			border: 5px solid #fff;
+			border-top-color: #cfcfcf;
+			content: ' ';
+			display: inline-block;
+			float: left;
+			margin: -11px 0 0 22px;
+		}
+
+		&[data-active]::after {
+			border-top-color: #fff;
+			border-bottom-color: #000;
+			margin-top: -16px;
+		}
+	}
+
+	.title {
+		border-left: 1px solid #bbb;
+		color: #656e78;
+		font-size: 24px;
+		font-weight: 200;
+		height: 24px;
+		line-height: 24px;
+		margin: 12px 0 0 30px;
+		padding-left: 10px;
 	}
 }
 
@@ -59,8 +92,8 @@ $site-nav-width: 300px;
 }
 
 .page-content {
-    border-left: 1px solid #c7c7c7;
-	min-height: 1200px;
+	background: white;
+	margin: 96px 0 40px 0;
 	padding-bottom: 40px;
 
 	.hero {
@@ -163,7 +196,7 @@ $site-nav-width: 300px;
 	}
 
 	p {
-		margin-top: 10px;
+		margin-top: 15px;
 	}
 
 	.pagination {
@@ -175,13 +208,6 @@ $site-nav-width: 300px;
 
 	.dot-pagination {
 		margin-bottom: 20px;
-	}
-
-	ul {
-		&.f-dropdown {
-			display: block;
-			position: static;
-		}
 	}
 
 	.wrapper {

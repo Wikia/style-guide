@@ -1803,42 +1803,11 @@ blockquote, blockquote p {
   border: solid 1px #cccccc;
   font-size: 0.875rem;
   z-index: 89;
-  margin-top: 2px;
   max-width: 200px; }
   .f-dropdown > *:first-child {
     margin-top: 0; }
   .f-dropdown > *:last-child {
     margin-bottom: 0; }
-  .f-dropdown:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border: inset 6px;
-    border-color: transparent transparent #FFFFFF transparent;
-    border-bottom-style: solid;
-    position: absolute;
-    top: -12px;
-    left: 10px;
-    z-index: 89; }
-  .f-dropdown:after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border: inset 7px;
-    border-color: transparent transparent #cccccc transparent;
-    border-bottom-style: solid;
-    position: absolute;
-    top: -14px;
-    left: 9px;
-    z-index: 88; }
-  .f-dropdown.right:before {
-    left: auto;
-    right: 10px; }
-  .f-dropdown.right:after {
-    left: auto;
-    right: 9px; }
   .f-dropdown.drop-right {
     position: absolute;
     display: none;
@@ -1978,7 +1947,7 @@ blockquote, blockquote p {
       right: auto;
       z-index: 88; }
   .f-dropdown li {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #E6EBF2;
     font-size: 0.875rem;
     cursor: pointer;
     line-height: 1.125rem;
@@ -1991,7 +1960,7 @@ blockquote, blockquote p {
     .f-dropdown li a {
       display: block;
       padding: 0.5rem;
-      color: #555555; }
+      color: #1A5EB8; }
       .f-dropdown li a:hover {
         color: #FFFFFF; }
   .f-dropdown.content {
@@ -2034,8 +2003,11 @@ blockquote, blockquote p {
         background-color: #1A5EB8;
         color: #FFFFFF; }
 
-img.dropdown, svg.dropdown {
-  cursor: pointer; }
+.dropdown-icon {
+  cursor: pointer;
+  display: block;
+  height: 38px;
+  width: 38px; }
 
 .dropdown.button, button.dropdown {
   position: relative;
