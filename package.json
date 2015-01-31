@@ -1,13 +1,13 @@
 {
   "name": "wikia-style-guide",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Wikia Style Guide ===========",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bump-major": "npm version major && bower version major",
-    "bump-minor": "npm version minor && bower version minor",
-    "bump-patch": "npm version patch && bower version patch"
+    "bump-major": "bower version major && git push --tags",
+    "bump-minor": "bower version minor && git push --tags",
+    "bump-patch": "bower version patch && git push --tags"
   },
   "repository": {
     "type": "git",
