@@ -38,7 +38,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   line-height: 150%;
   position: relative;
@@ -232,7 +232,7 @@ a {
 /* Default paragraph styles */
 p {
   font-family: inherit;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
@@ -248,7 +248,7 @@ p {
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
   color: #222222;
   text-rendering: optimizeLegibility;
@@ -281,13 +281,13 @@ h5 {
   line-height: 1.75rem; }
 
 h6 {
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.75rem; }
 
 .subheader {
   line-height: 1.4;
   color: #6f6f6f;
-  font-weight: normal;
+  font-weight: 400;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem; }
 
@@ -304,7 +304,7 @@ em, i {
   line-height: inherit; }
 
 strong, b {
-  font-weight: bold;
+  font-weight: 700;
   line-height: inherit; }
 
 small {
@@ -313,7 +313,7 @@ small {
 
 code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
-  font-weight: normal;
+  font-weight: 400;
   color: #333333;
   background-color: #f8f8f8;
   border-width: 1px;
@@ -366,7 +366,7 @@ ol {
 /* Definition Lists */
 dl dt {
   margin-bottom: 0.3rem;
-  font-weight: bold; }
+  font-weight: 700; }
 dl dd {
   margin-bottom: 0.75rem; }
 
@@ -407,14 +407,14 @@ blockquote:after {
 
 blockquote {
   font-size: 1.6875rem;
-  font-weight: bold;
+  font-weight: 700;
   display: block;
   padding: 0;
   padding-top: 40px;
   position: relative; }
   blockquote cite {
     display: block;
-    font-size: 1.35rem;
+    font-size: 1.0125rem;
     font-weight: normal;
     font-style: normal;
     color: #555555; }
@@ -437,15 +437,15 @@ blockquote, blockquote p {
     margin: 0;
     display: block; }
   .vcard .fn {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 0.9375rem; }
 
 .vevent .summary {
-  font-weight: bold; }
+  font-weight: 700; }
 .vevent abbr {
   cursor: default;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
   border: none;
   padding: 0 0.0625rem; }
 
@@ -461,7 +461,7 @@ blockquote, blockquote p {
   h5 {
     font-size: 1.5rem; }
   h6 {
-    font-size: 1rem; } }
+    font-size: 1.125rem; } }
 
 /*
        * Print styles.

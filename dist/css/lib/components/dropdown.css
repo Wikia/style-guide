@@ -38,7 +38,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   line-height: 150%;
   position: relative;
@@ -232,7 +232,7 @@ a {
 /* Default paragraph styles */
 p {
   font-family: inherit;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
@@ -248,7 +248,7 @@ p {
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
   color: #222222;
   text-rendering: optimizeLegibility;
@@ -281,13 +281,13 @@ h5 {
   line-height: 1.75rem; }
 
 h6 {
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.75rem; }
 
 .subheader {
   line-height: 1.4;
   color: #6f6f6f;
-  font-weight: normal;
+  font-weight: 400;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem; }
 
@@ -304,7 +304,7 @@ em, i {
   line-height: inherit; }
 
 strong, b {
-  font-weight: bold;
+  font-weight: 700;
   line-height: inherit; }
 
 small {
@@ -313,7 +313,7 @@ small {
 
 code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
-  font-weight: normal;
+  font-weight: 400;
   color: #333333;
   background-color: #f8f8f8;
   border-width: 1px;
@@ -366,7 +366,7 @@ ol {
 /* Definition Lists */
 dl dt {
   margin-bottom: 0.3rem;
-  font-weight: bold; }
+  font-weight: 700; }
 dl dd {
   margin-bottom: 0.75rem; }
 
@@ -407,14 +407,14 @@ blockquote:after {
 
 blockquote {
   font-size: 1.6875rem;
-  font-weight: bold;
+  font-weight: 700;
   display: block;
   padding: 0;
   padding-top: 40px;
   position: relative; }
   blockquote cite {
     display: block;
-    font-size: 1.35rem;
+    font-size: 1.0125rem;
     font-weight: normal;
     font-style: normal;
     color: #555555; }
@@ -437,15 +437,15 @@ blockquote, blockquote p {
     margin: 0;
     display: block; }
   .vcard .fn {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 0.9375rem; }
 
 .vevent .summary {
-  font-weight: bold; }
+  font-weight: 700; }
 .vevent abbr {
   cursor: default;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
   border: none;
   padding: 0 0.0625rem; }
 
@@ -461,7 +461,7 @@ blockquote, blockquote p {
   h5 {
     font-size: 1.5rem; }
   h6 {
-    font-size: 1rem; } }
+    font-size: 1.125rem; } }
 
 /*
        * Print styles.
@@ -528,42 +528,11 @@ blockquote, blockquote p {
   border: solid 1px #cccccc;
   font-size: 0.875rem;
   z-index: 89;
-  margin-top: 2px;
   max-width: 200px; }
   .f-dropdown > *:first-child {
     margin-top: 0; }
   .f-dropdown > *:last-child {
     margin-bottom: 0; }
-  .f-dropdown:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border: inset 6px;
-    border-color: transparent transparent #FFFFFF transparent;
-    border-bottom-style: solid;
-    position: absolute;
-    top: -12px;
-    left: 10px;
-    z-index: 89; }
-  .f-dropdown:after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border: inset 7px;
-    border-color: transparent transparent #cccccc transparent;
-    border-bottom-style: solid;
-    position: absolute;
-    top: -14px;
-    left: 9px;
-    z-index: 88; }
-  .f-dropdown.right:before {
-    left: auto;
-    right: 10px; }
-  .f-dropdown.right:after {
-    left: auto;
-    right: 9px; }
   .f-dropdown.drop-right {
     position: absolute;
     display: none;
@@ -703,20 +672,20 @@ blockquote, blockquote p {
       right: auto;
       z-index: 88; }
   .f-dropdown li {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #E6EBF2;
     font-size: 0.875rem;
     cursor: pointer;
     line-height: 1.125rem;
     margin: 0; }
     .f-dropdown li:hover, .f-dropdown li:focus {
-      background: #EEEEEE;
+      background: #1A5EB8;
       color: #FFFFFF; }
     .f-dropdown li.radius {
       border-radius: 3px; }
     .f-dropdown li a {
       display: block;
       padding: 0.5rem;
-      color: #555555; }
+      color: #1A5EB8; }
       .f-dropdown li a:hover {
         color: #FFFFFF; }
   .f-dropdown.content {
@@ -759,5 +728,8 @@ blockquote, blockquote p {
         background-color: #1A5EB8;
         color: #FFFFFF; }
 
-img.dropdown, svg.dropdown {
-  cursor: pointer; }
+.dropdown-icon {
+  cursor: pointer;
+  display: block;
+  height: 38px;
+  width: 38px; }

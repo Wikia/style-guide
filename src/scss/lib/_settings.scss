@@ -64,13 +64,13 @@ $column-gutter: rem-calc(30);
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
- $font-family-sans-serif: "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif: "Helvetica Neue", Arial, sans-serif;
 $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
-$font-weight-normal: normal !default;
-$font-weight-bold: bold !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
 
 $white       : #FFFFFF;
 $ghost       : #FAFAFA;
@@ -207,35 +207,37 @@ $header-text-rendering: optimizeLegibility;
 
 // Type Scale inspired by Medium's CSS
 // @source https : //medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06
-$type-jumbo      : rem-calc(54);
-$type-largest    : rem-calc(40);
-$type-larger     : rem-calc(36);
-$type-large      : rem-calc(27);
-$type-medium     : rem-calc(24);
-$type-base       : 1rem;
-$type-small      : 0.75rem;
+$type-jumbo     : rem-calc(54);
+$type-largest   : rem-calc(40);
+$type-larger    : rem-calc(36);
+$type-large     : rem-calc(27);
+$type-med-large : rem-calc(24);
+$type-medium    : rem-calc(18);
+$type-base      : 1rem;
+$type-small     : rem-calc(14);
+$type-smaller   : 0.75rem;
 
-$line-height-jumbo   : rem-calc(54);
-$line-height-largest : rem-calc(40);
-$line-height-larger  : rem-calc(36);
-$line-height-large   : rem-calc(32);
-$line-height-medium  : rem-calc(28);
-$line-height-base    : rem-calc(28);
+$line-height-jumbo     : rem-calc(54);
+$line-height-largest   : rem-calc(40);
+$line-height-larger    : rem-calc(36);
+$line-height-large     : rem-calc(32);
+$line-height-med-large : rem-calc(28);
+$line-height-medium    : rem-calc(28);
 
 // We use these to control header font sizes
 $h1-font-size: $type-jumbo;
 $h2-font-size: $type-largest;
 $h3-font-size: $type-larger;
 $h4-font-size: $type-large;
-$h5-font-size: $type-medium;
-$h6-font-size: $type-base;
+$h5-font-size: $type-med-large;
+$h6-font-size: $type-medium;
 
 $h1-line-height: $line-height-jumbo;
 $h2-line-height: $line-height-largest;
 $h3-line-height: $line-height-larger;
 $h4-line-height: $line-height-large;
-$h5-line-height: $line-height-medium;
-$h6-line-height: $line-height-base;
+$h5-line-height: $line-height-med-large;
+$h6-line-height: $line-height-medium;
 
 // We use these to control header size reduction on small screens
 $h1-font-reduction: 0 !default;
@@ -253,7 +255,7 @@ $subheader-top-margin: .2rem;
 $subheader-bottom-margin: .5rem;
 
 // A general <small> styling
-$small-font-size: $type-small;
+$small-font-size: $type-smaller;
 $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
@@ -389,8 +391,8 @@ $button-function-factor: -20%;
 // We use these to control button border and hover styles.
 $button-border-width: 1px;
 $button-border-style: solid;
-$button-bg-color: $color-blue-dark;
-$button-bg-hover: mix($button-bg-color, $color-white, 90%);
+$button-bg-color: $color-blue-light;
+$button-bg-hover: $color-blue-dark;
 $button-border-color: $button-bg-color;
 $secondary-button-bg-hover: $color-white;
 $secondary-button-border-color: $button-bg-color;
@@ -452,7 +454,7 @@ $f-dropdown-font-color: $color-blue-light;
 $f-dropdown-font-size: rem-calc(14);
 $f-dropdown-list-padding: rem-calc(5, 10);
 $f-dropdown-line-height: rem-calc(18);
-$f-dropdown-list-hover-bg: $smoke  ;
+$f-dropdown-list-hover-bg: $color-blue-light;
 $dropdown-mobile-default-float: 0;
 
 // We use this to control the styles for when the dropdown has custom content.
@@ -578,16 +580,16 @@ $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%);
 
 // We use these to style the icon-bar and items
 $include-html-icon-bar-classes: $include-html-classes;
-$icon-bar-bg: $oil;
+$icon-bar-bg: transparent;
 $icon-bar-font-color: $white;
 $icon-bar-font-size: 1rem;
 $icon-bar-hover-color: $primary-color;
 $icon-bar-icon-color: $white;
-$icon-bar-icon-size: 1.875rem;
-$icon-bar-image-width: 1.875rem;
-$icon-bar-image-height: 1.875rem;
+$icon-bar-icon-size: rem-calc(38);
+$icon-bar-image-width: rem-calc(38);
+$icon-bar-image-height: $icon-bar-image-width;
 $icon-bar-active-color: $primary-color;
-$icon-bar-item-padding: 1.25rem;
+$icon-bar-item-padding: rem-calc(6);
 
 // 07. Pagination
 // - - - - - - - - - - - - - - - - - - - - - - - - -
