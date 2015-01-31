@@ -49,7 +49,7 @@ $site-nav-width: 300px;
 	.menu-icon {
 		height: 16px;
 		line-height: 16px;
-		margin-top: 17px;
+		margin-top: 16px;
 		width: 16px;
 
 		&::after {
@@ -93,8 +93,8 @@ $site-nav-width: 300px;
 
 .page-content {
 	background: white;
-	margin: 96px 0 40px 0;
-	padding-bottom: 40px;
+	margin: 90px 0 40px 0;
+	padding: 50px 40px 70px 40px;
 
 	.hero {
 		background: #fff url(../assets/images/bg_universe.png) center top;
@@ -124,6 +124,16 @@ $site-nav-width: 300px;
 	button {
 		&.outline {
 			border-style: dashed;
+		}
+
+		&.active {
+			background-color: #092344;
+
+			&.secondary {
+				background-color: transparent;
+				border-color: #092344;
+				color: #092344;
+			}
 		}
 	}
 

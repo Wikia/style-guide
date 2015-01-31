@@ -11,10 +11,13 @@ layout: default
 	<strong>Wikia corporate buttons</strong> are used in most cases when the interface calls for a button.
 </p>
 <div class="row">
-	<div class="large-3 column">
+	<div class="large-2 column">
 		<button>Default</button>
 	</div>
-	<div class="large-3 column end">
+	<div class="large-2 column">
+		<button class="active">Hover</button>
+	</div>
+	<div class="large-2 column end">
 		<button disabled>Inactive</button>
 	</div>
 </div>
@@ -25,6 +28,7 @@ layout: default
 
 <h6>HTML</h6>
 <pre><code>&lt;button&gt;Default&lt;/button&gt;
+&lt;button&gt;Hover&lt;/button&gt;
 &lt;button disabled&gt;Inactive&lt;/button&gt;
 </code></pre>
 
@@ -43,48 +47,39 @@ layout: default
 
 <hr class="break">
 <p>
-	<strong>Secondary buttons</strong> are only used when there is an exceedingly distinct and clear call-to-action. An example of this is the "Vote" button on a poll, or a "Send" button in a form.
+	<strong>Secondary buttons</strong> are only used when there is an exceedingly distinct and clear call-to-action. An example of this is the "Vote" button on a poll, or a "Send" button in a form. Although appearing different in style, the color used for each state is the same as normal buttons.
 </p>
 <div class="row">
-	<div class="large-3 column">
+	<div class="large-2 column">
 		<button class="secondary">Default</button>
 	</div>
-	<div class="large-3 column end">
+	<div class="large-2 column">
+		<button class="active secondary">Hover</button>
+	</div>
+	<div class="large-2 column end">
 		<button class="secondary" disabled>Inactive</button>
 	</div>
 </div>
 
 <h6>HTML</h6>
 <pre><code>&lt;button class="secondary"&gt;Default&lt;/button&gt;
+&lt;button class="secondary"&gt;Hover&lt;/button&gt;
 &lt;button class="secondary" disabled&gt;Inactive&lt;/button&gt;
 </code></pre>
 
 <hr class="break">
 <p>
-	<strong>Themed community buttons</strong> are similar to Wikia corporate buttons, but they use different color rules (go to <a href="{{site.baseurl}}/section/theming">theming</a> to check the rules).
+	<strong>Sizes of buttons</strong> depend on the situation. Medium is the default size and is used in most cases. Add the <code>large</code> or <code>small</code> class to use a different size. Only the height changes with button size. All buttons use the same padding, and therefore width is only dependent on the length of the button label.
 </p>
 <div class="row">
-	<div class="large-3 column">
-		<button class="themed">Default</button>
+	<div class="large-2 column">
+		<button class="large">Large</button>
 	</div>
-	<div class="large-3 column end">
-		<button class="themed" disabled>Inactive</button>
+	<div class="large-2 column">
+		<button>Medium</button>
 	</div>
-</div>
-
-<hr class="break">
-<p>
-	<strong>Sizes of buttons</strong> depend on the situation. Medium is the default size and is used in most cases. Add the <code>large</code> or <code>small</code> class to use a different size. Only the height changes with button size. All buttons use the same padding, and therefore width is only dependent on the button label.
-</p>
-<div class="row">
-	<div class="large-3 column">
-		<button class="large secondary outline">Large</button>
-	</div>
-	<div class="large-3 column">
-		<button class="secondary outline">Medium</button>
-	</div>
-	<div class="large-3 column end">
-		<button class="small secondary outline">Small</button>
+	<div class="large-2 column end">
+		<button class="small">Small</button>
 	</div>
 </div>
 
