@@ -1789,33 +1789,6 @@ blockquote, blockquote p {
   .show-for-print {
     display: inherit !important; } }
 
-.font-base {
-  font-size: 1rem; }
-
-.font-max {
-  font-size: 3.375rem; }
-
-.font-largest {
-  font-size: 2.5rem; }
-
-.font-larger {
-  font-size: 2.25rem; }
-
-.font-large {
-  font-size: 1.6875rem; }
-
-.font-small {
-  font-size: 1.5rem; }
-
-.font-smaller {
-  font-size: 1.125rem; }
-
-.font-smallest {
-  font-size: 0.875rem; }
-
-.font-min {
-  font-size: 0.75rem; }
-
 /* Foundation Dropdowns */
 .f-dropdown {
   position: absolute;
@@ -3032,33 +3005,6 @@ ul.dot-pagination {
     ul.dot-pagination li.current > * {
       border: 1px solid #000;
       background-color: #000; }
-
-.font-base {
-  font-size: 1rem; }
-
-.font-max {
-  font-size: 3.375rem; }
-
-.font-largest {
-  font-size: 2.5rem; }
-
-.font-larger {
-  font-size: 2.25rem; }
-
-.font-large {
-  font-size: 1.6875rem; }
-
-.font-small {
-  font-size: 1.5rem; }
-
-.font-smaller {
-  font-size: 1.125rem; }
-
-.font-smallest {
-  font-size: 0.875rem; }
-
-.font-min {
-  font-size: 0.75rem; }
 
 /* small displays */
 @media only screen {
