@@ -207,37 +207,40 @@ $header-text-rendering: optimizeLegibility;
 
 // Type Scale inspired by Medium's CSS
 // @source https : //medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06
-$type-jumbo     : rem-calc(54);
-$type-largest   : rem-calc(40);
-$type-larger    : rem-calc(36);
-$type-large     : rem-calc(27);
-$type-med-large : rem-calc(24);
-$type-medium    : rem-calc(18);
-$type-base      : 1rem;
-$type-small     : rem-calc(14);
-$type-smaller   : 0.75rem;
+$type-base     : 1rem;
+$type-max      : rem-calc(54);
+$type-largest  : rem-calc(40);
+$type-larger   : rem-calc(36);
+$type-large    : rem-calc(27);
+$type-small    : rem-calc(24);
+$type-smaller  : rem-calc(18);
+$type-smallest : rem-calc(14);
+$type-min      : 0.75rem;
 
-$line-height-jumbo     : rem-calc(54);
-$line-height-largest   : rem-calc(40);
-$line-height-larger    : rem-calc(36);
-$line-height-large     : rem-calc(32);
-$line-height-med-large : rem-calc(28);
-$line-height-medium    : rem-calc(28);
+$line-height-base     : rem-calc(26);
+$line-height-max      : rem-calc(54);
+$line-height-largest  : rem-calc(40);
+$line-height-larger   : rem-calc(36);
+$line-height-large    : rem-calc(32);
+$line-height-small    : rem-calc(28);
+$line-height-smaller  : rem-calc(28);
+$line-height-smallest : rem-calc(20);
+$line-height-min      : rem-calc(18);
 
 // We use these to control header font sizes
-$h1-font-size: $type-jumbo;
+$h1-font-size: $type-max;
 $h2-font-size: $type-largest;
 $h3-font-size: $type-larger;
 $h4-font-size: $type-large;
-$h5-font-size: $type-med-large;
-$h6-font-size: $type-medium;
+$h5-font-size: $type-small;
+$h6-font-size: $type-smaller;
 
-$h1-line-height: $line-height-jumbo;
+$h1-line-height: $line-height-max;
 $h2-line-height: $line-height-largest;
 $h3-line-height: $line-height-larger;
 $h4-line-height: $line-height-large;
-$h5-line-height: $line-height-med-large;
-$h6-line-height: $line-height-medium;
+$h5-line-height: $line-height-small;
+$h6-line-height: $line-height-smaller;
 
 // We use these to control header size reduction on small screens
 $h1-font-reduction: 0 !default;
@@ -255,7 +258,7 @@ $subheader-top-margin: .2rem;
 $subheader-bottom-margin: .5rem;
 
 // A general <small> styling
-$small-font-size: $type-smaller;
+$small-font-size: $type-min;
 $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
@@ -313,7 +316,7 @@ $blockquote-font-weight: $font-weight-bold;
 $blockquote-line-height: 1.2;
 $blockquote-padding: rem-calc(9 20 0 19);
 $blockquote-border: 1px solid $gainsboro;
-$blockquote-cite-font-size: $type-medium;
+$blockquote-cite-font-size: $type-smaller;
 $blockquote-cite-font-style: normal;
 $blockquote-cite-font-weight: $font-weight-normal;
 $blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%);

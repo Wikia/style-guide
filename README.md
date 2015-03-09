@@ -26,9 +26,13 @@ Development involves the following:
 
 ### Living Documentation
 The living documentation can be found in the `gh-pages/` folder of the project. To get started with development, you can start the server by:
-* (from project root) `$ cd gh-pages/`
-* `$ jekyll serve --baseUrl=’’`
+* (from project root) `npm install` to install dependencies
+* `$ cd gh-pages/`
+* `$ jekyll serve --baseUrl=''`
 This will start the Jekyll server on the default port of 4000. If you need a different port, use the `--port XXXX` flag when running `jekyll serve`. You can then visit [localhost:4000](http://localhost:4000) to view the living documentation.
+
+#### Troubleshooting
+If you're having trouble with your global version of Jekyll, you can try using the version that is local to the style guide project: `bundle exec jekyll serve`
 
 ### Watching and updating the living documentation automatically
 Always start your development by running `$ gulp watch`. With this task running, anytime you edit a file in the `src/` directory of the project, gulp will automatically compile your styles, icons and also update the static assets in the `gh-pages` subfolder, where the living documentation lives.
