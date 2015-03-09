@@ -26,8 +26,9 @@ Development involves the following:
 
 ### Living Documentation
 The living documentation can be found in the `gh-pages/` folder of the project. To get started with development, you can start the server by:
-* (from project root) `$ cd gh-pages/`
-* `$ jekyll serve --baseUrl=’’`
+* (from project root) `npm install` to install dependencies
+* `$ cd gh-pages/`
+* `$ jekyll serve --baseUrl=''`
 This will start the Jekyll server on the default port of 4000. If you need a different port, use the `--port XXXX` flag when running `jekyll serve`. You can then visit [localhost:4000](http://localhost:4000) to view the living documentation.
 
 #### Troubleshooting
