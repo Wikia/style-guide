@@ -23,12 +23,13 @@ gulp.task('update-static', function () {
 });
 
 gulp.task('watch', function () {
-	gulp.watch('./src/**/*').on('change', function (change) {
-		if (change.path.match('scss')) {
-			gulp.start('sass');
-		} else if (change.path.match('svg')) {
-			gulp.start('svg');
-		}
-		gulp.start('update-static');
+	var stream = gulp.watch('./src/**/*');
+
+	stream.on('change', function () {
+		gulp.start(['svg', 'sass'], 'update-static');
+	});
+
+	stream.on('error', function (err) {
+		console.log(err);
 	});
 });
