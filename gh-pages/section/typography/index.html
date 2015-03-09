@@ -9,10 +9,10 @@ class: 'typography'
 <table class="font-list">
 	<thead>
 		<tr>
-            <td>Example</td>
-            <td>Font Weight</td>
-            <td>Font Size</td>
-            <td>Line Height</td>
+            <th>Example</th>
+            <th>Font Weight</th>
+            <th>Font Size /<br>Line Height</th>
+            <th>Uses</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -21,64 +21,88 @@ class: 'typography'
 				<h1>Helvetica Neue</h1>
 			</td>
 			<td>700</td>
-			<td>54px</td>
-			<td>54px</td>
+			<td>54px / 54px</td>
+			<td class="font-smallest">
+				<code>h1</code> heading
+			</td>
 		</tr>
 		<tr>
 			<td>
 				<h2>Helvetica Neue</h2>
 			</td>
 			<td>700</td>
-			<td>40px</td>
-			<td>40px</td>
+			<td>40px / 40px</td>
+			<td class="font-smallest">
+				<code>h2</code> heading
+			</td>
 		</tr>
 		<tr>
 			<td>
 				<h3>Helvetica Neue</h3>
 			</td>
 			<td>700</td>
-			<td>36px</td>
-			<td>44px</td>
+			<td>36px / 44px</td>
+			<td class="font-smallest">
+				<code>h3</code> heading
+			</td>
 		</tr>
 		<tr>
 			<td>
 				<h4>Helvetica Neue</h4>
 			</td>
 			<td>400/700</td>
-			<td>27px</td>
-			<td>32px</td>
+			<td>27px / 32px</td>
+			<td class="font-smallest">
+				<code>h4</code> heading, <code>blockquote</code> quote text
+			</td>
 		</tr>
 		<tr>
 			<td>
 				<h5>Helvetica Neue</h5>
 			</td>
 			<td>400/700</td>
-			<td>24px</td>
-			<td>28px</td>
+			<td>24px / 28px</td>
+			<td class="font-smallest">
+				<code>h5</code> heading
+			</td>
 		</tr>
 		<tr>
 			<td>
 				<h6>Helvetica Neue</h6>
 			</td>
 			<td>400/700</td>
-			<td>18px</td>
-			<td>28px</td>
+			<td>18px / 28px</td>
+			<td class="font-smallest">
+				<code>h6</code> heading, <code>cite</code> inside <code>blockquote</code>
+			</td>
 		</tr>
 		<tr>
 			<td>
 				Helvetica Neue
 			</td>
 			<td>400</td>
-			<td>16px</td>
-			<td>26px</td>
+			<td>16px / 26px</td>
+			<td class="font-smallest">
+				Base paragraph and body text
+			</td>
+		</tr>
+		<tr>
+			<td class="font-smallest">
+				Helvetica Neue
+			</td>
+			<td>400</td>
+			<td>14px / 20px</td>
+			<td class="font-smallest"></td>
 		</tr>
 		<tr>
 			<td>
                 <small>Helvetica Neue</small>
 			</td>
 			<td>400</td>
-			<td>12px</td>
-			<td>18px</td>
+			<td>12px / 18px</td>
+			<td class="font-smallest">
+				<code>small</code> text
+			</td>
 		</tr>
 	</tbody>
 </table>
@@ -133,7 +157,7 @@ class: 'typography'
 <h4 class="section-header">Numbered and bulleted lists</h4>
 <section class="row">
     <div class="large-12 columns">
-        <h5>Bullet list</h5>
+        <p><b>Bullet list</b></p>
         <ul>
             <li>It has been estimated to be 60 feet high and 250 feet long with each half of the great gate being 90 feet wide and set on large stone wheels.</li>
             <li>The Black Gate was made from an impregnable black stone.</li>
@@ -146,7 +170,7 @@ class: 'typography'
   &lt;li&gt;During the War of the Ring, Frodo and Sam had a chance...&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
         <hr class="break">
-        <h5>Number list</h5>
+        <p><b>Number list</b></p>
         <ol>
             <li>It has been estimated to be 60 feet high and 250 feet long with each half of the great gate being 90 feet wide and set on large stone wheels.</li>
             <li>The Black Gate was made from an impregnable black stone.</li>
