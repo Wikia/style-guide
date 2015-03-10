@@ -4,32 +4,39 @@ var gulp = require('gulp'),
 	del = require('del');
 
 gulp.task('sass', function () {
-	gulp.src('./src/scss/**/*.scss')
+	return gulp.src('./src/scss/**/*.scss')
 		.pipe(sass({
 			errLogToConsole: true
 		}))
 		.pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('svg', function () {
-	gulp.src('./src/icons/*.svg')
+gulp.task('svg:icons', function () {
+	return gulp.src('./src/icons/*.svg')
 		.pipe(gulp.dest('./dist/icons'));
 });
 
-gulp.task('update-static', function () {
-	del('./gh-pages/vendor/wikia-style-guide/dist');
-	gulp.src('./dist/**/*')
+gulp.task('svg:images', function () {
+	return gulp.src('./src/svg/*.svg')
+		.pipe(gulp.dest('./dist/svg'));
+});
+
+gulp.task('static:clean', function () {
+	return del.sync('./gh-pages/vendor/wikia-style-guide/dist/**');
+});
+
+gulp.task('dist:clean', function () {
+	return del.sync('./dist/**');
+});
+
+gulp.task('update-static', ['dist:clean', 'static:clean', 'svg:icons', 'svg:images', 'sass'], function () {
+	return gulp.src('./dist/**/*')
 		.pipe(gulp.dest('./gh-pages/vendor/wikia-style-guide/dist'));
 });
 
 gulp.task('watch', function () {
-	var stream = gulp.watch('./src/**/*');
-
-	stream.on('change', function () {
-		gulp.start(['svg', 'sass'], 'update-static');
-	});
-
-	stream.on('error', function (err) {
-		console.log(err);
-	});
+	gulp.watch('./src/**/*')
+		.on('change', function () {
+			gulp.start('update-static');
+		});
 });
