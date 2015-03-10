@@ -29,7 +29,12 @@ gulp.task('dist:clean', function () {
 	return del.sync('./dist/**');
 });
 
-gulp.task('update-static', ['dist:clean', 'static:clean', 'svg:icons', 'svg:images', 'sass'], function () {
+gulp.task('vendor', function () {
+	return gulp.src('./src/vendor/**/*')
+		.pipe(gulp.dest('./dist/vendor'));
+});
+
+gulp.task('update-static', ['dist:clean', 'static:clean', 'svg:icons', 'svg:images', 'sass', 'vendor'], function () {
 	return gulp.src('./dist/**/*')
 		.pipe(gulp.dest('./gh-pages/vendor/wikia-style-guide/dist'));
 });
