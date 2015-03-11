@@ -2,6 +2,7 @@
 *.rbc
 */Gemfile.lock
 *.swp
+.idea
 /.config
 /coverage/
 /InstalledFiles
@@ -34,6 +35,7 @@ build/
 /node_modules
 *.log
 /src/vendor/
+dist/vendor/
 _site/
 */_site/
 
