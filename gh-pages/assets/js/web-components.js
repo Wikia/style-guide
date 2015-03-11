@@ -4,12 +4,31 @@
 	// Create custom element
 	var proto = Object.create(HTMLDivElement.prototype);
 	proto.name = 'Dropdown Icon';
+
 	proto.createdCallback = function() {
-		var template = document.querySelector('#dropdownIconTemplate');
+		// import the template and retrieve a document fragment from it
+		var content = document.querySelector('#dropdownIconImport').import;
+		var template = content.querySelector('#dropdownIconTemplate');
 		var clone = document.importNode(template.content, true);
+
+		// import the list items
+		var list = clone.querySelector('.f-dropdown');
+		list.innerHTML = this.innerHTML;
+
+		// set the icon image source
+		var icon = clone.querySelector('.menu-icon');
+		var img = icon.querySelector('img');
+		img.src = this.getAttribute('icon-src');
+
+		// add our doc fragment to the DOM
+		this.innerHTML = '';
 		this.appendChild(clone);
-		bindEvents(this.querySelector('.dropdown-icon'));
+
+		// add functionality
+		bindEvents(icon);
 	};
+
+	// register the custom element
 	document.registerElement('dropdown-icon', {
 		prototype: proto
 	});
