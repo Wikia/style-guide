@@ -13,9 +13,6 @@
 /tmp/
 .DS_Store
 
-# IDE's
-.idea
-
 ## Specific to RubyMotion:
 .dat*
 .repl_history
