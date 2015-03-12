@@ -2,10 +2,8 @@
 	<div class="row">
 		<div class="large-12 columns">
 			<a href="{{site.baseurl}}/"><img src="{{ site.assets_path | prepend: site.baseurl }}/images/wikia_logo.svg" alt="Wikia" class="logo left"></a>
-			<a class="menu-icon dropdown-icon left">
-				<img src="{{ site.assets_path | prepend: site.baseurl }}/images/icons/icon_nav.svg">
-			</a>
-			<ul class="f-dropdown" data-offset-x="-13" data-offset-y="13">
+			<!-- this web component is a bit of a WIP. Clean-up ticket is: https://github.com/Wikia/style-guide/issues/44 -->
+			<dropdown-icon icon-src="{{ site.assets_path | prepend: site.baseurl }}/images/icons/icon_nav.svg">
 				<li>
 					<a href="{{site.baseurl}}/">Home</a>
 				</li>
@@ -27,8 +25,7 @@
 				<li>
 					<a href="{{site.baseurl}}/section/video">Video</a>
 				</li>
-			</ul>
-
+			</dropdown-icon>
 			<a href="{{site.baseurl}}/" class="title left">Style Guide</a>
 		</div>
 	</div>
