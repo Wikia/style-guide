@@ -1,3 +1,8 @@
+/**
+ * Creates a web component with custom tag: dropdown-icon
+ * @todo: There's a lot of duplicate code from /js/ui.icon-dropdown.js.
+ * Clean-up ticket is: https://github.com/Wikia/style-guide/issues/44
+ */
 (function () {
 	'use strict';
 
