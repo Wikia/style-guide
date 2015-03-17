@@ -1,6 +1,7 @@
 *.gem
 *.rbc
 *.swp
+*/Gemfile.lock
 .idea
 /.config
 /coverage/

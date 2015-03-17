@@ -16,6 +16,21 @@ gulp.task('svg:icons', function () {
 		.pipe(gulp.dest('./dist/icons'));
 });
 
+gulp.task('vendor', function () {
+	return gulp.src('./src/vendor/**/*')
+		.pipe(gulp.dest('./dist/vendor'));
+});
+
+gulp.task('scripts', function () {
+	return gulp.src('./src/scripts/**/*.js')
+		.pipe(gulp.dest('./dist/scripts'));
+});
+
+gulp.task('templates', function () {
+	return gulp.src('./src/templates/*.html')
+		.pipe(gulp.dest('./dist/templates'));
+});
+
 gulp.task('svg:images', function () {
 	return gulp.src('./src/svg/*.svg')
 		.pipe(gulp.dest('./dist/svg'));
@@ -29,7 +44,16 @@ gulp.task('dist:clean', function () {
 	return del.sync('./dist/**');
 });
 
-gulp.task('update-static', ['dist:clean', 'static:clean', 'svg:icons', 'svg:images', 'sass'], function () {
+gulp.task('update-static', [
+	'dist:clean',
+	'static:clean',
+	'svg:icons',
+	'svg:images',
+	'sass',
+	'vendor',
+	'scripts',
+	'templates'
+], function () {
 	return gulp.src('./dist/**/*')
 		.pipe(gulp.dest('./gh-pages/vendor/wikia-style-guide/dist'));
 });
