@@ -201,7 +201,7 @@ $header-font-style: normal;
 $header-font-color: $jet;
 $header-line-height: 1.4;
 $header-top-margin: .2rem;
-$header-bottom-margin: .5rem;
+$header-bottom-margin: 1.4rem;
 $header-text-rendering: optimizeLegibility;
 
 
@@ -241,6 +241,20 @@ $h3-line-height: $line-height-larger;
 $h4-line-height: $line-height-large;
 $h5-line-height: $line-height-small;
 $h6-line-height: $line-height-smaller;
+
+$h1-font-size-small: $type-larger;
+$h2-font-size-small: $type-large;
+$h3-font-size-small: $type-small;
+$h4-font-size-small: $type-smaller;
+$h5-font-size-small: $type-smaller;
+$h6-font-size-small: $type-smaller;
+
+$h1-line-height-small: $line-height-larger;
+$h2-line-height-small: $line-height-large;
+$h3-line-height-small: $line-height-large;
+$h4-line-height-small: $line-height-large;
+$h5-line-height-small: $line-height-small;
+$h6-line-height-small: $line-height-smaller;
 
 // We use these to control header size reduction on small screens
 $h1-font-reduction: 0 !default;
