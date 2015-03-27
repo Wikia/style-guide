@@ -1360,7 +1360,7 @@ button::-moz-focus-inner {
   padding: 0; }
 
 @media only screen and (min-width:321px) {
-  button, .button {
+  button, .button, input[type="submit"] {
     display: inline-block; } }
 
 .icon-btn {

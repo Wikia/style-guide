@@ -196,7 +196,7 @@
     button::-moz-focus-inner {border:0; padding:0;}
 
     @media #{$medium-up} {
-      button, .button {
+      button, .button, input[type="submit"] {
         @include button-base($style:false, $display:inline-block);
         @include button-size($size:false, $full-width:false);
       }
