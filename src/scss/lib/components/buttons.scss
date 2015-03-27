@@ -160,7 +160,7 @@
   @if $include-html-button-classes {
 
     // Default styles applied outside of media query
-    button, .button {
+    button, .button, input[type="submit"] {
       @include button-base;
       @include button-size;
       @include button-style;
