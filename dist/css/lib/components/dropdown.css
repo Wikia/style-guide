@@ -34,7 +34,7 @@ html, body {
 
 body {
   background: #FFFFFF;
-  color: #000000;
+  color: #39424D;
   padding: 0;
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -204,7 +204,7 @@ select {
     text-align: justify !important; } }
 
 html, body {
-  color: #000000;
+  color: #39424D;
   font-size: 16px; }
 
 @media only screen and (min-width:1025px) {
@@ -227,7 +227,7 @@ a {
     border: none; }
   a.redlink {
     background-color: #afd0e5;
-    color: #000000;
+    color: #39424D;
     padding: 2px 5px; }
 
 /* Default paragraph styles */
@@ -395,7 +395,7 @@ dl dd {
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
-  color: #000000;
+  color: #39424D;
   cursor: help; }
 
 abbr {
