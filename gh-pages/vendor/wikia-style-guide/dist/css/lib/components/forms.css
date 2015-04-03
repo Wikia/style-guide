@@ -606,8 +606,7 @@ span.error, small.error {
   text-transform: capitalize;
   font-style: normal;
   font-size: 60%;
-  margin: 0;
-  display: inline; }
+  margin: 0; }
 .error span.error-message {
   display: block; }
 
