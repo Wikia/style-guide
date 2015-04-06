@@ -220,7 +220,34 @@ $align-class-breakpoints:
       }
     }
 
-     .subheader { @include subheader; }
+    @media #{$medium-only} {
+      h1 {
+        font-size: $h1-font-size-medium;
+        line-height: $h1-line-height-medium;
+      }
+      h2 {
+        font-size: $h2-font-size-medium;
+        line-height: $h2-line-height-medium;
+      }
+      h3 {
+        font-size: $h3-font-size-medium;
+        line-height: $h3-line-height-medium;
+      }
+      h4 {
+        font-size: $h4-font-size-medium;
+        line-height: $h4-line-height-medium;
+      }
+      h5 {
+        font-size: $h5-font-size-medium;
+        line-height: $h5-line-height-medium;
+      }
+      h6 {
+        font-size: $h6-font-size-medium;
+        line-height: $h6-line-height-medium;
+      }
+    }
+
+    .subheader { @include subheader; }
 
     hr {
       border: $hr-border-style $hr-border-color;
@@ -399,16 +426,6 @@ $align-class-breakpoints:
     blockquote p {
       line-height: $blockquote-line-height;
       color: $blockquote-font-color;
-    }
-
-
-    @media #{$medium-up} {
-      h1 { font-size: $h1-font-size; }
-      h2 { font-size: $h2-font-size; }
-      h3 { font-size: $h3-font-size; }
-      h4 { font-size: $h4-font-size; }
-      h5 { font-size: $h5-font-size; }
-      h6 { font-size: $h6-font-size; }
     }
 
     // Only include these styles if you want them.
