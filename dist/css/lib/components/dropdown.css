@@ -236,7 +236,7 @@ p {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1.25rem;
+  margin: 1rem 0;
   text-rendering: optimizeLegibility; }
   p.lead {
     font-size: 1.21875rem;
@@ -366,7 +366,7 @@ code {
 ul, ol, dl {
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   list-style-position: outside;
   font-family: inherit; }
 

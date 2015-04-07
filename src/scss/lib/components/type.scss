@@ -138,7 +138,7 @@ $align-class-breakpoints:
       font-weight: $paragraph-font-weight;
       font-size: $paragraph-font-size;
       line-height: $paragraph-line-height;
-      margin-bottom: $paragraph-margin-bottom;
+      margin: $paragraph-margin 0;
       text-rendering: $paragraph-text-rendering;
 
       &.lead { @include lead; }
