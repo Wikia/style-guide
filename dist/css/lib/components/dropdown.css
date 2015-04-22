@@ -34,7 +34,7 @@ html, body {
 
 body {
   background: #FFFFFF;
-  color: #000000;
+  color: #39424D;
   padding: 0;
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -204,6 +204,7 @@ select {
     text-align: justify !important; } }
 
 html, body {
+  color: #39424D;
   font-size: 16px; }
 
 @media only screen and (min-width:1025px) {
@@ -226,7 +227,7 @@ a {
     border: none; }
   a.redlink {
     background-color: #afd0e5;
-    color: #000000;
+    color: #39424D;
     padding: 2px 5px; }
 
 /* Default paragraph styles */
@@ -235,7 +236,7 @@ p {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1.25rem;
+  margin: 1rem 0;
   text-rendering: optimizeLegibility; }
   p.lead {
     font-size: 1.21875rem;
@@ -253,7 +254,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #222222;
   text-rendering: optimizeLegibility;
   margin-top: 0.2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.4rem;
   line-height: 1.4; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     font-size: 0.75rem;
@@ -283,6 +284,46 @@ h5 {
 h6 {
   font-size: 1.125rem;
   line-height: 1.75rem; }
+
+@media only screen and (max-width: 320px) {
+  h1 {
+    font-size: 1.6875rem;
+    line-height: 2rem; }
+  h2 {
+    font-size: 1.6875rem;
+    line-height: 2rem; }
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.75rem; }
+  h4 {
+    font-size: 1.125rem;
+    line-height: 1.75rem; }
+  h5 {
+    font-size: 1.125rem;
+    line-height: 1.75rem; }
+  h6 {
+    font-size: 0.875rem;
+    line-height: 1.25rem; } }
+
+@media only screen and (min-width:321px) and (max-width:768px) {
+  h1 {
+    font-size: 2.25rem;
+    line-height: 2.25rem; }
+  h2 {
+    font-size: 1.6875rem;
+    line-height: 2rem; }
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.75rem; }
+  h4 {
+    font-size: 1.125rem;
+    line-height: 1.75rem; }
+  h5 {
+    font-size: 1.125rem;
+    line-height: 1.75rem; }
+  h6 {
+    font-size: 1.125rem;
+    line-height: 1.75rem; } }
 
 .subheader {
   line-height: 1.4;
@@ -325,7 +366,7 @@ code {
 ul, ol, dl {
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   list-style-position: outside;
   font-family: inherit; }
 
@@ -374,7 +415,7 @@ dl dd {
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
-  color: #000000;
+  color: #39424D;
   cursor: help; }
 
 abbr {
@@ -426,42 +467,6 @@ blockquote {
 blockquote, blockquote p {
   line-height: 1.2;
   color: #000000; }
-
-/* Microformats */
-.vcard {
-  display: inline-block;
-  margin: 0 0 1.25rem 0;
-  border: 1px solid #DDDDDD;
-  padding: 0.625rem 0.75rem; }
-  .vcard li {
-    margin: 0;
-    display: block; }
-  .vcard .fn {
-    font-weight: 700;
-    font-size: 0.9375rem; }
-
-.vevent .summary {
-  font-weight: 700; }
-.vevent abbr {
-  cursor: default;
-  text-decoration: none;
-  font-weight: 700;
-  border: none;
-  padding: 0 0.0625rem; }
-
-@media only screen and (min-width:321px) {
-  h1 {
-    font-size: 3.375rem; }
-  h2 {
-    font-size: 2.5rem; }
-  h3 {
-    font-size: 2.25rem; }
-  h4 {
-    font-size: 1.6875rem; }
-  h5 {
-    font-size: 1.5rem; }
-  h6 {
-    font-size: 1.125rem; } }
 
 /*
        * Print styles.

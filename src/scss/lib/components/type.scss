@@ -73,6 +73,7 @@ $align-class-breakpoints:
     // Base font size for all screens up to xlarge
     html,
     body {
+        color: $body-font-color;
         font-size: $base-font-size;
     }
 
@@ -137,7 +138,7 @@ $align-class-breakpoints:
       font-weight: $paragraph-font-weight;
       font-size: $paragraph-font-size;
       line-height: $paragraph-line-height;
-      margin-bottom: $paragraph-margin-bottom;
+      margin: $paragraph-margin 0;
       text-rendering: $paragraph-text-rendering;
 
       &.lead { @include lead; }
@@ -167,7 +168,7 @@ $align-class-breakpoints:
       }
     }
 
-    h1 {
+   h1 {
       font-size: $h1-font-size - $h1-font-reduction;
       line-height: $h1-line-height;
     }
@@ -190,6 +191,60 @@ $align-class-breakpoints:
     h6 {
       font-size: $h6-font-size - $h6-font-reduction;
       line-height: $h6-line-height;
+    }
+
+    @media #{$small-only} {
+      h1 {
+        font-size: $h1-font-size-small;
+        line-height: $h1-line-height-small;
+      }
+      h2 {
+        font-size: $h2-font-size-small;
+        line-height: $h2-line-height-small;
+      }
+      h3 {
+        font-size: $h3-font-size-small;
+        line-height: $h3-line-height-small;
+      }
+      h4 {
+        font-size: $h4-font-size-small;
+        line-height: $h4-line-height-small;
+      }
+      h5 {
+        font-size: $h5-font-size-small;
+        line-height: $h5-line-height-small;
+      }
+      h6 {
+        font-size: $h6-font-size-small;
+        line-height: $h6-line-height-small;
+      }
+    }
+
+    @media #{$medium-only} {
+      h1 {
+        font-size: $h1-font-size-medium;
+        line-height: $h1-line-height-medium;
+      }
+      h2 {
+        font-size: $h2-font-size-medium;
+        line-height: $h2-line-height-medium;
+      }
+      h3 {
+        font-size: $h3-font-size-medium;
+        line-height: $h3-line-height-medium;
+      }
+      h4 {
+        font-size: $h4-font-size-medium;
+        line-height: $h4-line-height-medium;
+      }
+      h5 {
+        font-size: $h5-font-size-medium;
+        line-height: $h5-line-height-medium;
+      }
+      h6 {
+        font-size: $h6-font-size-medium;
+        line-height: $h6-line-height-medium;
+      }
     }
 
     .subheader { @include subheader; }
@@ -371,45 +426,6 @@ $align-class-breakpoints:
     blockquote p {
       line-height: $blockquote-line-height;
       color: $blockquote-font-color;
-    }
-
-    /* Microformats */
-    .vcard {
-      display: inline-block;
-      margin: $microformat-margin;
-      border: $microformat-border-width $microformat-border-style $microformat-border-color;
-      padding: $microformat-padding;
-
-      li {
-        margin: 0;
-        display: block;
-      }
-      .fn {
-        font-weight: $microformat-fullname-font-weight;
-        font-size: $microformat-fullname-font-size;
-      }
-    }
-
-    .vevent {
-      .summary { font-weight: $microformat-summary-font-weight; }
-
-      abbr {
-        cursor: $cursor-default-value;
-        text-decoration: $microformat-abbr-font-decoration;
-        font-weight: $microformat-abbr-font-weight;
-        border: none;
-        padding: $microformat-abbr-padding;
-      }
-    }
-
-
-    @media #{$medium-up} {
-      h1 { font-size: $h1-font-size; }
-      h2 { font-size: $h2-font-size; }
-      h3 { font-size: $h3-font-size; }
-      h4 { font-size: $h4-font-size; }
-      h5 { font-size: $h5-font-size; }
-      h6 { font-size: $h6-font-size; }
     }
 
     // Only include these styles if you want them.

@@ -121,8 +121,8 @@ $warning-color   : #f08a24;
 $info-color      : #a0d3e8;
 
 // We use these to control various global styles
-$body-bg: $white;
-$body-font-color: $color-black;
+$body-background: $white;
+$body-font-color: $color-gray-dark;
 $body-font-family: $font-family-sans-serif;
 $body-font-weight: $font-weight-normal;
 $body-font-style: normal;
@@ -201,7 +201,7 @@ $header-font-style: normal;
 $header-font-color: $jet;
 $header-line-height: 1.4;
 $header-top-margin: .2rem;
-$header-bottom-margin: .5rem;
+$header-bottom-margin: 1.4rem;
 $header-text-rendering: optimizeLegibility;
 
 
@@ -242,6 +242,34 @@ $h4-line-height: $line-height-large;
 $h5-line-height: $line-height-small;
 $h6-line-height: $line-height-smaller;
 
+$h1-font-size-small: $type-large;
+$h2-font-size-small: $type-large;
+$h3-font-size-small: $type-small;
+$h4-font-size-small: $type-smaller;
+$h5-font-size-small: $type-smaller;
+$h6-font-size-small: $type-smallest;
+
+$h1-line-height-small: $line-height-large;
+$h2-line-height-small: $line-height-large;
+$h3-line-height-small: $line-height-small;
+$h4-line-height-small: $line-height-smaller;
+$h5-line-height-small: $line-height-smaller;
+$h6-line-height-small: $line-height-smallest;
+
+$h1-font-size-medium: $type-larger;
+$h2-font-size-medium: $type-large;
+$h3-font-size-medium: $type-small;
+$h4-font-size-medium: $type-smaller;
+$h5-font-size-medium: $type-smaller;
+$h6-font-size-medium: $type-smaller;
+
+$h1-line-height-medium: $line-height-larger;
+$h2-line-height-medium: $line-height-large;
+$h3-line-height-medium: $line-height-small;
+$h4-line-height-medium: $line-height-smaller;
+$h5-line-height-medium: $line-height-smaller;
+$h6-line-height-medium: $line-height-smaller;
+
 // We use these to control header size reduction on small screens
 $h1-font-reduction: 0 !default;
 $h2-font-reduction: 0 !default;
@@ -264,10 +292,10 @@ $small-font-color: scale-color($header-font-color, $lightness: 35%);
 // We use these to style paragraphs
 $paragraph-font-family: inherit;
 $paragraph-font-weight: $font-weight-normal;
-$paragraph-font-size: 1rem;
+$paragraph-font-size: $type-base;
 $paragraph-line-height: 1.6;
-$paragraph-margin-bottom: rem-calc(20);
-$paragraph-aside-font-size: rem-calc(14);
+$paragraph-margin: 1rem;
+$paragraph-aside-font-size: $type-smallest;
 $paragraph-aside-line-height: 1.35;
 $paragraph-aside-font-style: italic;
 $paragraph-text-rendering: optimizeLegibility;
@@ -299,7 +327,7 @@ $hr-margin: rem-calc(20);
 $list-font-family: $paragraph-font-family;
 $list-font-size: $paragraph-font-size;
 $list-line-height: $paragraph-line-height;
-$list-margin-bottom: $paragraph-margin-bottom;
+$list-margin-bottom: $paragraph-margin;
 $list-style-position: outside;
 $list-side-margin: 1.1rem;
 $list-ordered-side-margin: 1.4rem;
@@ -336,7 +364,7 @@ $microformat-border-color: $gainsboro;
 
 // We use these to control full name font styles
 $microformat-fullname-font-weight: $font-weight-bold;
-$microformat-fullname-font-size: rem-calc(15);
+$microformat-fullname-font-size: $type-smallest;
 
 // We use this to control the summary font styles
 $microformat-summary-font-weight: $font-weight-bold;
@@ -454,7 +482,7 @@ $f-dropdown-triangle-side-offset: 10px;
 // We use these to control styles for the list elements.
 $f-dropdown-list-style: none;
 $f-dropdown-font-color: $color-blue-light;
-$f-dropdown-font-size: rem-calc(14);
+$f-dropdown-font-size: $type-smallest;
 $f-dropdown-list-padding: rem-calc(5, 10);
 $f-dropdown-line-height: rem-calc(18);
 $f-dropdown-list-hover-bg: $color-blue-light;
@@ -515,7 +543,7 @@ $form-spacing: rem-calc(16);
 
 // We use these to style the labels in different ways
 $form-label-pointer: pointer;
-$form-label-font-size: rem-calc(14);
+$form-label-font-size: $type-smallest;
 $form-label-font-weight: $font-weight-normal;
 $form-label-line-height: 1.5;
 $form-label-font-color: scale-color($black, $lightness: 30%);
@@ -523,7 +551,7 @@ $form-label-small-transform: capitalize;
 $form-label-bottom-margin: 0;
 $input-font-family: inherit;
 $input-font-color: rgba(0,0,0,0.75);
-$input-font-size: rem-calc(14);
+$input-font-size: $type-smallest;
 $input-bg-color: $white;
 $input-focus-bg-color: scale-color($white, $lightness: -2%);
 $input-border-color: scale-color($white, $lightness: -20%);
@@ -562,7 +590,7 @@ $input-number-spinners: true;
 // We use these to style the error states for inputs and labels
 $input-error-message-padding: rem-calc(6 9 9);
 $input-error-message-top: -1px;
-$input-error-message-font-size: rem-calc(12);
+$input-error-message-font-size: $type-min;
 $input-error-message-font-weight: $font-weight-normal;
 $input-error-message-font-style: italic;
 $input-error-message-font-color: $alert-color;
@@ -575,7 +603,7 @@ $glowing-effect-color: $input-focus-border-color;
 
 // Select variables
 $select-bg-color: $ghost;
-$select-font-size: rem-calc(12);
+$select-font-size: $type-min;
 $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%);
 
 // 06. Icon Bar
@@ -585,7 +613,7 @@ $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%);
 $include-html-icon-bar-classes: $include-html-classes;
 $icon-bar-bg: transparent;
 $icon-bar-font-color: $white;
-$icon-bar-font-size: 1rem;
+$icon-bar-font-size: $type-base;
 $icon-bar-hover-color: $primary-color;
 $icon-bar-icon-color: $white;
 $icon-bar-icon-size: rem-calc(38);
@@ -607,7 +635,7 @@ $pagination-margin: rem-calc(-5);
 $pagination-li-float: $default-float;
 $pagination-li-height: rem-calc(18);
 $pagination-li-font-color: $body-font-color;
-$pagination-li-font-size: rem-calc(14);
+$pagination-li-font-size: $type-smallest;
 $pagination-li-margin: rem-calc(0 6);
 
 // We use these for the pagination anchor links
@@ -662,3 +690,21 @@ $portrait-column-width-medium:  50px;
 $portrait-column-width-large:   60px;
 $portrait-column-width-xlarge:  80px;
 $portrait-column-width-xxlarge: 90px;
+
+// Z-Index Scale
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Never --ever-- implement z-index that doesn't use this scale, if you have a use-case that
+// for some reason falls out of this scale, ask for guidance before implementing one-offs.
+
+$z-min : -1;
+$z-1   : 100;
+$z-2   : 200;
+$z-3   : 300;
+$z-4   : 400;
+$z-5   : 500;
+$z-6   : 600;
+$z-7   : 700;
+$z-8   : 800;
+$z-9   : 900;
+$z-max : 10000;
