@@ -115,7 +115,7 @@ $color-hub-tv        : #00B7E0;
 // We use these as default colors throughout
 $primary-color   : $color-blue-dark;
 $secondary-color : #e7e7e7;
-$alert-color     : #ff3500;
+$alert-color     : #d0021b;
 $success-color   : #43AC6A;
 $warning-color   : #f08a24;
 $info-color      : #a0d3e8;
@@ -144,6 +144,9 @@ $global-rounded: 1000px;
 $shiny-edge-size: 0 1px 0;
 $shiny-edge-color: rgba($white, .5);
 $shiny-edge-active-color: rgba($black, .2);
+
+// Image paths
+$icon-path: '../../dist/icons';
 
 // d. Media Query Ranges
 // - - - - - - - - - - - - - - - - - - - - - - - - -
