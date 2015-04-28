@@ -134,11 +134,11 @@ button, .button, input[type="submit"] {
       button.success:hover.secondary, button.success:focus.secondary, .button.success:hover.secondary, .button.success:focus.secondary, input[type="submit"].success:hover.secondary, input[type="submit"].success:focus.secondary {
         color: #092344; }
   button.alert, .button.alert, input[type="submit"].alert {
-    background-color: #ff3500;
-    border-color: #cc2a00;
+    background-color: #d0021b;
+    border-color: #a60216;
     color: #FFFFFF; }
     button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus, input[type="submit"].alert:hover, input[type="submit"].alert:focus {
-      background-color: #cc2a00;
+      background-color: #a60216;
       border-color: #092344;
       color: #FFFFFF; }
       button.alert:hover.secondary, button.alert:focus.secondary, .button.alert:hover.secondary, .button.alert:focus.secondary, input[type="submit"].alert:hover.secondary, input[type="submit"].alert:focus.secondary {
@@ -225,15 +225,15 @@ button, .button, input[type="submit"] {
         border-color: #092344;
         color: #092344; }
     button.disabled.alert, button[disabled].alert, .button.disabled.alert, .button[disabled].alert, input[type="submit"].disabled.alert, input[type="submit"][disabled].alert {
-      background-color: #ff3500;
-      border-color: #cc2a00;
+      background-color: #d0021b;
+      border-color: #a60216;
       color: #FFFFFF;
       color: #F2F6FA;
       cursor: default;
       opacity: 0.5;
       box-shadow: none; }
       button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus, input[type="submit"].disabled.alert:hover, input[type="submit"].disabled.alert:focus, input[type="submit"][disabled].alert:hover, input[type="submit"][disabled].alert:focus {
-        background-color: #cc2a00;
+        background-color: #a60216;
         border-color: #092344;
         color: #FFFFFF; }
         button.disabled.alert:hover.secondary, button.disabled.alert:focus.secondary, button[disabled].alert:hover.secondary, button[disabled].alert:focus.secondary, .button.disabled.alert:hover.secondary, .button.disabled.alert:focus.secondary, .button[disabled].alert:hover.secondary, .button[disabled].alert:focus.secondary, input[type="submit"].disabled.alert:hover.secondary, input[type="submit"].disabled.alert:focus.secondary, input[type="submit"][disabled].alert:hover.secondary, input[type="submit"][disabled].alert:focus.secondary {

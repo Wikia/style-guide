@@ -8,9 +8,9 @@
 // @mixins
 @mixin page-chevron($direction) {
   @if $direction == left {
-    background-image: url(../../dist/icons/icon_page_left.svg);
+    background-image: url(#{$icon-path}/icon_page_left.svg);
   } @else {
-    background-image: url(../../dist/icons/icon_page_right.svg);
+    background-image: url(#{$icon-path}/icon_page_right.svg);
   }
   background-position: center;
   background-repeat: no-repeat;

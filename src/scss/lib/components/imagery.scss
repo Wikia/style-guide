@@ -250,7 +250,7 @@ figure {
 		}
 
 		.icon-play {
-		    background-image: url(../../dist/icons/icon_play.svg);
+		    background-image: url(#{$icon-path}/icon_play.svg);
 			background-size: cover;
 		}
 	}
