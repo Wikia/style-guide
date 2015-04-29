@@ -250,8 +250,10 @@ figure {
 		}
 
 		.icon-play {
-		    background-image: url(../../dist/icons/icon_play.svg);
-			background-size: cover;
+			// Commented out for HG-616
+			// TODO: Find a way to make image paths work with a variable
+			//background-image: url(../../dist/icons/icon_play.svg);
+			//background-size: cover;
 		}
 	}
 

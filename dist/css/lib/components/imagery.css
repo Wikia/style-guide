@@ -502,8 +502,5 @@ figure.video {
   figure.video .icon-play, figure.video .overlay {
     display: block;
     position: absolute; }
-  figure.video .icon-play {
-    background-image: url(../../dist/icons/icon_play.svg);
-    background-size: cover; }
 figure img {
   width: 100%; }

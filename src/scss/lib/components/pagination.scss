@@ -7,14 +7,16 @@
 
 // @mixins
 @mixin page-chevron($direction) {
-  @if $direction == left {
-    background-image: url(../../dist/icons/icon_page_left.svg);
-  } @else {
-    background-image: url(../../dist/icons/icon_page_right.svg);
-  }
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 18px 18px;
+  // Commented out for HG-616
+  // TODO: Find a way to make image paths work with a variable
+  //@if $direction == left {
+  //  background-image: url(../../dist/icons/icon_page_left.svg);
+  //} @else {
+  //  background-image: url(../../dist/icons/icon_page_right.svg);
+  //}
+  //background-position: center;
+  //background-repeat: no-repeat;
+  //background-size: 18px 18px;
 }
 
 // @mixins
