@@ -151,7 +151,7 @@ $avatar-size: 36px;
 
 figure {
 	// User avatars
-	&.avatar {
+	&.avatar img {
 		border: 2px solid #fff;
 		border-radius: 50%;
 		height: $avatar-size;

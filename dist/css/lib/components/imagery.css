@@ -91,7 +91,7 @@ textarea {
 select {
   width: 100%; }
 
-figure.avatar {
+figure.avatar img {
   border: 2px solid #fff;
   border-radius: 50%;
   height: 36px;

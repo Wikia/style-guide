@@ -2514,7 +2514,7 @@ label.error {
   .icon-bar.six-up.large-vertical .item {
     width: auto; } }
 
-figure.avatar {
+figure.avatar img {
   border: 2px solid #fff;
   border-radius: 50%;
   height: 36px;
