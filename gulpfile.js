@@ -1,7 +1,9 @@
 'use strict';
 var gulp = require('gulp'),
 	sass = require('gulp-sass'),
-	del = require('del');
+	del = require('del'),
+	gulpif = require('gulp-if'),
+	preprocess = require('gulp-preprocess');
 
 gulp.task('sass', function () {
 	return gulp.src('./src/scss/**/*.scss')
@@ -44,6 +46,28 @@ gulp.task('dist:clean', function () {
 	return del.sync('./dist/**');
 });
 
+/**
+ * Set up components:
+ *  - Compile SCSS
+ *  - Inline JS and CSS into template file
+ *  - Move file to dist folder
+ */
+gulp.task('components-sass', function () {
+	var base = './src/components';
+
+	return gulp.src(base + '/**/*.scss')
+		.pipe(sass())
+		.pipe(gulp.dest(base));
+});
+gulp.task('components-html', ['components-sass'], function () {
+	return gulp.src('./src/components/**/*.html')
+		.pipe(preprocess())
+		.pipe(gulp.dest('./dist/components'));
+});
+gulp.task('components', ['components-html'], function () {
+	return del.sync('./src/components/**/*.css');
+});
+
 gulp.task('update-static', [
 	'dist:clean',
 	'static:clean',
@@ -52,13 +76,14 @@ gulp.task('update-static', [
 	'sass',
 	'vendor',
 	'scripts',
-	'templates'
+	'templates',
+	'components'
 ], function () {
 	return gulp.src('./dist/**/*')
 		.pipe(gulp.dest('./gh-pages/vendor/wikia-style-guide/dist'));
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', ['update-static'], function () {
 	gulp.watch('./src/**/*')
 		.on('change', function () {
 			gulp.start('update-static');
