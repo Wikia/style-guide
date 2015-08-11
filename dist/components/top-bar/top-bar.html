@@ -23,14 +23,14 @@
 		 *
 		 * Options are:
 		 * 	importedDoc - if component is included via html import, pass a reference to the imported document object.
-		 * 	imagesBaseUrl - base URL for logo and other images component may contain
+		 * 	logoUrl - URL for logo asset
 		 *
 		 * @params {Object} options Configuration options
 		 * @type {Function}
 		 */
 		var TopBar = SG.Components.TopBar = function (options) {
 			this.doc = options.importedDoc || window.document;
-			this.imagesBaseUrl = options.imagesBaseUrl || '';
+			this.logoUrl = options.logoUrl || '';
 			this.elem = null;
 		};
 	
@@ -57,11 +57,8 @@
 		};
 	
 		TopBar.prototype.updateLogo = function (elem) {
-			var logo = elem.querySelector('.logo'),
-				slashRE = /(\/)?$/;
-	
-			// use getAttribute instead of logo.src for the raw text
-			logo.src = this.imagesBaseUrl.replace(slashRE, '/') + logo.getAttribute('src');
+			var logo = elem.querySelector('.logo');
+			logo.src = this.logoUrl;
 		};
 	
 	})(window, document);
