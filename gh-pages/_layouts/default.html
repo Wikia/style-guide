@@ -4,16 +4,13 @@
   {% include head.html %}
 
   <body class="page-{{page.class}}">
-    {% include global-nav.html %}
+    <!--{% include global-nav.html %}-->
 
 
     <script src="{{ site.assets_path | prepend: site.baseurl }}/../vendor/wikia-style-guide/dist/vendor/webcomponentsjs/webcomponents.min.js"></script>
     <link rel="import" href="{{ site.assets_path | prepend: site.baseurl }}/../vendor/wikia-style-guide/dist/components/top-bar/top-bar.html">
-    <script>
-      new SG.Components.TopBar({isImported:true});
-    </script>
-    <top-nav></top-nav>
 
+    <top-bar></top-bar>
 
 
 
