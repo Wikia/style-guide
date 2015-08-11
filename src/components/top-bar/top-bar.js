@@ -9,44 +9,33 @@
 	 * Build top-bar component
 	 *
 	 * Options are:
-	 * 	isImported - whether the HTML template is imported as opposed to inline
+	 * 	importedDoc - if this component is being included via html import, pass a reference to the imported document object.
 	 *
 	 * @params {Object} options Configuration options
 	 * @type {Function}
 	 */
 	var TopBar = SG.Components.TopBar = function (options) {
-		this.isImported = options.isImported;
+		this.doc = options.importedDoc || window.document;
 		this.elem = null;
-		this.createElement();
 	};
 
 	TopBar.prototype.createElement = function () {
-		var doc = this.getDoc(),
-			elemProto = Object.create(HTMLElement.prototype),
-			isImported = this.isImported;
+		var elemProto = Object.create(HTMLElement.prototype),
+			thisDoc = this.doc;
 
 		elemProto.createdCallback = function () {
 			var shadowRoot = this.createShadowRoot(),
-				template = doc.getElementById('SGTopBarTemplate').content,
-				clone = isImported ? doc.importNode(template, true) : template;
+				// get template from imported doc
+				template = thisDoc.getElementById('SGTopBarTemplate').content,
+				isImported = thisDoc !== window.document,
+				clone = isImported ? thisDoc.importNode(template, true) : template;
 
 			shadowRoot.appendChild(clone);
 		};
 
+		// register element on parent doc
 		this.elem = window.document.registerElement('top-bar', {
 			prototype: elemProto
 		});
 	};
-
-	TopBar.prototype.getDoc = function () {
-		var doc = window.document;
-
-		if (this.isImported) {
-			return (doc._currentScript || doc.currentScript).ownerDocument
-		}
-
-		return doc;
-	};
-
-	new SG.Components.TopBar({isImported:true});
 })(window, document);

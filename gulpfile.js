@@ -56,8 +56,15 @@ gulp.task('components-sass', function () {
 	var base = './src/components';
 
 	return gulp.src(base + '/**/*.scss')
-		.pipe(sass())
+		.pipe(
+			sass({outputStyle: 'compressed'})
+				.on('error', sass.logError)
+		)
 		.pipe(gulp.dest(base));
+});
+gulp.task('components-svg', function () {
+	return gulp.src('./src/components/**/*.svg')
+		.pipe(gulp.dest('./dist/components'))
 });
 gulp.task('components-html', ['components-sass'], function () {
 	return gulp.src('./src/components/**/*.html')

@@ -1,3 +1,16 @@
-body {
-	background-color: purple;
+@import '../../scss/lib/components/grid';
+
+:host {
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+	height: 46px;
+	position: fixed;
+	width: 100%;
+	z-index: 9999999;
+
+	.logo {
+		fill: #092344;
+		margin: 10px 20px 10px 0;
+		width: 82px;
+	}
 }
