@@ -11,6 +11,7 @@
 	 * Options are:
 	 * 	importedDoc - if component is included via html import, pass a reference to the imported document object.
 	 * 	logoUrl - URL for logo asset
+	 * 	logoHref - Where the logo links. Defaults to '/'.
 	 *
 	 * @params {Object} options Configuration options
 	 * @type {Function}
@@ -18,6 +19,7 @@
 	var TopBar = SG.Components.TopBar = function (options) {
 		this.doc = options.importedDoc || window.document;
 		this.logoUrl = options.logoUrl || '';
+		this.logoHref = options.logoHref || '/';
 		this.elem = null;
 	};
 
@@ -46,6 +48,7 @@
 	TopBar.prototype.updateLogo = function (elem) {
 		var logo = elem.querySelector('.logo');
 		logo.src = this.logoUrl;
+		logo.parentElement.href = this.logoHref;
 	};
 
 })(window, document);

@@ -18,7 +18,8 @@
         new window.SG.Components.TopBar({
           // send reference to imported document
           importedDoc: document.getElementById('top-bar-import').import,
-          logoUrl: '{{ site.assets_path | prepend: site.baseurl }}/images/wikia_logo.svg'
+          logoUrl: '{{ site.assets_path | prepend: site.baseurl }}/images/wikia_logo.svg',
+          logoHref: '{{site.baseurl}}/'
         }).createElement();
       });
     </script>
