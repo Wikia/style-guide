@@ -16,7 +16,9 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         new window.SG.Components.TopBar({
-          importedDoc: document.getElementById('top-bar-import').import
+          // send reference to imported document
+          importedDoc: document.getElementById('top-bar-import').import,
+          imagesBaseUrl: '{{ site.assets_path | prepend: site.baseurl }}/images'
         }).createElement();
       });
     </script>

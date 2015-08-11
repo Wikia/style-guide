@@ -71,7 +71,7 @@ gulp.task('components-html', ['components-sass'], function () {
 		.pipe(preprocess())
 		.pipe(gulp.dest('./dist/components'));
 });
-gulp.task('components', ['components-html'], function () {
+gulp.task('components', ['components-html', 'components-svg'], function () {
 	return del.sync('./src/components/**/*.css');
 });
 
