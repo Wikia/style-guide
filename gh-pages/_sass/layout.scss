@@ -27,7 +27,7 @@ $site-nav-width: 300px;
 }
 
 // include custom component top-bar while we make the switch-over
-.global-navigation, top-bar::shadow {
+.global-navigation, top-bar {
 	background-color: #fff;
 	border-bottom: 1px solid #ccc;
 	height: 46px;
