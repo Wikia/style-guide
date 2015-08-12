@@ -4,7 +4,36 @@
   {% include head.html %}
 
   <body class="page-{{page.class}}">
-    <top-bar></top-bar>
+    <top-bar>
+      <a class="menu-icon dropdown-icon left">
+        <img src="{{ site.assets_path | prepend: site.baseurl }}/images/icons/icon_nav.svg">
+      </a>
+      <ul class="f-dropdown" data-offset-x="-13" data-offset-y="13">
+        <li>
+          <a href="{{site.baseurl}}/">Home</a>
+        </li>
+        <li>
+          <a href="{{site.baseurl}}/section/colors">Colors</a>
+        </li>
+        <li>
+          <a href="{{site.baseurl}}/section/typography">Typography</a>
+        </li>
+        <li>
+          <a href="{{site.baseurl}}/section/buttons">Buttons</a>
+        </li>
+        <li>
+          <a href="{{site.baseurl}}/section/forms">Forms &amp; Dropdowns</a>
+        </li>
+        <li>
+          <a href="{{site.baseurl}}/section/imagery">Imagery</a>
+        </li>
+        <li>
+          <a href="{{site.baseurl}}/section/video">Video</a>
+        </li>
+      </ul>
+
+      <a href="{{site.baseurl}}/" class="title left">Style Guide</a>
+    </top-bar>
 
     <div class="row">
       <div class="page-content large-12 columns">

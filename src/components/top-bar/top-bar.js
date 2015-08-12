@@ -28,15 +28,21 @@
 			self = this;
 
 		elemProto.createdCallback = function () {
-			var shadowRoot = this.createShadowRoot(),
+			var lightDom = this.innerHTML,
+				shadowRoot = this.createShadowRoot(),
 				// get template from imported doc
 				template = self.doc.getElementById('SGTopBarTemplate').content,
 				isImported = self.doc !== window.document,
-				clone = isImported ? self.doc.importNode(template, true) : template;
+				clone = isImported ? self.doc.importNode(template, true) : template,
+				replace = clone.querySelector('.replace');
 
 			self.updateLogo(clone);
+			replace.outerHTML = lightDom;
 
 			shadowRoot.appendChild(clone);
+
+			//shadowRoot.innerHTML = lightDom;
+			//shadowRoot.insertBefore(clone, shadowRoot.firstChild);
 		};
 
 		// register element on parent doc
