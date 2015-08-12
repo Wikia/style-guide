@@ -8,6 +8,8 @@ Wikia Style Guide
 ## Using the Style Guide in your projects
 This style guide has been built to easily integrate into your applications through [bower](http://bower.io/) or manually as a compiled package of all the components, individual components or as SCSS source files. We recommend using bower, as then your application will gain access to easy dependency management, versioning and future upgrades will be predictable and easy to integrate.
 
+The style guide is an adaptation of Zurb's Foundation framework. [Visit the docs](http://foundation.zurb.com/docs/) and make sure to choose foundation 5. 
+
 ### Installing using bower
 To add this package as a bower dependency, simply run `$ bower install --save Wikia/style-guide` and this will fetch the latest from our development branch. If you prefer a simple version, run something like `$ bower install --save Wikia/style-guide#v0.2.0` or for a specific branch `$ bower install --save Wikia/style-guide#feature-branch`.
 
