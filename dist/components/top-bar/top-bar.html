@@ -52,6 +52,7 @@
         				replace.parentElement.insertBefore(elem, replace);
         			});
         			this.appendChild(clone);
+        			this.style.visibility = 'visible';
         		};
         
         		// register element on parent doc
@@ -68,5 +69,5 @@
         
         })(window, document);
         </script>
-<style>:host{background-color:#fff;border-bottom:1px solid #ccc;height:46px;position:fixed;width:100%;z-index:9999999}:host .logo{fill:#092344;width:82px}
+<style>top-bar{display:block;visibility:hidden;background-color:#fff;border-bottom:1px solid #ccc;height:46px;position:fixed;width:100%;z-index:9999999}top-bar .logo{fill:#092344;width:82px}
        </style>

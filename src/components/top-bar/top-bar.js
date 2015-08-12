@@ -43,6 +43,7 @@
 				replace.parentElement.insertBefore(elem, replace);
 			});
 			this.appendChild(clone);
+			this.style.visibility = 'visible';
 		};
 
 		// register element on parent doc
