@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 
 gulp.task('sass', function () {
 	return gulp.src('./src/scss/**/*.scss')
-		.pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
+		.pipe(sass().on('error', sass.logError))
 		.pipe(gulp.dest('./dist/css'));
 });
 
