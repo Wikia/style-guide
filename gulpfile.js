@@ -58,7 +58,7 @@ gulp.task('update-static', [
 		.pipe(gulp.dest('./gh-pages/vendor/wikia-style-guide/dist'));
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', ['update-static'], function () {
 	gulp.watch('./src/**/*')
 		.on('change', function () {
 			gulp.start('update-static');
