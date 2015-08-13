@@ -7,7 +7,7 @@
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
-// @version 0.7.10
+// @version 0.6.0
 if (typeof WeakMap === "undefined") {
   (function() {
     var defineProperty = Object.defineProperty;
@@ -44,305 +44,6 @@ if (typeof WeakMap === "undefined") {
   })();
 }
 
-(function(global) {
-  var registrationsTable = new WeakMap();
-  var setImmediate;
-  if (/Trident|Edge/.test(navigator.userAgent)) {
-    setImmediate = setTimeout;
-  } else if (window.setImmediate) {
-    setImmediate = window.setImmediate;
-  } else {
-    var setImmediateQueue = [];
-    var sentinel = String(Math.random());
-    window.addEventListener("message", function(e) {
-      if (e.data === sentinel) {
-        var queue = setImmediateQueue;
-        setImmediateQueue = [];
-        queue.forEach(function(func) {
-          func();
-        });
-      }
-    });
-    setImmediate = function(func) {
-      setImmediateQueue.push(func);
-      window.postMessage(sentinel, "*");
-    };
-  }
-  var isScheduled = false;
-  var scheduledObservers = [];
-  function scheduleCallback(observer) {
-    scheduledObservers.push(observer);
-    if (!isScheduled) {
-      isScheduled = true;
-      setImmediate(dispatchCallbacks);
-    }
-  }
-  function wrapIfNeeded(node) {
-    return window.ShadowDOMPolyfill && window.ShadowDOMPolyfill.wrapIfNeeded(node) || node;
-  }
-  function dispatchCallbacks() {
-    isScheduled = false;
-    var observers = scheduledObservers;
-    scheduledObservers = [];
-    observers.sort(function(o1, o2) {
-      return o1.uid_ - o2.uid_;
-    });
-    var anyNonEmpty = false;
-    observers.forEach(function(observer) {
-      var queue = observer.takeRecords();
-      removeTransientObserversFor(observer);
-      if (queue.length) {
-        observer.callback_(queue, observer);
-        anyNonEmpty = true;
-      }
-    });
-    if (anyNonEmpty) dispatchCallbacks();
-  }
-  function removeTransientObserversFor(observer) {
-    observer.nodes_.forEach(function(node) {
-      var registrations = registrationsTable.get(node);
-      if (!registrations) return;
-      registrations.forEach(function(registration) {
-        if (registration.observer === observer) registration.removeTransientObservers();
-      });
-    });
-  }
-  function forEachAncestorAndObserverEnqueueRecord(target, callback) {
-    for (var node = target; node; node = node.parentNode) {
-      var registrations = registrationsTable.get(node);
-      if (registrations) {
-        for (var j = 0; j < registrations.length; j++) {
-          var registration = registrations[j];
-          var options = registration.options;
-          if (node !== target && !options.subtree) continue;
-          var record = callback(options);
-          if (record) registration.enqueue(record);
-        }
-      }
-    }
-  }
-  var uidCounter = 0;
-  function JsMutationObserver(callback) {
-    this.callback_ = callback;
-    this.nodes_ = [];
-    this.records_ = [];
-    this.uid_ = ++uidCounter;
-  }
-  JsMutationObserver.prototype = {
-    observe: function(target, options) {
-      target = wrapIfNeeded(target);
-      if (!options.childList && !options.attributes && !options.characterData || options.attributeOldValue && !options.attributes || options.attributeFilter && options.attributeFilter.length && !options.attributes || options.characterDataOldValue && !options.characterData) {
-        throw new SyntaxError();
-      }
-      var registrations = registrationsTable.get(target);
-      if (!registrations) registrationsTable.set(target, registrations = []);
-      var registration;
-      for (var i = 0; i < registrations.length; i++) {
-        if (registrations[i].observer === this) {
-          registration = registrations[i];
-          registration.removeListeners();
-          registration.options = options;
-          break;
-        }
-      }
-      if (!registration) {
-        registration = new Registration(this, target, options);
-        registrations.push(registration);
-        this.nodes_.push(target);
-      }
-      registration.addListeners();
-    },
-    disconnect: function() {
-      this.nodes_.forEach(function(node) {
-        var registrations = registrationsTable.get(node);
-        for (var i = 0; i < registrations.length; i++) {
-          var registration = registrations[i];
-          if (registration.observer === this) {
-            registration.removeListeners();
-            registrations.splice(i, 1);
-            break;
-          }
-        }
-      }, this);
-      this.records_ = [];
-    },
-    takeRecords: function() {
-      var copyOfRecords = this.records_;
-      this.records_ = [];
-      return copyOfRecords;
-    }
-  };
-  function MutationRecord(type, target) {
-    this.type = type;
-    this.target = target;
-    this.addedNodes = [];
-    this.removedNodes = [];
-    this.previousSibling = null;
-    this.nextSibling = null;
-    this.attributeName = null;
-    this.attributeNamespace = null;
-    this.oldValue = null;
-  }
-  function copyMutationRecord(original) {
-    var record = new MutationRecord(original.type, original.target);
-    record.addedNodes = original.addedNodes.slice();
-    record.removedNodes = original.removedNodes.slice();
-    record.previousSibling = original.previousSibling;
-    record.nextSibling = original.nextSibling;
-    record.attributeName = original.attributeName;
-    record.attributeNamespace = original.attributeNamespace;
-    record.oldValue = original.oldValue;
-    return record;
-  }
-  var currentRecord, recordWithOldValue;
-  function getRecord(type, target) {
-    return currentRecord = new MutationRecord(type, target);
-  }
-  function getRecordWithOldValue(oldValue) {
-    if (recordWithOldValue) return recordWithOldValue;
-    recordWithOldValue = copyMutationRecord(currentRecord);
-    recordWithOldValue.oldValue = oldValue;
-    return recordWithOldValue;
-  }
-  function clearRecords() {
-    currentRecord = recordWithOldValue = undefined;
-  }
-  function recordRepresentsCurrentMutation(record) {
-    return record === recordWithOldValue || record === currentRecord;
-  }
-  function selectRecord(lastRecord, newRecord) {
-    if (lastRecord === newRecord) return lastRecord;
-    if (recordWithOldValue && recordRepresentsCurrentMutation(lastRecord)) return recordWithOldValue;
-    return null;
-  }
-  function Registration(observer, target, options) {
-    this.observer = observer;
-    this.target = target;
-    this.options = options;
-    this.transientObservedNodes = [];
-  }
-  Registration.prototype = {
-    enqueue: function(record) {
-      var records = this.observer.records_;
-      var length = records.length;
-      if (records.length > 0) {
-        var lastRecord = records[length - 1];
-        var recordToReplaceLast = selectRecord(lastRecord, record);
-        if (recordToReplaceLast) {
-          records[length - 1] = recordToReplaceLast;
-          return;
-        }
-      } else {
-        scheduleCallback(this.observer);
-      }
-      records[length] = record;
-    },
-    addListeners: function() {
-      this.addListeners_(this.target);
-    },
-    addListeners_: function(node) {
-      var options = this.options;
-      if (options.attributes) node.addEventListener("DOMAttrModified", this, true);
-      if (options.characterData) node.addEventListener("DOMCharacterDataModified", this, true);
-      if (options.childList) node.addEventListener("DOMNodeInserted", this, true);
-      if (options.childList || options.subtree) node.addEventListener("DOMNodeRemoved", this, true);
-    },
-    removeListeners: function() {
-      this.removeListeners_(this.target);
-    },
-    removeListeners_: function(node) {
-      var options = this.options;
-      if (options.attributes) node.removeEventListener("DOMAttrModified", this, true);
-      if (options.characterData) node.removeEventListener("DOMCharacterDataModified", this, true);
-      if (options.childList) node.removeEventListener("DOMNodeInserted", this, true);
-      if (options.childList || options.subtree) node.removeEventListener("DOMNodeRemoved", this, true);
-    },
-    addTransientObserver: function(node) {
-      if (node === this.target) return;
-      this.addListeners_(node);
-      this.transientObservedNodes.push(node);
-      var registrations = registrationsTable.get(node);
-      if (!registrations) registrationsTable.set(node, registrations = []);
-      registrations.push(this);
-    },
-    removeTransientObservers: function() {
-      var transientObservedNodes = this.transientObservedNodes;
-      this.transientObservedNodes = [];
-      transientObservedNodes.forEach(function(node) {
-        this.removeListeners_(node);
-        var registrations = registrationsTable.get(node);
-        for (var i = 0; i < registrations.length; i++) {
-          if (registrations[i] === this) {
-            registrations.splice(i, 1);
-            break;
-          }
-        }
-      }, this);
-    },
-    handleEvent: function(e) {
-      e.stopImmediatePropagation();
-      switch (e.type) {
-       case "DOMAttrModified":
-        var name = e.attrName;
-        var namespace = e.relatedNode.namespaceURI;
-        var target = e.target;
-        var record = new getRecord("attributes", target);
-        record.attributeName = name;
-        record.attributeNamespace = namespace;
-        var oldValue = e.attrChange === MutationEvent.ADDITION ? null : e.prevValue;
-        forEachAncestorAndObserverEnqueueRecord(target, function(options) {
-          if (!options.attributes) return;
-          if (options.attributeFilter && options.attributeFilter.length && options.attributeFilter.indexOf(name) === -1 && options.attributeFilter.indexOf(namespace) === -1) {
-            return;
-          }
-          if (options.attributeOldValue) return getRecordWithOldValue(oldValue);
-          return record;
-        });
-        break;
-
-       case "DOMCharacterDataModified":
-        var target = e.target;
-        var record = getRecord("characterData", target);
-        var oldValue = e.prevValue;
-        forEachAncestorAndObserverEnqueueRecord(target, function(options) {
-          if (!options.characterData) return;
-          if (options.characterDataOldValue) return getRecordWithOldValue(oldValue);
-          return record;
-        });
-        break;
-
-       case "DOMNodeRemoved":
-        this.addTransientObserver(e.target);
-
-       case "DOMNodeInserted":
-        var changedNode = e.target;
-        var addedNodes, removedNodes;
-        if (e.type === "DOMNodeInserted") {
-          addedNodes = [ changedNode ];
-          removedNodes = [];
-        } else {
-          addedNodes = [];
-          removedNodes = [ changedNode ];
-        }
-        var previousSibling = changedNode.previousSibling;
-        var nextSibling = changedNode.nextSibling;
-        var record = getRecord("childList", e.target.parentNode);
-        record.addedNodes = addedNodes;
-        record.removedNodes = removedNodes;
-        record.previousSibling = previousSibling;
-        record.nextSibling = nextSibling;
-        forEachAncestorAndObserverEnqueueRecord(e.relatedNode, function(options) {
-          if (!options.childList) return;
-          return record;
-        });
-      }
-      clearRecords();
-    }
-  };
-  global.JsMutationObserver = JsMutationObserver;
-  if (!global.MutationObserver) global.MutationObserver = JsMutationObserver;
-})(this);
-
 window.HTMLImports = window.HTMLImports || {
   flags: {}
 };
@@ -352,19 +53,19 @@ window.HTMLImports = window.HTMLImports || {
   var useNative = Boolean(IMPORT_LINK_TYPE in document.createElement("link"));
   var hasShadowDOMPolyfill = Boolean(window.ShadowDOMPolyfill);
   var wrap = function(node) {
-    return hasShadowDOMPolyfill ? window.ShadowDOMPolyfill.wrapIfNeeded(node) : node;
+    return hasShadowDOMPolyfill ? ShadowDOMPolyfill.wrapIfNeeded(node) : node;
   };
   var rootDocument = wrap(document);
   var currentScriptDescriptor = {
     get: function() {
-      var script = window.HTMLImports.currentScript || document.currentScript || (document.readyState !== "complete" ? document.scripts[document.scripts.length - 1] : null);
+      var script = HTMLImports.currentScript || document.currentScript || (document.readyState !== "complete" ? document.scripts[document.scripts.length - 1] : null);
       return wrap(script);
     },
     configurable: true
   };
   Object.defineProperty(document, "_currentScript", currentScriptDescriptor);
   Object.defineProperty(rootDocument, "_currentScript", currentScriptDescriptor);
-  var isIE = /Trident/.test(navigator.userAgent);
+  var isIE = /Trident|Edge/.test(navigator.userAgent);
   function whenReady(callback, doc) {
     doc = doc || rootDocument;
     whenDocumentReady(function() {
@@ -473,8 +174,8 @@ window.HTMLImports = window.HTMLImports || {
     })();
   }
   whenReady(function(detail) {
-    window.HTMLImports.ready = true;
-    window.HTMLImports.readyTime = new Date().getTime();
+    HTMLImports.ready = true;
+    HTMLImports.readyTime = new Date().getTime();
     var evt = rootDocument.createEvent("CustomEvent");
     evt.initCustomEvent("HTMLImportsLoaded", true, true, detail);
     rootDocument.dispatchEvent(evt);
@@ -484,7 +185,7 @@ window.HTMLImports = window.HTMLImports || {
   scope.rootDocument = rootDocument;
   scope.whenReady = whenReady;
   scope.isIE = isIE;
-})(window.HTMLImports);
+})(HTMLImports);
 
 (function(scope) {
   var modules = [];
@@ -498,9 +199,9 @@ window.HTMLImports = window.HTMLImports || {
   };
   scope.addModule = addModule;
   scope.initializeModules = initializeModules;
-})(window.HTMLImports);
+})(HTMLImports);
 
-window.HTMLImports.addModule(function(scope) {
+HTMLImports.addModule(function(scope) {
   var CSS_URL_REGEXP = /(url\()([^)]*)(\))/g;
   var CSS_IMPORT_REGEXP = /(@import[\s]+(?!url\())([^;]*)(;)/g;
   var path = {
@@ -530,7 +231,7 @@ window.HTMLImports.addModule(function(scope) {
   scope.path = path;
 });
 
-window.HTMLImports.addModule(function(scope) {
+HTMLImports.addModule(function(scope) {
   var xhr = {
     async: true,
     ok: function(request) {
@@ -562,7 +263,7 @@ window.HTMLImports.addModule(function(scope) {
   scope.xhr = xhr;
 });
 
-window.HTMLImports.addModule(function(scope) {
+HTMLImports.addModule(function(scope) {
   var xhr = scope.xhr;
   var flags = scope.flags;
   var Loader = function(onLoad, onComplete) {
@@ -655,7 +356,7 @@ window.HTMLImports.addModule(function(scope) {
   scope.Loader = Loader;
 });
 
-window.HTMLImports.addModule(function(scope) {
+HTMLImports.addModule(function(scope) {
   var Observer = function(addCallback) {
     this.addCallback = addCallback;
     this.mo = new MutationObserver(this.handler.bind(this));
@@ -688,7 +389,7 @@ window.HTMLImports.addModule(function(scope) {
   scope.Observer = Observer;
 });
 
-window.HTMLImports.addModule(function(scope) {
+HTMLImports.addModule(function(scope) {
   var path = scope.path;
   var rootDocument = scope.rootDocument;
   var flags = scope.flags;
@@ -697,7 +398,7 @@ window.HTMLImports.addModule(function(scope) {
   var IMPORT_SELECTOR = "link[rel=" + IMPORT_LINK_TYPE + "]";
   var importParser = {
     documentSelectors: IMPORT_SELECTOR,
-    importsSelectors: [ IMPORT_SELECTOR, "link[rel=stylesheet]:not([type])", "style:not([type])", "script:not([type])", 'script[type="application/javascript"]', 'script[type="text/javascript"]' ].join(","),
+    importsSelectors: [ IMPORT_SELECTOR, "link[rel=stylesheet]", "style", "script:not([type])", 'script[type="text/javascript"]' ].join(","),
     map: {
       link: "parseLink",
       script: "parseScript",
@@ -748,9 +449,8 @@ window.HTMLImports.addModule(function(scope) {
       }
     },
     parseImport: function(elt) {
-      elt.import = elt.__doc;
-      if (window.HTMLImports.__importsParsingHook) {
-        window.HTMLImports.__importsParsingHook(elt);
+      if (HTMLImports.__importsParsingHook) {
+        HTMLImports.__importsParsingHook(elt);
       }
       if (elt.import) {
         elt.import.__importParsed = true;
@@ -811,8 +511,6 @@ window.HTMLImports.addModule(function(scope) {
     trackElement: function(elt, callback) {
       var self = this;
       var done = function(e) {
-        elt.removeEventListener("load", done);
-        elt.removeEventListener("error", done);
         if (callback) {
           callback(e);
         }
@@ -836,11 +534,9 @@ window.HTMLImports.addModule(function(scope) {
           }
         }
         if (fakeLoad) {
-          setTimeout(function() {
-            elt.dispatchEvent(new CustomEvent("load", {
-              bubbles: false
-            }));
-          });
+          elt.dispatchEvent(new CustomEvent("load", {
+            bubbles: false
+          }));
         }
       }
     },
@@ -850,9 +546,7 @@ window.HTMLImports.addModule(function(scope) {
       script.src = scriptElt.src ? scriptElt.src : generateScriptDataUrl(scriptElt);
       scope.currentScript = scriptElt;
       this.trackElement(script, function(e) {
-        if (script.parentNode) {
-          script.parentNode.removeChild(script);
-        }
+        script.parentNode.removeChild(script);
         scope.currentScript = null;
       });
       this.addElementToDocument(script);
@@ -868,7 +562,7 @@ window.HTMLImports.addModule(function(scope) {
         for (var i = 0, l = nodes.length, p = 0, n; i < l && (n = nodes[i]); i++) {
           if (!this.isParsed(n)) {
             if (this.hasResource(n)) {
-              return nodeIsImport(n) ? this.nextToParseInDoc(n.__doc, n) : n;
+              return nodeIsImport(n) ? this.nextToParseInDoc(n.import, n) : n;
             } else {
               return;
             }
@@ -891,7 +585,7 @@ window.HTMLImports.addModule(function(scope) {
       return this.dynamicElements.indexOf(elt) >= 0;
     },
     hasResource: function(node) {
-      if (nodeIsImport(node) && node.__doc === undefined) {
+      if (nodeIsImport(node) && node.import === undefined) {
         return false;
       }
       return true;
@@ -925,7 +619,7 @@ window.HTMLImports.addModule(function(scope) {
   scope.IMPORT_SELECTOR = IMPORT_SELECTOR;
 });
 
-window.HTMLImports.addModule(function(scope) {
+HTMLImports.addModule(function(scope) {
   var flags = scope.flags;
   var IMPORT_LINK_TYPE = scope.IMPORT_LINK_TYPE;
   var IMPORT_SELECTOR = scope.IMPORT_SELECTOR;
@@ -965,7 +659,7 @@ window.HTMLImports.addModule(function(scope) {
           }
           this.documents[url] = doc;
         }
-        elt.__doc = doc;
+        elt.import = doc;
       }
       parser.parseNext();
     },
@@ -1024,7 +718,7 @@ window.HTMLImports.addModule(function(scope) {
   scope.importLoader = importLoader;
 });
 
-window.HTMLImports.addModule(function(scope) {
+HTMLImports.addModule(function(scope) {
   var parser = scope.parser;
   var importer = scope.importer;
   var dynamic = {
@@ -1066,13 +760,6 @@ window.HTMLImports.addModule(function(scope) {
       params = params || {};
       var e = document.createEvent("CustomEvent");
       e.initCustomEvent(inType, Boolean(params.bubbles), Boolean(params.cancelable), params.detail);
-      e.preventDefault = function() {
-        Object.defineProperty(this, "defaultPrevented", {
-          get: function() {
-            return true;
-          }
-        });
-      };
       return e;
     };
     window.CustomEvent.prototype = window.Event.prototype;
@@ -1080,11 +767,11 @@ window.HTMLImports.addModule(function(scope) {
   initializeModules();
   var rootDocument = scope.rootDocument;
   function bootstrap() {
-    window.HTMLImports.importer.bootDocument(rootDocument);
+    HTMLImports.importer.bootDocument(rootDocument);
   }
   if (document.readyState === "complete" || document.readyState === "interactive" && !window.attachEvent) {
     bootstrap();
   } else {
     document.addEventListener("DOMContentLoaded", bootstrap);
   }
-})(window.HTMLImports);
+})(HTMLImports);
