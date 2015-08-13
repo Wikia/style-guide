@@ -27,7 +27,9 @@ meta.foundation-data-attribute-namespace {
 html, body {
   height: 100%; }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
@@ -54,7 +56,12 @@ img {
 img {
   -ms-interpolation-mode: bicubic; }
 
-#map_canvas img, #map_canvas embed, #map_canvas object, .map_canvas img, .map_canvas embed, .map_canvas object {
+#map_canvas img,
+#map_canvas embed,
+#map_canvas object,
+.map_canvas img,
+.map_canvas embed,
+.map_canvas object {
   max-width: none !important; }
 
 .left {
@@ -66,6 +73,7 @@ img {
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table; }
+
 .clearfix:after {
   clear: both; }
 
@@ -96,6 +104,7 @@ figure.avatar img {
   border-radius: 50%;
   height: 36px;
   width: 36px; }
+
 @media only screen and (max-width: 320px) {
   figure.landscape.xlarge, figure.video.xlarge {
     width: 312px; }
@@ -106,7 +115,8 @@ figure.avatar img {
       height: 31.2px;
       left: 10.4px;
       width: 31.2px; } }
-@media only screen and (min-width:321px) and (max-width:768px) {
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
   figure.landscape.xlarge, figure.video.xlarge {
     width: 600px; }
     figure.landscape.xlarge img, figure.landscape.xlarge .overlay, figure.video.xlarge img, figure.video.xlarge .overlay {
@@ -116,7 +126,8 @@ figure.avatar img {
       height: 60px;
       left: 20px;
       width: 60px; } }
-@media only screen and (min-width:769px) and (max-width:1024px) {
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   figure.landscape.xlarge, figure.video.xlarge {
     width: 720px; }
     figure.landscape.xlarge img, figure.landscape.xlarge .overlay, figure.video.xlarge img, figure.video.xlarge .overlay {
@@ -126,7 +137,8 @@ figure.avatar img {
       height: 72px;
       left: 24px;
       width: 72px; } }
-@media only screen and (min-width:1025px) and (max-width:1156px) {
+
+@media only screen and (min-width: 1025px) and (max-width: 1156px) {
   figure.landscape.xlarge, figure.video.xlarge {
     width: 960px; }
     figure.landscape.xlarge img, figure.landscape.xlarge .overlay, figure.video.xlarge img, figure.video.xlarge .overlay {
@@ -136,7 +148,8 @@ figure.avatar img {
       height: 96px;
       left: 32px;
       width: 96px; } }
-@media only screen and (min-width:1157px) {
+
+@media only screen and (min-width: 1157px) {
   figure.landscape.xlarge, figure.video.xlarge {
     width: 1080px; }
     figure.landscape.xlarge img, figure.landscape.xlarge .overlay, figure.video.xlarge img, figure.video.xlarge .overlay {
@@ -146,6 +159,7 @@ figure.avatar img {
       height: 108px;
       left: 36px;
       width: 108px; } }
+
 @media only screen and (max-width: 320px) {
   figure.landscape.large, figure.video.large {
     width: 208px; }
@@ -156,7 +170,8 @@ figure.avatar img {
       height: 20.8px;
       left: 6.93333px;
       width: 20.8px; } }
-@media only screen and (min-width:321px) and (max-width:768px) {
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
   figure.landscape.large, figure.video.large {
     width: 400px; }
     figure.landscape.large img, figure.landscape.large .overlay, figure.video.large img, figure.video.large .overlay {
@@ -166,7 +181,8 @@ figure.avatar img {
       height: 40px;
       left: 13.33333px;
       width: 40px; } }
-@media only screen and (min-width:769px) and (max-width:1024px) {
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   figure.landscape.large, figure.video.large {
     width: 480px; }
     figure.landscape.large img, figure.landscape.large .overlay, figure.video.large img, figure.video.large .overlay {
@@ -176,7 +192,8 @@ figure.avatar img {
       height: 48px;
       left: 16px;
       width: 48px; } }
-@media only screen and (min-width:1025px) and (max-width:1156px) {
+
+@media only screen and (min-width: 1025px) and (max-width: 1156px) {
   figure.landscape.large, figure.video.large {
     width: 640px; }
     figure.landscape.large img, figure.landscape.large .overlay, figure.video.large img, figure.video.large .overlay {
@@ -186,7 +203,8 @@ figure.avatar img {
       height: 64px;
       left: 21.33333px;
       width: 64px; } }
-@media only screen and (min-width:1157px) {
+
+@media only screen and (min-width: 1157px) {
   figure.landscape.large, figure.video.large {
     width: 720px; }
     figure.landscape.large img, figure.landscape.large .overlay, figure.video.large img, figure.video.large .overlay {
@@ -196,6 +214,7 @@ figure.avatar img {
       height: 72px;
       left: 24px;
       width: 72px; } }
+
 @media only screen and (max-width: 320px) {
   figure.landscape.medium, figure.video.medium {
     width: 156px; }
@@ -206,7 +225,8 @@ figure.avatar img {
       height: 15.6px;
       left: 5.2px;
       width: 15.6px; } }
-@media only screen and (min-width:321px) and (max-width:768px) {
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
   figure.landscape.medium, figure.video.medium {
     width: 300px; }
     figure.landscape.medium img, figure.landscape.medium .overlay, figure.video.medium img, figure.video.medium .overlay {
@@ -216,7 +236,8 @@ figure.avatar img {
       height: 30px;
       left: 10px;
       width: 30px; } }
-@media only screen and (min-width:769px) and (max-width:1024px) {
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   figure.landscape.medium, figure.video.medium {
     width: 360px; }
     figure.landscape.medium img, figure.landscape.medium .overlay, figure.video.medium img, figure.video.medium .overlay {
@@ -226,7 +247,8 @@ figure.avatar img {
       height: 36px;
       left: 12px;
       width: 36px; } }
-@media only screen and (min-width:1025px) and (max-width:1156px) {
+
+@media only screen and (min-width: 1025px) and (max-width: 1156px) {
   figure.landscape.medium, figure.video.medium {
     width: 480px; }
     figure.landscape.medium img, figure.landscape.medium .overlay, figure.video.medium img, figure.video.medium .overlay {
@@ -236,7 +258,8 @@ figure.avatar img {
       height: 48px;
       left: 16px;
       width: 48px; } }
-@media only screen and (min-width:1157px) {
+
+@media only screen and (min-width: 1157px) {
   figure.landscape.medium, figure.video.medium {
     width: 540px; }
     figure.landscape.medium img, figure.landscape.medium .overlay, figure.video.medium img, figure.video.medium .overlay {
@@ -246,6 +269,7 @@ figure.avatar img {
       height: 54px;
       left: 18px;
       width: 54px; } }
+
 @media only screen and (max-width: 320px) {
   figure.landscape.small, figure.video.small {
     width: 104px; }
@@ -256,7 +280,8 @@ figure.avatar img {
       height: 10.4px;
       left: 3.46667px;
       width: 10.4px; } }
-@media only screen and (min-width:321px) and (max-width:768px) {
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
   figure.landscape.small, figure.video.small {
     width: 200px; }
     figure.landscape.small img, figure.landscape.small .overlay, figure.video.small img, figure.video.small .overlay {
@@ -266,7 +291,8 @@ figure.avatar img {
       height: 20px;
       left: 6.66667px;
       width: 20px; } }
-@media only screen and (min-width:769px) and (max-width:1024px) {
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   figure.landscape.small, figure.video.small {
     width: 240px; }
     figure.landscape.small img, figure.landscape.small .overlay, figure.video.small img, figure.video.small .overlay {
@@ -276,7 +302,8 @@ figure.avatar img {
       height: 24px;
       left: 8px;
       width: 24px; } }
-@media only screen and (min-width:1025px) and (max-width:1156px) {
+
+@media only screen and (min-width: 1025px) and (max-width: 1156px) {
   figure.landscape.small, figure.video.small {
     width: 320px; }
     figure.landscape.small img, figure.landscape.small .overlay, figure.video.small img, figure.video.small .overlay {
@@ -286,7 +313,8 @@ figure.avatar img {
       height: 32px;
       left: 10.66667px;
       width: 32px; } }
-@media only screen and (min-width:1157px) {
+
+@media only screen and (min-width: 1157px) {
   figure.landscape.small, figure.video.small {
     width: 360px; }
     figure.landscape.small img, figure.landscape.small .overlay, figure.video.small img, figure.video.small .overlay {
@@ -296,6 +324,7 @@ figure.avatar img {
       height: 36px;
       left: 12px;
       width: 36px; } }
+
 @media only screen and (max-width: 320px) {
   figure.landscape.xsmall, figure.video.xsmall {
     width: 78px; }
@@ -306,7 +335,8 @@ figure.avatar img {
       height: 7.8px;
       left: 2.6px;
       width: 7.8px; } }
-@media only screen and (min-width:321px) and (max-width:768px) {
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
   figure.landscape.xsmall, figure.video.xsmall {
     width: 150px; }
     figure.landscape.xsmall img, figure.landscape.xsmall .overlay, figure.video.xsmall img, figure.video.xsmall .overlay {
@@ -316,7 +346,8 @@ figure.avatar img {
       height: 15px;
       left: 5px;
       width: 15px; } }
-@media only screen and (min-width:769px) and (max-width:1024px) {
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   figure.landscape.xsmall, figure.video.xsmall {
     width: 180px; }
     figure.landscape.xsmall img, figure.landscape.xsmall .overlay, figure.video.xsmall img, figure.video.xsmall .overlay {
@@ -326,7 +357,8 @@ figure.avatar img {
       height: 18px;
       left: 6px;
       width: 18px; } }
-@media only screen and (min-width:1025px) and (max-width:1156px) {
+
+@media only screen and (min-width: 1025px) and (max-width: 1156px) {
   figure.landscape.xsmall, figure.video.xsmall {
     width: 240px; }
     figure.landscape.xsmall img, figure.landscape.xsmall .overlay, figure.video.xsmall img, figure.video.xsmall .overlay {
@@ -336,7 +368,8 @@ figure.avatar img {
       height: 24px;
       left: 8px;
       width: 24px; } }
-@media only screen and (min-width:1157px) {
+
+@media only screen and (min-width: 1157px) {
   figure.landscape.xsmall, figure.video.xsmall {
     width: 270px; }
     figure.landscape.xsmall img, figure.landscape.xsmall .overlay, figure.video.xsmall img, figure.video.xsmall .overlay {
@@ -346,6 +379,7 @@ figure.avatar img {
       height: 27px;
       left: 9px;
       width: 27px; } }
+
 @media only screen and (max-width: 320px) {
   figure.landscape.thumb, figure.video.thumb {
     width: 52px; }
@@ -356,7 +390,8 @@ figure.avatar img {
       height: 5.2px;
       left: 1.73333px;
       width: 5.2px; } }
-@media only screen and (min-width:321px) and (max-width:768px) {
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
   figure.landscape.thumb, figure.video.thumb {
     width: 100px; }
     figure.landscape.thumb img, figure.landscape.thumb .overlay, figure.video.thumb img, figure.video.thumb .overlay {
@@ -366,7 +401,8 @@ figure.avatar img {
       height: 10px;
       left: 3.33333px;
       width: 10px; } }
-@media only screen and (min-width:769px) and (max-width:1024px) {
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   figure.landscape.thumb, figure.video.thumb {
     width: 120px; }
     figure.landscape.thumb img, figure.landscape.thumb .overlay, figure.video.thumb img, figure.video.thumb .overlay {
@@ -376,7 +412,8 @@ figure.avatar img {
       height: 12px;
       left: 4px;
       width: 12px; } }
-@media only screen and (min-width:1025px) and (max-width:1156px) {
+
+@media only screen and (min-width: 1025px) and (max-width: 1156px) {
   figure.landscape.thumb, figure.video.thumb {
     width: 160px; }
     figure.landscape.thumb img, figure.landscape.thumb .overlay, figure.video.thumb img, figure.video.thumb .overlay {
@@ -386,7 +423,8 @@ figure.avatar img {
       height: 16px;
       left: 5.33333px;
       width: 16px; } }
-@media only screen and (min-width:1157px) {
+
+@media only screen and (min-width: 1157px) {
   figure.landscape.thumb, figure.video.thumb {
     width: 180px; }
     figure.landscape.thumb img, figure.landscape.thumb .overlay, figure.video.thumb img, figure.video.thumb .overlay {
@@ -396,81 +434,97 @@ figure.avatar img {
       height: 18px;
       left: 6px;
       width: 18px; } }
+
 @media only screen and (max-width: 320px) {
   figure.portrait.medium {
     width: 104px; }
     figure.portrait.medium img, figure.portrait.medium .overlay {
       height: 145.6px; } }
-@media only screen and (min-width:321px) and (max-width:768px) {
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
   figure.portrait.medium {
     width: 200px; }
     figure.portrait.medium img, figure.portrait.medium .overlay {
       height: 280px; } }
-@media only screen and (min-width:769px) and (max-width:1024px) {
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   figure.portrait.medium {
     width: 240px; }
     figure.portrait.medium img, figure.portrait.medium .overlay {
       height: 336px; } }
-@media only screen and (min-width:1025px) and (max-width:1156px) {
+
+@media only screen and (min-width: 1025px) and (max-width: 1156px) {
   figure.portrait.medium {
     width: 320px; }
     figure.portrait.medium img, figure.portrait.medium .overlay {
       height: 448px; } }
-@media only screen and (min-width:1157px) {
+
+@media only screen and (min-width: 1157px) {
   figure.portrait.medium {
     width: 360px; }
     figure.portrait.medium img, figure.portrait.medium .overlay {
       height: 504px; } }
+
 @media only screen and (max-width: 320px) {
   figure.portrait.small {
     width: 78px; }
     figure.portrait.small img, figure.portrait.small .overlay {
       height: 109.2px; } }
-@media only screen and (min-width:321px) and (max-width:768px) {
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
   figure.portrait.small {
     width: 150px; }
     figure.portrait.small img, figure.portrait.small .overlay {
       height: 210px; } }
-@media only screen and (min-width:769px) and (max-width:1024px) {
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   figure.portrait.small {
     width: 180px; }
     figure.portrait.small img, figure.portrait.small .overlay {
       height: 252px; } }
-@media only screen and (min-width:1025px) and (max-width:1156px) {
+
+@media only screen and (min-width: 1025px) and (max-width: 1156px) {
   figure.portrait.small {
     width: 240px; }
     figure.portrait.small img, figure.portrait.small .overlay {
       height: 336px; } }
-@media only screen and (min-width:1157px) {
+
+@media only screen and (min-width: 1157px) {
   figure.portrait.small {
     width: 270px; }
     figure.portrait.small img, figure.portrait.small .overlay {
       height: 378px; } }
+
 @media only screen and (max-width: 320px) {
   figure.portrait.thumb {
     width: 52px; }
     figure.portrait.thumb img, figure.portrait.thumb .overlay {
       height: 72.8px; } }
-@media only screen and (min-width:321px) and (max-width:768px) {
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
   figure.portrait.thumb {
     width: 100px; }
     figure.portrait.thumb img, figure.portrait.thumb .overlay {
       height: 140px; } }
-@media only screen and (min-width:769px) and (max-width:1024px) {
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   figure.portrait.thumb {
     width: 120px; }
     figure.portrait.thumb img, figure.portrait.thumb .overlay {
       height: 168px; } }
-@media only screen and (min-width:1025px) and (max-width:1156px) {
+
+@media only screen and (min-width: 1025px) and (max-width: 1156px) {
   figure.portrait.thumb {
     width: 160px; }
     figure.portrait.thumb img, figure.portrait.thumb .overlay {
       height: 224px; } }
-@media only screen and (min-width:1157px) {
+
+@media only screen and (min-width: 1157px) {
   figure.portrait.thumb {
     width: 180px; }
     figure.portrait.thumb img, figure.portrait.thumb .overlay {
       height: 252px; } }
+
 figure.video {
   position: relative; }
   figure.video.large figcaption {
@@ -499,8 +553,10 @@ figure.video {
     color: #1A5EB8;
     font-size: 14px;
     padding: 10px; }
-  figure.video .icon-play, figure.video .overlay {
+  figure.video .icon-play,
+  figure.video .overlay {
     display: block;
     position: absolute; }
+
 figure img {
   width: 100%; }
