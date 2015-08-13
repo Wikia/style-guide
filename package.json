@@ -21,8 +21,8 @@
   "homepage": "https://github.com/Wikia/style-guide",
   "devDependencies": {
     "del": "^1.1.1",
-    "gulp-sass": "^1.1.0",
-    "node-sass": "^1.2.2"
+    "gulp-sass": "^2.0.4",
+    "node-sass": "^3.2.0"
   },
   "dependencies": {
     "gulp": "^3.8.10"

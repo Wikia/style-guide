@@ -27,7 +27,9 @@ meta.foundation-data-attribute-namespace {
 html, body {
   height: 100%; }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
@@ -54,7 +56,12 @@ img {
 img {
   -ms-interpolation-mode: bicubic; }
 
-#map_canvas img, #map_canvas embed, #map_canvas object, .map_canvas img, .map_canvas embed, .map_canvas object {
+#map_canvas img,
+#map_canvas embed,
+#map_canvas object,
+.map_canvas img,
+.map_canvas embed,
+.map_canvas object {
   max-width: none !important; }
 
 .left {
@@ -66,6 +73,7 @@ img {
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table; }
+
 .clearfix:after {
   clear: both; }
 
@@ -123,7 +131,7 @@ select {
   .small-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:321px) and (max-width:768px) {
+@media only screen and (min-width: 321px) and (max-width: 768px) {
   .medium-only-text-left {
     text-align: left !important; }
   .medium-only-text-right {
@@ -133,7 +141,7 @@ select {
   .medium-only-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:321px) {
+@media only screen and (min-width: 321px) {
   .medium-text-left {
     text-align: left !important; }
   .medium-text-right {
@@ -143,7 +151,7 @@ select {
   .medium-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:769px) and (max-width:1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   .large-only-text-left {
     text-align: left !important; }
   .large-only-text-right {
@@ -153,7 +161,7 @@ select {
   .large-only-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:769px) {
+@media only screen and (min-width: 769px) {
   .large-text-left {
     text-align: left !important; }
   .large-text-right {
@@ -163,7 +171,7 @@ select {
   .large-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:1025px) and (max-width:1156px) {
+@media only screen and (min-width: 1025px) and (max-width: 1156px) {
   .xlarge-only-text-left {
     text-align: left !important; }
   .xlarge-only-text-right {
@@ -173,7 +181,7 @@ select {
   .xlarge-only-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:1025px) {
+@media only screen and (min-width: 1025px) {
   .xlarge-text-left {
     text-align: left !important; }
   .xlarge-text-right {
@@ -183,7 +191,7 @@ select {
   .xlarge-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:1157px) and (max-width:99999px) {
+@media only screen and (min-width: 1157px) and (max-width: 99999px) {
   .xxlarge-only-text-left {
     text-align: left !important; }
   .xxlarge-only-text-right {
@@ -193,7 +201,7 @@ select {
   .xxlarge-only-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:1157px) {
+@media only screen and (min-width: 1157px) {
   .xxlarge-text-left {
     text-align: left !important; }
   .xxlarge-text-right {
@@ -203,16 +211,36 @@ select {
   .xxlarge-text-justify {
     text-align: justify !important; } }
 
-html, body {
+html,
+body {
   color: #39424D;
   font-size: 16px; }
 
-@media only screen and (min-width:1025px) {
-  html, body {
+@media only screen and (min-width: 1025px) {
+  html,
+  body {
     font-size: 18px; } }
 
 /* Typography resets */
-div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
   margin: 0;
   padding: 0; }
 
@@ -221,7 +249,8 @@ a {
   color: #1A5EB8;
   text-decoration: none;
   line-height: inherit; }
-  a:hover, a:focus {
+  a:hover,
+  a:focus {
     color: #081e3a; }
   a img {
     border: none; }
@@ -305,7 +334,7 @@ h6 {
     font-size: 0.875rem;
     line-height: 1.25rem; } }
 
-@media only screen and (min-width:321px) and (max-width:768px) {
+@media only screen and (min-width: 321px) and (max-width: 768px) {
   h1 {
     font-size: 2.25rem;
     line-height: 2.25rem; }
@@ -340,11 +369,13 @@ hr {
   height: 0; }
 
 /* Helpful Typography Defaults */
-em, i {
+em,
+i {
   font-style: italic;
   line-height: inherit; }
 
-strong, b {
+strong,
+b {
   font-weight: 700;
   line-height: inherit; }
 
@@ -363,7 +394,9 @@ code {
   padding: 0.125rem 0.3125rem 0.0625rem; }
 
 /* Lists */
-ul, ol, dl {
+ul,
+ol,
+dl {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -374,33 +407,43 @@ ul {
   margin-left: 1.1rem; }
   ul.no-bullet {
     margin-left: 0; }
-    ul.no-bullet li ul, ul.no-bullet li ol {
+    ul.no-bullet li ul,
+    ul.no-bullet li ol {
       margin-left: 1.25rem;
       margin-bottom: 0;
       list-style: none; }
 
 /* Unordered Lists */
-ul li ul, ul li ol {
+ul li ul,
+ul li ol {
   margin-left: 1.25rem;
   margin-bottom: 0; }
-ul.square li ul, ul.circle li ul, ul.disc li ul {
+
+ul.square li ul,
+ul.circle li ul,
+ul.disc li ul {
   list-style: inherit; }
+
 ul.square {
   list-style-type: square;
   margin-left: 1.1rem; }
+
 ul.circle {
   list-style-type: circle;
   margin-left: 1.1rem; }
+
 ul.disc {
   list-style-type: disc;
   margin-left: 1.1rem; }
+
 ul.no-bullet {
   list-style: none; }
 
 /* Ordered Lists */
 ol {
   margin-left: 1.4rem; }
-  ol li ul, ol li ol {
+  ol li ul,
+  ol li ol {
     margin-left: 1.25rem;
     margin-bottom: 0; }
 
@@ -408,11 +451,13 @@ ol {
 dl dt {
   margin-bottom: 0.3rem;
   font-weight: 700; }
+
 dl dd {
   margin-bottom: 0.75rem; }
 
 /* Abbreviations */
-abbr, acronym {
+abbr,
+acronym {
   text-transform: uppercase;
   font-size: 90%;
   color: #39424D;
@@ -461,10 +506,12 @@ blockquote {
     color: #555555; }
     blockquote cite:before {
       content: "\2014 \0020"; }
-    blockquote cite a, blockquote cite a:visited {
+    blockquote cite a,
+    blockquote cite a:visited {
       color: #1A5EB8; }
 
-blockquote, blockquote p {
+blockquote,
+blockquote p {
   line-height: 1.2;
   color: #000000; }
 
@@ -484,31 +531,38 @@ blockquote, blockquote p {
     /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important; }
-  a, a:visited {
+  a,
+  a:visited {
     text-decoration: underline; }
   a[href]:after {
     content: " (" attr(href) ")"; }
   abbr[title]:after {
     content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
     content: ""; }
-  pre, blockquote {
+  pre,
+  blockquote {
     border: 1px solid #999999;
     page-break-inside: avoid; }
   thead {
     display: table-header-group;
     /* h5bp.com/t */ }
-  tr, img {
+  tr,
+  img {
     page-break-inside: avoid; }
   img {
     max-width: 100% !important; }
   @page {
     margin: 0.5cm; }
-
-  p, h2, h3 {
+  p,
+  h2,
+  h3 {
     orphans: 3;
     widows: 3; }
-  h2, h3 {
+  h2,
+  h3 {
     page-break-after: avoid; }
   .hide-on-print {
     display: none !important; }
