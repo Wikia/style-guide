@@ -16,6 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "webcomponentsjs": "~0.6.0"
+    "webcomponentsjs": "~0.7.10"
   }
 }
