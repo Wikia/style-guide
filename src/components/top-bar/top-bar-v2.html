@@ -1,3 +1,11 @@
+<!--
+
+Wikia Style Guide
+Global Top Bar
+
+This component provides a default top bar for Wikia websites and includes handling for logged in user state or a call
+to action for anonymous users.
+-->
 <dom-module id="top-bar">
   <style>
     [unresolved] {
@@ -41,11 +49,16 @@
     }
   </style>
   <template>
+
     <div class="row">
       <div class="large-12 columns">
         <a href="{{logoHref}}"><img src="{{logoSrc}}" alt="Wikia" class="logo left"></a>
+
+        <!-- Catch&#45;all for transcluded content -->
         <content></content>
+
         <div class="user-status">
+
           <template is="dom-if" if="{{userLoggedIn}}">
             <a href="{{userAvatarHref}}">
                 <figure>
@@ -53,11 +66,13 @@
               </figure>
             </a>
           </template>
+
           <template is="dom-if" if="{{!userLoggedIn}}">
               <div class="register-cta">
                 <a href="#">Register</a> or <a href="#">Login</a>
               </div>
           </template>
+
         </div>
       </div>
     </div>
@@ -77,8 +92,6 @@
         value: false,
         reflectToAttribute: true
       }
-    },
-    ready: function () {
     }
   });
 </script>
