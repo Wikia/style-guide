@@ -57,23 +57,24 @@ to action for anonymous users.
         <!-- Catch all for transcluded content -->
         <content></content>
 
-        <div class="user-status">
+        <template is="dom-if" if="{{showUserStatus}}">
+          <div class="user-status">
+            <template is="dom-if" if="{{userLoggedIn}}">
+              <a href="{{userAvatarHref}}">
+                  <figure>
+                    <img src="{{userAvatarSrc}}" alt="{{userName}}">
+                </figure>
+              </a>
+            </template>
 
-          <template is="dom-if" if="{{userLoggedIn}}">
-            <a href="{{userAvatarHref}}">
-                <figure>
-                  <img src="{{userAvatarSrc}}" alt="{{userName}}">
-              </figure>
-            </a>
-          </template>
+            <template is="dom-if" if="{{!userLoggedIn}}">
+                <div class="register-cta">
+                  <a href="#">Register</a> or <a href="#">Login</a>
+                </div>
+            </template>
+          </div>
+        </template>
 
-          <template is="dom-if" if="{{!userLoggedIn}}">
-              <div class="register-cta">
-                <a href="#">Register</a> or <a href="#">Login</a>
-              </div>
-          </template>
-
-        </div>
       </div>
     </div>
   </template>
@@ -93,6 +94,10 @@ to action for anonymous users.
           type: Boolean,
           value: false,
           reflectToAttribute: true
+        },
+        showUserStatus: {
+          type: Boolean,
+          value: false
         }
       }
     });
