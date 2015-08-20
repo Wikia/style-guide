@@ -1,10 +1,21 @@
 <!--
-
 Wikia Style Guide
 Global Top Bar
 
+Description:
 This component provides a default top bar for Wikia websites and includes handling for logged in user state or a call
 to action for anonymous users.
+
+Example:
+  <top-bar
+    user-avatar-src="foo.png" user-profile-href="http://wwww.wikia.com" user-name="Wikia User"
+    logo-href="http://www.wikia.com" logo-src="logo.svg" user-logged-in show-user-status>
+    <h1>Hello World!</h1>
+  </top-bar>
+
+You can use the `showUserStatus` to control whether or not the callout for user registration/user logged in avatar is
+shown or not. If `showUserStatus` is true, then the `userLoggedIn` attribute will control whether or not the
+registration/signin callout is shown or whether the user avatar is shown.
 -->
 <dom-module id="top-bar">
   <style>
