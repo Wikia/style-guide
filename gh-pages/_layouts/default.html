@@ -12,16 +12,6 @@
       </div>
     </div>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        new window.SG.Components.TopBar({
-          // send reference to imported document
-          importedDoc: document.getElementById('top-bar-import').import,
-          logoUrl: '{{ site.assets_path | prepend: site.baseurl }}/images/wikia_logo.svg',
-          logoHref: '{{site.baseurl}}/'
-        }).createElement();
-      });
-    </script>
     <script src="{{ site.assets_path | prepend: site.baseurl }}/js/ui.icon-dropdown.js"></script>
   </body>
 
