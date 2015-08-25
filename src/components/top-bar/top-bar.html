@@ -58,6 +58,63 @@ registration/signin callout is shown or whether the user avatar is shown.
 		.register-cta {
 			margin-top: 10px;
 		}
+
+		.overlay {
+			/*@include perfect-square(100%);*/
+			background-color: black;
+			left: 0;
+			position: fixed;
+			top: 0;
+			z-index: 1000; /* TODO - firgure out number from mercury app */
+		}
+
+		.drawer {
+			list-style: none;
+			overflow: hidden;
+			position: fixed;
+			right: 0;
+			top: 0;
+			transition: height .1s;
+			width: 100%;
+			z-index: 1000; /* TODO - firgure out number from mercury app */
+		}
+
+		.drawer a {
+			/*@extend .touch-active;*/
+			display: block;
+			overflow: hidden;
+			padding: 0.625rem 0.8125rem; /* TODO - this is done with rem-calc in mercury */
+			text-overflow: ellipsis;
+			width: 100%;
+		}
+
+		li {
+			background-color: #fff;
+			border-bottom: rem-calc(1) solid #d0d0d0;
+		}
+
+		.collapsed .drawer {
+			height: 0;
+		}
+
+		.collapsed .overlay {
+			opacity: 0;
+			transition: visibility 0s 0.1s, opacity 0.1s; /* TODO - mercury uses variables for these values */
+			visibility: hidden;
+		}
+
+		.visible .drawer {
+			/* This is an arbitrary number larger than the combined height of the
+			li children, so that transition animation works. With height: auto,
+			it wouldn't be guaranteed to work. */
+			height: 100px;
+		}
+
+		.visible .overlay {
+			opacity: 0.5; /* TODO - mercury uses variables for these values */
+			transition: opacity 0.1s; /* TODO - mercury uses variables for these values */
+			visibility: visible;
+		}
 	</style>
 
 	<template>
@@ -69,25 +126,26 @@ registration/signin callout is shown or whether the user avatar is shown.
 				<content select=".content"></content>
 
 				<template is="dom-if" if="{{showUserStatus}}">
-					<div class="user-status">
+					<div class="user-status collapsed">
 						<template is="dom-if" if="{{userLoggedIn}}">
 							<a href="{{userAvatarHref}}">
-									<figure>
-										<img src="{{userAvatarSrc}}" alt="{{userName}}">
+								<figure>
+									<img src="{{userAvatarSrc}}" alt="{{userName}}">
 								</figure>
 							</a>
 							<div class="overlay"></div>
-							<content select=".drawer"></content>
+							<ul class="drawer">
+								<content select=".drawer-li"></content>
+							</ul>
 						</template>
 
 						<template is="dom-if" if="{{!userLoggedIn}}">
-								<div class="register-cta">
-									<a href="#">Register</a> or <a href="#">Login</a>
-								</div>
+							<div class="register-cta">
+								<a href="#">Register</a> or <a href="#">Login</a>
+							</div>
 						</template>
 					</div>
 				</template>
-
 			</div>
 		</div>
 	</template>
