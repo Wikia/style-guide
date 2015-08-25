@@ -1,33 +1,41 @@
 <top-bar
-  class="global-navigation"
-  logo-src="{{ site.assets_path | prepend: site.baseurl }}/images/wikia_logo.svg"
-  logo-href="{{site.baseurl}}/"
-  user-avatar-src="http://img4.wikia.nocookie.net/__cb1372467243/common/avatars/thumb/e/eb/11096997.png/100px-11096997.png.jpg">
-	<a class="menu-icon dropdown-icon left">
-		<img src="{{ site.assets_path | prepend: site.baseurl }}/images/icons/icon_nav.svg">
-	</a>
-	<ul class="f-dropdown" data-offset-x="-13" data-offset-y="13">
-		<li>
-			<a href="{{site.baseurl}}/">Home</a>
-		</li>
-		<li>
-			<a href="{{site.baseurl}}/section/colors">Colors</a>
-		</li>
-		<li>
-			<a href="{{site.baseurl}}/section/typography">Typography</a>
-		</li>
-		<li>
-			<a href="{{site.baseurl}}/section/buttons">Buttons</a>
-		</li>
-		<li>
-			<a href="{{site.baseurl}}/section/forms">Forms &amp; Dropdowns</a>
-		</li>
-		<li>
-			<a href="{{site.baseurl}}/section/imagery">Imagery</a>
-		</li>
-		<li>
-			<a href="{{site.baseurl}}/section/video">Video</a>
-		</li>
+	class="global-navigation"
+	logo-src="{{ site.assets_path | prepend: site.baseurl }}/images/wikia_logo.svg"
+	logo-href="{{site.baseurl}}/"
+	user-avatar-src="http://img4.wikia.nocookie.net/__cb1372467243/common/avatars/thumb/e/eb/11096997.png/100px-11096997.png.jpg"
+	show-user-status="true"
+	user-logged-in="true">
+	<div class="content">
+		<a class="menu-icon dropdown-icon left">
+			<img src="{{ site.assets_path | prepend: site.baseurl }}/images/icons/icon_nav.svg">
+		</a>
+		<ul class="f-dropdown" data-offset-x="-13" data-offset-y="13">
+			<li>
+				<a href="{{site.baseurl}}/">Home</a>
+			</li>
+			<li>
+				<a href="{{site.baseurl}}/section/colors">Colors</a>
+			</li>
+			<li>
+				<a href="{{site.baseurl}}/section/typography">Typography</a>
+			</li>
+			<li>
+				<a href="{{site.baseurl}}/section/buttons">Buttons</a>
+			</li>
+			<li>
+				<a href="{{site.baseurl}}/section/forms">Forms &amp; Dropdowns</a>
+			</li>
+			<li>
+				<a href="{{site.baseurl}}/section/imagery">Imagery</a>
+			</li>
+			<li>
+				<a href="{{site.baseurl}}/section/video">Video</a>
+			</li>
+		</ul>
+	</div>
+	<ul class="drawer">
+		<li>foo</li>
+		<li>bar</li>
 	</ul>
 
 	<a href="{{site.baseurl}}/" class="title left">Style Guide</a>
