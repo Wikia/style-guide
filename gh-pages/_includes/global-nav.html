@@ -1,10 +1,7 @@
 <top-bar
 	class="global-navigation"
 	logo-src="{{ site.assets_path | prepend: site.baseurl }}/images/wikia_logo.svg"
-	logo-href="{{site.baseurl}}/"
-	user-avatar-src="http://img4.wikia.nocookie.net/__cb1372467243/common/avatars/thumb/e/eb/11096997.png/100px-11096997.png.jpg"
-	show-user-status="true"
-	user-logged-in="true">
+	logo-href="{{site.baseurl}}/">
 	<a class="menu-icon dropdown-icon left default-content">
 		<img src="{{ site.assets_path | prepend: site.baseurl }}/images/icons/icon_nav.svg">
 	</a>
@@ -32,8 +29,18 @@
 		</li>
 	</ul>
 
-	<li class="drawer-li"><a href="">foo</a></li>
-	<li class="drawer-li"><a href="">bar</a></li>
+	<user-status
+		class="visible"
+		user-avatar-src="http://img4.wikia.nocookie.net/__cb1372467243/common/avatars/thumb/e/eb/11096997.png/100px-11096997.png.jpg"
+		anon-avatar-src="{{ site.assets_path | prepend: site.baseurl }}/images/icons/icon_avatar.svg"
+		show-user-status
+		user-logged-in>
+		<li class="drawer-li"><a href="">foo</a></li>
+		<li class="drawer-li"><a href="">bar</a></li>
+	</user-status>
 
 	<a href="{{site.baseurl}}/" class="title left">Style Guide</a>
 </top-bar>
+
+
+

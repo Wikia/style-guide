@@ -1,0 +1,124 @@
+<dom-module id="user-status">
+	<template>
+		<style>
+			:host {
+				float: right;
+			}
+
+			figure {
+				border-radius: 50%;
+				height: 28px;
+				margin-top: 7px;
+				overflow: hidden;
+				width: 28px;
+			}
+
+			figure img {
+				height: auto;
+				width: 100%;
+			}
+
+			.register-cta {
+				margin-top: 10px;
+			}
+
+			.overlay {
+				/*@include perfect-square(100%);*/ /* TODO - uncomment and fix */
+				background-color: black;
+				left: 0;
+				position: fixed;
+				top: 0;
+				z-index: 1000;
+			}
+
+			.drawer {
+				list-style: none;
+				overflow: hidden;
+				position: fixed;
+				right: 0;
+				top: 0;
+				transition: height .1s;
+				width: 100%;
+				z-index: 1000;
+			}
+
+			.drawer a {
+				/*@extend .touch-active;*/  /* TODO - uncomment and fix */
+				display: block;
+				overflow: hidden;
+				padding: 0.625rem 0.8125rem;
+				text-overflow: ellipsis;
+				width: 100%;
+			}
+
+			.drawer ::content li {
+				background-color: #fff;
+				border-bottom: 0.0625rem solid #d0d0d0;
+			}
+
+			.drawer {
+				height: 0;
+			}
+
+			.overlay {
+				opacity: 0;
+				transition: visibility 0s 0.1s, opacity 0.1s;
+				visibility: hidden;
+			}
+
+			:host.visible .drawer {
+				/* This is an arbitrary number larger than the combined height of the
+				li children, so that transition animation works. With height: auto,
+				it wouldn't be guaranteed to work. */
+				height: 100px;
+			}
+
+			:host.visible .overlay {
+				opacity: 0.5;
+				transition: opacity 0.1s;
+				visibility: visible;
+			}
+		</style>
+
+		<template is="dom-if" if="{{userLoggedIn}}">
+			<a href="{{userAvatarHref}}">
+				<figure>
+					<img src="{{userAvatarSrc}}" alt="{{userName}}">
+				</figure>
+			</a>
+			<div class="overlay"></div>
+			<ul class="drawer">
+				<content select=".drawer-li"></content>
+			</ul>
+		</template>
+
+		<template is="dom-if" if="{{!userLoggedIn}}">
+			<div class="register-cta">
+				<span class="show-for-large-up"><a href="#">Register</a> or <a href="#">Login</a></span>
+				<figure class="hide-for-large-up">
+					<img src="{{anonAvatarSrc}}" alt="Register or login">
+				</figure>
+			</div>
+		</template>
+	</template>
+
+</dom-module>
+
+<script>
+	(function () {
+		Polymer({
+			is: 'user-status',
+			properties: {
+				userAvatarHref: String,
+				userAvatarSrc: String,
+				userName: String,
+				anonAvatarSrc: String,
+				userLoggedIn: {
+					type: Boolean,
+					value: false,
+					reflectToAttribute: true
+				}
+			}
+		});
+	}());
+</script>

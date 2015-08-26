@@ -38,84 +38,6 @@ registration/signin callout is shown or whether the user avatar is shown.
 				fill: #092344;
 				width: 82px;
 			}
-
-			.user-status {
-				float: right;
-			}
-
-			.user-status figure {
-				margin-top: 3px;
-				width: 36px;
-				height: 36px;
-				border-radius: 50%;
-				overflow: hidden;
-			}
-
-			.user-status figure img {
-				width: 100%;
-				height: auto;
-			}
-
-			.register-cta {
-				margin-top: 10px;
-			}
-
-			.overlay {
-				/*@include perfect-square(100%);*/
-				background-color: black;
-				left: 0;
-				position: fixed;
-				top: 0;
-				z-index: 1000; /* TODO - firgure out number from mercury app */
-			}
-
-			.drawer {
-				list-style: none;
-				overflow: hidden;
-				position: fixed;
-				right: 0;
-				top: 0;
-				transition: height .1s;
-				width: 100%;
-				z-index: 1000; /* TODO - firgure out number from mercury app */
-			}
-
-			.drawer a {
-				/*@extend .touch-active;*/
-				display: block;
-				overflow: hidden;
-				padding: 0.625rem 0.8125rem; /* TODO - this is done with rem-calc in mercury */
-				text-overflow: ellipsis;
-				width: 100%;
-			}
-
-			.drawer ::content li {
-				background-color: #fff;
-				border-bottom: 0.0625rem solid #d0d0d0;
-			}
-
-			.collapsed .drawer {
-				height: 0;
-			}
-
-			.collapsed .overlay {
-				opacity: 0;
-				transition: visibility 0s 0.1s, opacity 0.1s; /* TODO - mercury uses variables for these values */
-				visibility: hidden;
-			}
-
-			.visible .drawer {
-				/* This is an arbitrary number larger than the combined height of the
-				li children, so that transition animation works. With height: auto,
-				it wouldn't be guaranteed to work. */
-				height: 100px;
-			}
-
-			.visible .overlay {
-				opacity: 0.5; /* TODO - mercury uses variables for these values */
-				transition: opacity 0.1s; /* TODO - mercury uses variables for these values */
-				visibility: visible;
-			}
 		</style>
 
 		<div class="row">
@@ -123,29 +45,7 @@ registration/signin callout is shown or whether the user avatar is shown.
 				<a href="{{logoHref}}"><img src="{{logoSrc}}" alt="Wikia" class="logo left"></a>
 
 				<!-- Catch all for transcluded content -->
-				<content select=".default-content"></content>
-
-				<template is="dom-if" if="{{showUserStatus}}">
-					<div class="user-status visible">
-						<template is="dom-if" if="{{userLoggedIn}}">
-							<a href="{{userAvatarHref}}">
-								<figure>
-									<img src="{{userAvatarSrc}}" alt="{{userName}}">
-								</figure>
-							</a>
-							<div class="overlay"></div>
-							<ul class="drawer">
-								<content select=".drawer-li"></content>
-							</ul>
-						</template>
-
-						<template is="dom-if" if="{{!userLoggedIn}}">
-							<div class="register-cta">
-								<a href="#">Register</a> or <a href="#">Login</a>
-							</div>
-						</template>
-					</div>
-				</template>
+				<content></content>
 			</div>
 		</div>
 	</template>
@@ -156,16 +56,8 @@ registration/signin callout is shown or whether the user avatar is shown.
 		Polymer({
 			is: 'top-bar',
 			properties: {
-				userAvatarSrc: String,
-				userProfileHref: String,
-				userName: String,
 				logoHref: String,
 				logoSrc: String,
-				userLoggedIn: {
-					type: Boolean,
-					value: false,
-					reflectToAttribute: true
-				},
 				showUserStatus: {
 					type: Boolean,
 					value: false
