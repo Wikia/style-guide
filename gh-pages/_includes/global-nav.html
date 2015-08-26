@@ -5,10 +5,10 @@
 	user-avatar-src="http://img4.wikia.nocookie.net/__cb1372467243/common/avatars/thumb/e/eb/11096997.png/100px-11096997.png.jpg"
 	show-user-status="true"
 	user-logged-in="true">
-	<a class="menu-icon dropdown-icon left content">
+	<a class="menu-icon dropdown-icon left default-content">
 		<img src="{{ site.assets_path | prepend: site.baseurl }}/images/icons/icon_nav.svg">
 	</a>
-	<ul class="f-dropdown content" data-offset-x="-13" data-offset-y="13">
+	<ul class="f-dropdown default-content" data-offset-x="-13" data-offset-y="13">
 		<li>
 			<a href="{{site.baseurl}}/">Home</a>
 		</li>
@@ -32,8 +32,8 @@
 		</li>
 	</ul>
 
-	<li class="drawer-li">foo</li>
-	<li class="drawer-li">bar</li>
+	<li class="drawer-li"><a href="">foo</a></li>
+	<li class="drawer-li"><a href="">bar</a></li>
 
 	<a href="{{site.baseurl}}/" class="title left">Style Guide</a>
 </top-bar>
