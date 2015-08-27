@@ -3,6 +3,7 @@
 		<style>
 			:host {
 				float: right;
+				position: relative;
 			}
 
 			figure {
@@ -30,24 +31,23 @@
 				cursor: pointer;
 			}
 
-			.overlay {
-				/*@include perfect-square(100%);*/ /* TODO - uncomment and fix */
-				background-color: black;
-				left: 0;
-				position: fixed;
-				top: 0;
-				z-index: 1000;
-			}
-
 			.drawer {
 				list-style: none;
+				max-height: 0;
 				overflow: hidden;
 				position: fixed;
 				right: 0;
 				top: 0;
-				transition: height .1s;
+				transition: max-height .3s;
 				width: 100%;
 				z-index: 1000;
+			}
+
+			:host.visible .drawer {
+				/* This is an arbitrary number larger than the combined height of the
+				li children, so that transition animation works. With max-height: auto,
+				it wouldn't be guaranteed to work. */
+				max-height: 600px;
 			}
 
 			.drawer a {
@@ -61,11 +61,20 @@
 
 			.drawer ::content li {
 				background-color: #fff;
-				border-bottom: 0.0625rem solid #d0d0d0;
+				border: solid #d0d0d0;
+				border-width: 0 1px 1px 1px;
 			}
 
-			.drawer {
-				height: 0;
+			@media only screen and (min-width: 40.063em) {
+				.drawer {
+					position: absolute;
+					right: 0;
+					top: 46px;
+					width: 150px;
+				}
+
+				:host.visible .drawer {
+				}
 			}
 
 			.overlay {
@@ -75,22 +84,15 @@
 				opacity: 0;
 				position: fixed;
 				top: 0;
-				transition: visibility 0s 0.1s, opacity 0.1s;
+				transition: visibility 0s 0.3s, opacity 0.3s;
 				visibility: hidden;
 				width: 100%;
 				z-index: 800;
 			}
 
-			:host.visible .drawer {
-				/* This is an arbitrary number larger than the combined height of the
-				li children, so that transition animation works. With height: auto,
-				it wouldn't be guaranteed to work. */
-				height: 100px;
-			}
-
 			:host.visible .overlay {
 				opacity: 0.5;
-				transition: opacity 0.1s;
+				transition: opacity 0.3s;
 				visibility: visible;
 			}
 
