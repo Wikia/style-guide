@@ -93,6 +93,14 @@
 				transition: opacity 0.1s;
 				visibility: visible;
 			}
+
+			/* Don't black out the rest of the screen on larger devices */
+			@media only screen and (min-width: 40.063em) {
+				:host.visible .overlay {
+					opacity: 0;
+				}
+			}
+
 		</style>
 
 		<template is="dom-if" if="{{userLoggedIn}}">
