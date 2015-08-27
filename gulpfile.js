@@ -79,18 +79,6 @@ gulp.task('components', ['components-html', 'components-svg'], function () {
 	return del.sync('./src/components/**/*.min.+(css|js)');
 });
 
-gulp.task('vulcanize', function () {
-	var vulcanize = require('gulp-vulcanize');
-
-	return gulp.src('gh-pages/_site/index.html')
-		.pipe(vulcanize({
-			inline: true,
-			abspath: '/',
-			inputUrl: __dirname + '/gh-pages/_site/index.html'
-		}))
-		.pipe(gulp.dest('./gh-pages/_site/index.html'));
-});
-
 gulp.task('update-static', [
 	'dist:clean',
 	'static:clean',
