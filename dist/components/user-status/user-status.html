@@ -50,13 +50,18 @@
 				max-height: 600px;
 			}
 
-			.drawer a {
-				/*@extend .touch-active;*/  /* TODO - uncomment and fix */
+			.drawer ::content a {
 				display: block;
+				height: auto;
+				line-height: normal;
 				overflow: hidden;
 				padding: 0.625rem 0.8125rem;
 				text-overflow: ellipsis;
 				width: 100%;
+			}
+
+			.drawer ::content a:active {
+				background-color: #F2F6FA;
 			}
 
 			.drawer ::content li {
