@@ -7,110 +7,110 @@ This component provides a default top bar for Wikia websites and includes handli
 to action for anonymous users.
 
 Example:
-  <top-bar
-    user-avatar-src="foo.png" user-profile-href="http://wwww.wikia.com" user-name="Wikia User"
-    logo-href="http://www.wikia.com" logo-src="logo.svg" user-logged-in show-user-status>
-    <h1>Hello World!</h1>
-  </top-bar>
+	<top-bar
+		user-avatar-src="foo.png" user-profile-href="http://wwww.wikia.com" user-name="Wikia User"
+		logo-href="http://www.wikia.com" logo-src="logo.svg" user-logged-in show-user-status>
+		<h1>Hello World!</h1>
+	</top-bar>
 
 You can use the `showUserStatus` to control whether or not the callout for user registration/user logged in avatar is
 shown or not. If `showUserStatus` is true, then the `userLoggedIn` attribute will control whether or not the
 registration/signin callout is shown or whether the user avatar is shown.
 -->
 <dom-module id="top-bar">
-  <style>
-    [unresolved] {
-      visibility: hidden;
-    }
+	<style>
+		[unresolved] {
+			visibility: hidden;
+		}
 
-    :host {
-      display: block;
-      background-color: #fff;
-      border-bottom: 1px solid #ccc;
-      height: 46px;
-      position: fixed;
-      width: 100%;
-      z-index: 9999999;
-    }
+		:host {
+			display: block;
+			background-color: #fff;
+			border-bottom: 1px solid #ccc;
+			height: 46px;
+			position: fixed;
+			width: 100%;
+			z-index: 9999999;
+		}
 
-    .logo {
-      fill: #092344;
-      width: 82px;
-    }
+		.logo {
+			fill: #092344;
+			width: 82px;
+		}
 
-    .user-status {
-      float: right;
-    }
+		.user-status {
+			float: right;
+		}
 
-    .user-status figure {
-      margin-top: 3px;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      overflow: hidden;
-    }
+		.user-status figure {
+			margin-top: 3px;
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			overflow: hidden;
+		}
 
-    .user-status figure img {
-      width: 100%;
-      height: auto;
-    }
+		.user-status figure img {
+			width: 100%;
+			height: auto;
+		}
 
-    .register-cta {
-      margin-top: 10px;
-    }
-  </style>
+		.register-cta {
+			margin-top: 10px;
+		}
+	</style>
 
-  <template>
-    <div class="row">
-      <div class="large-12 columns">
-        <a href="{{logoHref}}"><img src="{{logoSrc}}" alt="Wikia" class="logo left"></a>
+	<template>
+		<div class="row">
+			<div class="large-12 columns">
+				<a href="{{logoHref}}"><img src="{{logoSrc}}" alt="Wikia" class="logo left"></a>
 
-        <!-- Catch all for transcluded content -->
-        <content></content>
+				<!-- Catch all for transcluded content -->
+				<content></content>
 
-        <template is="dom-if" if="{{showUserStatus}}">
-          <div class="user-status">
-            <template is="dom-if" if="{{userLoggedIn}}">
-              <a href="{{userAvatarHref}}">
-                  <figure>
-                    <img src="{{userAvatarSrc}}" alt="{{userName}}">
-                </figure>
-              </a>
-            </template>
+				<template is="dom-if" if="{{showUserStatus}}">
+					<div class="user-status">
+						<template is="dom-if" if="{{userLoggedIn}}">
+							<a href="{{userAvatarHref}}">
+									<figure>
+										<img src="{{userAvatarSrc}}" alt="{{userName}}">
+								</figure>
+							</a>
+						</template>
 
-            <template is="dom-if" if="{{!userLoggedIn}}">
-                <div class="register-cta">
-                  <a href="#">Register</a> or <a href="#">Login</a>
-                </div>
-            </template>
-          </div>
-        </template>
+						<template is="dom-if" if="{{!userLoggedIn}}">
+								<div class="register-cta">
+									<a href="#">Register</a> or <a href="#">Login</a>
+								</div>
+						</template>
+					</div>
+				</template>
 
-      </div>
-    </div>
-  </template>
+			</div>
+		</div>
+	</template>
 </dom-module>
 
 <script>
-  (function () {
-    Polymer({
-      is: 'top-bar',
-      properties: {
-        userAvatarSrc: String,
-        userProfileHref: String,
-        userName: String,
-        logoHref: String,
-        logoSrc: String,
-        userLoggedIn: {
-          type: Boolean,
-          value: false,
-          reflectToAttribute: true
-        },
-        showUserStatus: {
-          type: Boolean,
-          value: false
-        }
-      }
-    });
-  }());
+	(function () {
+		Polymer({
+			is: 'top-bar',
+			properties: {
+				userAvatarSrc: String,
+				userProfileHref: String,
+				userName: String,
+				logoHref: String,
+				logoSrc: String,
+				userLoggedIn: {
+					type: Boolean,
+					value: false,
+					reflectToAttribute: true
+				},
+				showUserStatus: {
+					type: Boolean,
+					value: false
+				}
+			}
+		});
+	}());
 </script>
