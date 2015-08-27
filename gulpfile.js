@@ -63,17 +63,32 @@ gulp.task('components-assets', function () {
 		}))
 		.pipe(gulp.dest(base));
 });
+
 gulp.task('components-svg', function () {
 	return gulp.src('./src/components/**/*.svg')
 		.pipe(gulp.dest('./dist/components'))
 });
+
 gulp.task('components-html', ['components-assets'], function () {
 	return gulp.src('./src/components/**/*.html')
 		.pipe(preprocess())
 		.pipe(gulp.dest('./dist/components'));
 });
+
 gulp.task('components', ['components-html', 'components-svg'], function () {
 	return del.sync('./src/components/**/*.min.+(css|js)');
+});
+
+gulp.task('vulcanize', function () {
+	var vulcanize = require('gulp-vulcanize');
+
+	return gulp.src('gh-pages/_site/index.html')
+		.pipe(vulcanize({
+			inline: true,
+			abspath: '/',
+			inputUrl: __dirname + '/gh-pages/_site/index.html'
+		}))
+		.pipe(gulp.dest('./gh-pages/_site/index.html'));
 });
 
 gulp.task('update-static', [

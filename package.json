@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "bump-major": "bower version major && git push --tags",
     "bump-minor": "bower version minor && git push --tags",
-    "bump-patch": "bower version patch && git push --tags"
+    "bump-patch": "bower version patch && git push --tags",
+    "build-dist": "gulp update-static && (cd src && node ../node_modules/vulcanize/bin/vulcanize -p $PWD components/import.html > ../dist/components/import-built.html)"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
     "gulp-uglify": "^1.2.0",
-    "node-sass": "^3.2.0"
+    "node-sass": "^3.2.0",
+    "vulcanize": "^1.10.3"
   },
   "dependencies": {
     "gulp": "^3.8.10"
