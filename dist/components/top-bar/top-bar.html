@@ -18,74 +18,34 @@ shown or not. If `showUserStatus` is true, then the `userLoggedIn` attribute wil
 registration/signin callout is shown or whether the user avatar is shown.
 -->
 <dom-module id="top-bar">
-	<style>
-		[unresolved] {
-			visibility: hidden;
-		}
-
-		:host {
-			display: block;
-			background-color: #fff;
-			border-bottom: 1px solid #ccc;
-			height: 46px;
-			position: fixed;
-			width: 100%;
-			z-index: 9999999;
-		}
-
-		.logo {
-			fill: #092344;
-			width: 82px;
-		}
-
-		.user-status {
-			float: right;
-		}
-
-		.user-status figure {
-			margin-top: 3px;
-			width: 36px;
-			height: 36px;
-			border-radius: 50%;
-			overflow: hidden;
-		}
-
-		.user-status figure img {
-			width: 100%;
-			height: auto;
-		}
-
-		.register-cta {
-			margin-top: 10px;
-		}
-	</style>
-
 	<template>
+		<style>
+			[unresolved] {
+				visibility: hidden;
+			}
+
+			:host {
+				background-color: #fff;
+				border-bottom: 1px solid #ccc;
+				display: block;
+				height: 46px;
+				position: fixed;
+				width: 100%;
+				z-index: 9999999;
+			}
+
+			.logo {
+				fill: #092344;
+				width: 82px;
+			}
+		</style>
+
 		<div class="row">
 			<div class="large-12 columns">
 				<a href="{{logoHref}}"><img src="{{logoSrc}}" alt="Wikia" class="logo left"></a>
 
 				<!-- Catch all for transcluded content -->
 				<content></content>
-
-				<template is="dom-if" if="{{showUserStatus}}">
-					<div class="user-status">
-						<template is="dom-if" if="{{userLoggedIn}}">
-							<a href="{{userAvatarHref}}">
-									<figure>
-										<img src="{{userAvatarSrc}}" alt="{{userName}}">
-								</figure>
-							</a>
-						</template>
-
-						<template is="dom-if" if="{{!userLoggedIn}}">
-								<div class="register-cta">
-									<a href="#">Register</a> or <a href="#">Login</a>
-								</div>
-						</template>
-					</div>
-				</template>
-
 			</div>
 		</div>
 	</template>
@@ -96,16 +56,8 @@ registration/signin callout is shown or whether the user avatar is shown.
 		Polymer({
 			is: 'top-bar',
 			properties: {
-				userAvatarSrc: String,
-				userProfileHref: String,
-				userName: String,
 				logoHref: String,
 				logoSrc: String,
-				userLoggedIn: {
-					type: Boolean,
-					value: false,
-					reflectToAttribute: true
-				},
 				showUserStatus: {
 					type: Boolean,
 					value: false
