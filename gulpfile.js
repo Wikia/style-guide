@@ -70,7 +70,7 @@ gulp.task('components-svg', function () {
 });
 
 gulp.task('components-html', ['components-assets'], function () {
-	return gulp.src('./src/components/**/*.html')
+	return gulp.src(['./src/components/**/*.html', '!**/import.html'])
 		.pipe(preprocess())
 		.pipe(gulp.dest('./dist/components'));
 });
