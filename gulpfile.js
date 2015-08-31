@@ -63,15 +63,18 @@ gulp.task('components-assets', function () {
 		}))
 		.pipe(gulp.dest(base));
 });
+
 gulp.task('components-svg', function () {
 	return gulp.src('./src/components/**/*.svg')
 		.pipe(gulp.dest('./dist/components'))
 });
+
 gulp.task('components-html', ['components-assets'], function () {
-	return gulp.src('./src/components/**/*.html')
+	return gulp.src(['./src/components/**/*.html', '!**/import.html'])
 		.pipe(preprocess())
 		.pipe(gulp.dest('./dist/components'));
 });
+
 gulp.task('components', ['components-html', 'components-svg'], function () {
 	return del.sync('./src/components/**/*.min.+(css|js)');
 });
