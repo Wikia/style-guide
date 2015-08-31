@@ -7,7 +7,7 @@
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
-// @version 0.7.12
+// @version 0.7.10
 if (typeof WeakMap === "undefined") {
   (function() {
     var defineProperty = Object.defineProperty;
@@ -341,7 +341,7 @@ if (typeof WeakMap === "undefined") {
   };
   global.JsMutationObserver = JsMutationObserver;
   if (!global.MutationObserver) global.MutationObserver = JsMutationObserver;
-})(window);
+})(this);
 
 window.CustomElements = window.CustomElements || {
   flags: {}
@@ -361,7 +361,6 @@ window.CustomElements = window.CustomElements || {
   scope.addModule = addModule;
   scope.initializeModules = initializeModules;
   scope.hasNative = Boolean(document.registerElement);
-  scope.isIE = /Trident/.test(navigator.userAgent);
   scope.useNative = !flags.register && scope.hasNative && !window.ShadowDOMPolyfill && (!window.HTMLImports || window.HTMLImports.useNative);
 })(window.CustomElements);
 
@@ -670,7 +669,7 @@ window.CustomElements.addModule(function(scope) {
 });
 
 window.CustomElements.addModule(function(scope) {
-  var isIE = scope.isIE;
+  var isIE11OrOlder = scope.isIE11OrOlder;
   var upgradeDocumentTree = scope.upgradeDocumentTree;
   var upgradeAll = scope.upgradeAll;
   var upgradeWithDefinition = scope.upgradeWithDefinition;
@@ -866,7 +865,7 @@ window.CustomElements.addModule(function(scope) {
   }
   wrapDomMethodToForceUpgrade(Node.prototype, "cloneNode");
   wrapDomMethodToForceUpgrade(document, "importNode");
-  if (isIE) {
+  if (isIE11OrOlder) {
     (function() {
       var importNode = document.importNode;
       document.importNode = function() {
@@ -894,7 +893,7 @@ window.CustomElements.addModule(function(scope) {
 (function(scope) {
   var useNative = scope.useNative;
   var initializeModules = scope.initializeModules;
-  var isIE = scope.isIE;
+  var isIE11OrOlder = /Trident/.test(navigator.userAgent);
   if (useNative) {
     var nop = function() {};
     scope.watchShadow = nop;
@@ -931,9 +930,6 @@ window.CustomElements.addModule(function(scope) {
   function bootstrap() {
     upgradeDocumentTree(window.wrap(document));
     window.CustomElements.ready = true;
-    var requestAnimationFrame = window.requestAnimationFrame || function(f) {
-      setTimeout(f, 16);
-    };
     requestAnimationFrame(function() {
       setTimeout(function() {
         window.CustomElements.readyTime = Date.now();
@@ -946,7 +942,7 @@ window.CustomElements.addModule(function(scope) {
       });
     });
   }
-  if (isIE && typeof window.CustomEvent !== "function") {
+  if (isIE11OrOlder && typeof window.CustomEvent !== "function") {
     window.CustomEvent = function(inType, params) {
       params = params || {};
       var e = document.createEvent("CustomEvent");
@@ -970,4 +966,5 @@ window.CustomElements.addModule(function(scope) {
     var loadEvent = window.HTMLImports && !window.HTMLImports.ready ? "HTMLImportsLoaded" : "DOMContentLoaded";
     window.addEventListener(loadEvent, bootstrap);
   }
+  scope.isIE11OrOlder = isIE11OrOlder;
 })(window.CustomElements);
