@@ -217,9 +217,6 @@ Polymer.telemetry.instanceCount = 0;
 (function () {
 var modules = {};
 var lcModules = {};
-var findModule = function (id) {
-return modules[id] || lcModules[id.toLowerCase()];
-};
 var DomModule = function () {
 return document.createElement('dom-module');
 };
@@ -238,10 +235,10 @@ lcModules[id.toLowerCase()] = this;
 }
 },
 import: function (id, selector) {
-var m = findModule(id);
+var m = modules[id] || lcModules[id.toLowerCase()];
 if (!m) {
 forceDocumentUpgrade();
-m = findModule(id);
+m = modules[id];
 }
 if (m && selector) {
 m = m.querySelector(selector);
@@ -561,7 +558,7 @@ debouncer.stop();
 }
 }
 });
-Polymer.version = '1.1.1';
+Polymer.version = '1.1.0';
 Polymer.Base._addFeature({
 _registerFeatures: function () {
 this._prepIs();
