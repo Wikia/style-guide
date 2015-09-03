@@ -40,14 +40,31 @@ registration/signin callout is shown or whether the user avatar is shown.
 				fill: #092344;
 				width: 82px;
 			}
+
+      @media (max-width: 721px) {
+        :host {
+          text-align: center;
+        }
+
+        :host .logo-wrapper {
+          display: inline-block;
+        }
+
+        .transcluded-content ::content {
+          display: none;
+        }
+      }
 		</style>
 
 		<div class="row">
 			<div class="large-12 columns">
-				<a href="{{logoHref}}"><img src="{{logoSrc}}" alt="Wikia" class="logo left"></a>
+				<a class="logo-wrapper" href="{{logoHref}}"><img src="{{logoSrc}}" alt="Wikia" class="logo left"></a>
 
 				<!-- Catch all for transcluded content -->
-				<content></content>
+        <content select="user-status"></content>
+        <div class="transcluded-content">
+          <content></content>
+        </div>
 			</div>
 		</div>
 	</template>
