@@ -8,6 +8,7 @@
 
 			figure {
 				border-radius: 50%;
+				margin: 0;
 				height: 25px;
 				overflow: hidden;
 				width: 25px;
@@ -28,8 +29,10 @@
 
 			.drawer {
 				list-style: none;
+				margin: 0;
 				max-height: 0;
 				overflow: hidden;
+				padding: 0;
 				position: fixed;
 				right: 0;
 				top: 0;
@@ -38,7 +41,7 @@
 				z-index: 1000;
 			}
 
-			:host.visible .drawer {
+			:host(.visible) .drawer {
 				/* This is an arbitrary number larger than the combined height of the
 				li children, so that transition animation works. With max-height: auto,
 				it wouldn't be guaranteed to work. */
@@ -65,15 +68,6 @@
 				border-width: 0 1px 1px 1px;
 			}
 
-			@media only screen and (min-width: 40.063em) {
-				.drawer {
-					position: absolute;
-					right: 0;
-					top: 46px;
-					width: 150px;
-				}
-			}
-
 			.overlay {
 				background-color: black;
 				height: 100%;
@@ -87,16 +81,39 @@
 				z-index: 800;
 			}
 
-			:host.visible .overlay {
+			:host(.visible) .overlay {
 				opacity: 0.5;
 				transition: opacity 0.3s;
 				visibility: visible;
 			}
 
+			.register-cta span {
+				display: none;
+			}
+
+			.register-cta figure {
+				display: inline-block;
+			}
+
 			/* Don't black out the rest of the screen on larger devices */
-			@media only screen and (min-width: 40.063em) {
-				:host.visible .overlay {
+			@media only screen and (min-width: 721px) {
+				:host(.visible) .overlay {
 					opacity: 0;
+				}
+
+				.drawer {
+					position: absolute;
+					right: 0;
+					top: 35px;
+					width: 150px;
+				}
+
+				.register-cta span {
+					display: inline-block;
+				}
+
+				.register-cta figure {
+					display: none;
 				}
 			}
 
@@ -116,8 +133,8 @@
 
 		<template is="dom-if" if="{{!userLoggedIn}}">
 			<div class="register-cta">
-				<span class="show-for-large-up"><a href="#">Register</a> or <a href="#">Log in</a></span>
-				<figure class="hide-for-large-up">
+				<span><a href="#">Register</a> or <a href="#">Log in</a></span>
+				<figure>
 					<a href="{{anonAvatarHref}}">
 						<img src="{{anonAvatarSrc}}" alt="Register or log in">
 					</a>

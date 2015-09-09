@@ -28,6 +28,7 @@ registration/signin callout is shown or whether the user avatar is shown.
 				align-items: center;
 				background-color: #fff;
 				border-bottom: 1px solid #ccc;
+				box-sizing: border-box;
 				display: flex;
 				height: 41px;
 				position: fixed;
@@ -36,35 +37,70 @@ registration/signin callout is shown or whether the user avatar is shown.
 				z-index: 9999999;
 			}
 
+			:host * {
+				box-sizing: inherit;
+			}
+
+			.wrapper {
+				width: 100%;
+				margin: 0 auto;
+				max-width: 62.5rem;
+			}
+
+			.wrapper:before, .wrapper:after {
+				content: " ";
+				display: table;
+			}
+
+			.inner {
+				display: flex;
+				padding: 0 0.9375rem;
+				width: 100%;
+			}
+
 			.logo {
 				fill: #092344;
 				width: 82px;
 			}
 
-      @media (max-width: 721px) {
-        :host {
-          text-align: center;
-        }
+			.user-status-wrapper {
+				order: 3;
+			}
 
-        :host .logo-wrapper {
-          display: inline-block;
-        }
+			.transcluded-content {
+				flex-grow: 1;
+			}
 
-        .transcluded-content ::content {
-          display: none;
-        }
-      }
+			@media (max-width: 721px) {
+				:host {
+					text-align: center;
+				}
+
+				/* grow the logo element to take up the extra room in the row since transcluded
+				content is no longer there */
+				:host .logo-wrapper {
+					margin: 0 auto;
+					display: block;
+				}
+
+				.transcluded-content {
+					display: none;
+				}
+			}
 		</style>
 
-		<div class="row">
-			<div class="large-12 columns">
+		<div class="wrapper">
+			<div class="inner">
 				<a class="logo-wrapper" href="{{logoHref}}"><img src="{{logoSrc}}" alt="Wikia" class="logo left"></a>
 
-				<!-- Catch all for transcluded content -->
-        <content select="user-status"></content>
-        <div class="transcluded-content">
-          <content></content>
-        </div>
+				<div class="user-status-wrapper">
+					<content select="user-status"></content>
+				</div>
+
+				<div class="transcluded-content">
+					<!-- Catch all for transcluded content -->
+					<content></content>
+				</div>
 			</div>
 		</div>
 	</template>
