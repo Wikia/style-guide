@@ -89,12 +89,17 @@ $site-nav-width: 300px;
 
 .page-content {
 	background: white;
-	margin: 90px 0 40px 0;
+	margin: 45px 0 40px 0;
 	padding-bottom: 30px;
 
 	.hero {
+		align-items: center;
 		background: #fff url(../assets/images/bg_universe.png) center top;
 		color: #fff;
+		display: flex;
+		flex-direction: column;
+		height: 240px;
+		justify-content: center;
 		margin-bottom: 20px;
 		padding: 50px 30px;
 
