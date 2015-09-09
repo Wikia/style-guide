@@ -12,6 +12,10 @@
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
 	<script src="{{ '/vendor/wikia-style-guide/dist/vendor/webcomponentsjs/webcomponents-lite.js' | prepend: site.baseurl }}"></script>
+	<script>
+		window.Polymer = window.Polymer || {};
+		window.Polymer.dom = 'shadow';
+	</script>
 	<link rel="import" href="{{ '/vendor/wikia-style-guide/dist/vendor/polymer/polymer.html' | prepend: site.baseurl }}">
 	<link rel="import" href="{{ '/vendor/wikia-style-guide/dist/components/top-bar/top-bar.html' | prepend: site.baseurl }}">
 	<link rel="import" href="{{ '/vendor/wikia-style-guide/dist/components/user-status/user-status.html' | prepend: site.baseurl }}">
