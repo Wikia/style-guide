@@ -68,15 +68,6 @@
 				border-width: 0 1px 1px 1px;
 			}
 
-			@media only screen and (min-width: 40.063em) {
-				.drawer {
-					position: absolute;
-					right: 0;
-					top: 35px;
-					width: 150px;
-				}
-			}
-
 			.overlay {
 				background-color: black;
 				height: 100%;
@@ -96,10 +87,33 @@
 				visibility: visible;
 			}
 
+			.register-cta span {
+				display: none;
+			}
+
+			.register-cta figure {
+				display: inline-block;
+			}
+
 			/* Don't black out the rest of the screen on larger devices */
-			@media only screen and (min-width: 40.063em) {
+			@media only screen and (min-width: 721px) {
 				:host(.visible) .overlay {
 					opacity: 0;
+				}
+
+				.drawer {
+					position: absolute;
+					right: 0;
+					top: 35px;
+					width: 150px;
+				}
+
+				.register-cta span {
+					display: inline-block;
+				}
+
+				.register-cta figure {
+					display: none;
 				}
 			}
 
@@ -119,8 +133,8 @@
 
 		<template is="dom-if" if="{{!userLoggedIn}}">
 			<div class="register-cta">
-				<span class="show-for-large-up"><a href="#">Register</a> or <a href="#">Log in</a></span>
-				<figure class="hide-for-large-up">
+				<span><a href="#">Register</a> or <a href="#">Log in</a></span>
+				<figure>
 					<a href="{{anonAvatarHref}}">
 						<img src="{{anonAvatarSrc}}" alt="Register or log in">
 					</a>
