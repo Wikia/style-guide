@@ -8,13 +8,9 @@ search functionality.
 
 Example:
 	<top-bar
-		logo-href="http://www.wikia.com"
-		show-user-status>
+		logo-href="http://www.wikia.com">
 		<h1>Hello World!</h1>
 	</top-bar>
-
-You can use the `showUserStatus` to control whether or not the wrapping element for the user-status component is
-included. Note, you'll still have to include the user-status component in the light DOM when invoking the top-bar.
 -->
 <dom-module id="top-bar">
 	<template>
@@ -52,25 +48,17 @@ included. Note, you'll still have to include the user-status component in the li
 			}
 
 			.inner {
+				align-items: center;
 				display: flex;
 				padding: 0 0.9375rem;
 				width: 100%;
-			}
-
-			.logo {
-				fill: #092344;
-				width: 82px;
-			}
-
-			.user-status-wrapper {
-				order: 3;
 			}
 
 			.transcluded-content {
 				flex-grow: 1;
 			}
 
-			@media (max-width: 721px) {
+			@media (max-width: 769px) {
 				:host {
 					text-align: center;
 				}
@@ -83,7 +71,7 @@ included. Note, you'll still have to include the user-status component in the li
 				}
 
 				.transcluded-content {
-					display: none;
+					flex-grow: 0;
 				}
 			}
 		</style>
@@ -93,12 +81,6 @@ included. Note, you'll still have to include the user-status component in the li
 				<a class="logo-wrapper" href="{{logoHref}}">
 					<content select=".logo-image"></content>
 				</a>
-
-				<template is="dom-if" if="{{showUserStatus}}">
-					<div class="user-status-wrapper">
-						<content select=".user-status"></content>
-					</div>
-				</template>
 
 				<div class="transcluded-content">
 					<!-- Catch all for transcluded content -->
@@ -114,11 +96,7 @@ included. Note, you'll still have to include the user-status component in the li
 		Polymer({
 			is: 'top-bar',
 			properties: {
-				logoHref: String,
-				showUserStatus: {
-					type: Boolean,
-					value: false
-				}
+				logoHref: String
 			}
 		});
 	}());
