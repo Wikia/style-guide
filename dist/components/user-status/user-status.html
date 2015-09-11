@@ -6,21 +6,17 @@ Description:
 This component provides handling for logged in user state or a call to action for anonymous users.
 
 Example:
-	<top-bar
-		logo-href="http://www.wikia.com"
-		show-user-status>
-		<h1>Hello World!</h1>
-	</top-bar>
-
-You can use the `showUserStatus` to control whether or not the callout for user registration/user logged in avatar is
-shown or not. If `showUserStatus` is true, then the `userLoggedIn` attribute will control whether or not the
-registration/signin callout is shown or whether the user avatar is shown.
-
+	<user-status
 		user-avatar-src="foo.png"
-		user-profile-href="http://wwww.wikia.com"
+		anon-avatar-src="{{ site.assets_path | prepend: site.baseurl }}/images/icons/icon_avatar.svg"
+		anon-avatar-href="https://www.wikia.com/join"
 		user-name="Wikia User"
-		user-logged-in
+		user-logged-in>
+		<li><a href="/profile">Profile</a></li>
+		<li><a href="/logout">Log out</a></li>
+	</user-status>
 
+The `userLoggedIn` attribute will control whether the registration/signin callout or the user avatar is shown.
 -->
 
 <dom-module id="user-status">
