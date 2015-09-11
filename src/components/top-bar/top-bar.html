@@ -3,19 +3,18 @@ Wikia Style Guide
 Global Top Bar
 
 Description:
-This component provides a default top bar for Wikia websites and includes handling for logged in user state or a call
-to action for anonymous users.
+This component provides a default top bar for Wikia websites. Other components can be plugged in, like user-status or
+search functionality.
 
 Example:
 	<top-bar
-		user-avatar-src="foo.png" user-profile-href="http://wwww.wikia.com" user-name="Wikia User"
-		logo-href="http://www.wikia.com" logo-src="logo.svg" user-logged-in show-user-status>
+		logo-href="http://www.wikia.com"
+		show-user-status>
 		<h1>Hello World!</h1>
 	</top-bar>
 
-You can use the `showUserStatus` to control whether or not the callout for user registration/user logged in avatar is
-shown or not. If `showUserStatus` is true, then the `userLoggedIn` attribute will control whether or not the
-registration/signin callout is shown or whether the user avatar is shown.
+You can use the `showUserStatus` to control whether or not the wrapping element for the user-status component is
+included. Note, you'll still have to include the user-status component in the light DOM when invoking the top-bar.
 -->
 <dom-module id="top-bar">
 	<template>
@@ -91,11 +90,15 @@ registration/signin callout is shown or whether the user avatar is shown.
 
 		<div class="wrapper">
 			<div class="inner">
-				<a class="logo-wrapper" href="{{logoHref}}"><img src="{{logoSrc}}" alt="Wikia" class="logo left"></a>
+				<a class="logo-wrapper" href="{{logoHref}}">
+					<content select=".logo-image"></content>
+				</a>
 
-				<div class="user-status-wrapper">
-					<content select="user-status"></content>
-				</div>
+				<template is="dom-if" if="{{showUserStatus}}">
+					<div class="user-status-wrapper">
+						<content select=".user-status"></content>
+					</div>
+				</template>
 
 				<div class="transcluded-content">
 					<!-- Catch all for transcluded content -->
@@ -112,7 +115,6 @@ registration/signin callout is shown or whether the user avatar is shown.
 			is: 'top-bar',
 			properties: {
 				logoHref: String,
-				logoSrc: String,
 				showUserStatus: {
 					type: Boolean,
 					value: false
