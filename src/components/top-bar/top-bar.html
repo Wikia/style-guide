@@ -3,19 +3,14 @@ Wikia Style Guide
 Global Top Bar
 
 Description:
-This component provides a default top bar for Wikia websites and includes handling for logged in user state or a call
-to action for anonymous users.
+This component provides a default top bar for Wikia websites. Other components can be plugged in, like user-status or
+search functionality.
 
 Example:
 	<top-bar
-		user-avatar-src="foo.png" user-profile-href="http://wwww.wikia.com" user-name="Wikia User"
-		logo-href="http://www.wikia.com" logo-src="logo.svg" user-logged-in show-user-status>
+		logo-href="http://www.wikia.com">
 		<h1>Hello World!</h1>
 	</top-bar>
-
-You can use the `showUserStatus` to control whether or not the callout for user registration/user logged in avatar is
-shown or not. If `showUserStatus` is true, then the `userLoggedIn` attribute will control whether or not the
-registration/signin callout is shown or whether the user avatar is shown.
 -->
 <dom-module id="top-bar">
 	<template>
@@ -53,25 +48,17 @@ registration/signin callout is shown or whether the user avatar is shown.
 			}
 
 			.inner {
+				align-items: center;
 				display: flex;
 				padding: 0 0.9375rem;
 				width: 100%;
-			}
-
-			.logo {
-				fill: #092344;
-				width: 82px;
-			}
-
-			.user-status-wrapper {
-				order: 3;
 			}
 
 			.transcluded-content {
 				flex-grow: 1;
 			}
 
-			@media (max-width: 721px) {
+			@media (max-width: 769px) {
 				:host {
 					text-align: center;
 				}
@@ -84,18 +71,16 @@ registration/signin callout is shown or whether the user avatar is shown.
 				}
 
 				.transcluded-content {
-					display: none;
+					flex-grow: 0;
 				}
 			}
 		</style>
 
 		<div class="wrapper">
 			<div class="inner">
-				<a class="logo-wrapper" href="{{logoHref}}"><img src="{{logoSrc}}" alt="Wikia" class="logo left"></a>
-
-				<div class="user-status-wrapper">
-					<content select="user-status"></content>
-				</div>
+				<a class="logo-wrapper" href="{{logoHref}}">
+					<content select=".logo-image"></content>
+				</a>
 
 				<div class="transcluded-content">
 					<!-- Catch all for transcluded content -->
@@ -111,12 +96,7 @@ registration/signin callout is shown or whether the user avatar is shown.
 		Polymer({
 			is: 'top-bar',
 			properties: {
-				logoHref: String,
-				logoSrc: String,
-				showUserStatus: {
-					type: Boolean,
-					value: false
-				}
+				logoHref: String
 			}
 		});
 	}());

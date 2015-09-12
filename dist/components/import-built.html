@@ -6396,7 +6396,7 @@ this.fire('dom-change');
 			}
 
 			/* Don't black out the rest of the screen on larger devices */
-			@media only screen and (min-width: 721px) {
+			@media only screen and (min-width: 769px) {
 				:host(.visible) .overlay {
 					opacity: 0;
 				}
@@ -6404,7 +6404,7 @@ this.fire('dom-change');
 				.drawer {
 					position: absolute;
 					right: 0;
-					top: 35px;
+					top: 32px;
 					width: 150px;
 				}
 
@@ -6508,25 +6508,17 @@ this.fire('dom-change');
 			}
 
 			.inner {
+				align-items: center;
 				display: flex;
 				padding: 0 0.9375rem;
 				width: 100%;
-			}
-
-			.logo {
-				fill: #092344;
-				width: 82px;
-			}
-
-			.user-status-wrapper {
-				order: 3;
 			}
 
 			.transcluded-content {
 				flex-grow: 1;
 			}
 
-			@media (max-width: 721px) {
+			@media (max-width: 769px) {
 				:host {
 					text-align: center;
 				}
@@ -6539,18 +6531,16 @@ this.fire('dom-change');
 				}
 
 				.transcluded-content {
-					display: none;
+					flex-grow: 0;
 				}
 			}
 		</style>
 
 		<div class="wrapper">
 			<div class="inner">
-				<a class="logo-wrapper" href="{{logoHref}}"><img src="{{logoSrc}}" alt="Wikia" class="logo left"></a>
-
-				<div class="user-status-wrapper">
-					<content select="user-status"></content>
-				</div>
+				<a class="logo-wrapper" href="{{logoHref}}">
+					<content select=".logo-image"></content>
+				</a>
 
 				<div class="transcluded-content">
 					<!-- Catch all for transcluded content -->
@@ -6566,12 +6556,7 @@ this.fire('dom-change');
 		Polymer({
 			is: 'top-bar',
 			properties: {
-				logoHref: String,
-				logoSrc: String,
-				showUserStatus: {
-					type: Boolean,
-					value: false
-				}
+				logoHref: String
 			}
 		});
 	}());

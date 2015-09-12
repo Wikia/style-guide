@@ -1,3 +1,24 @@
+<!--
+Wikia Style Guide
+User Status Component
+
+Description:
+This component provides handling for logged in user state or a call to action for anonymous users.
+
+Example:
+	<user-status
+		user-avatar-src="foo.png"
+		anon-avatar-src="{{ site.assets_path | prepend: site.baseurl }}/images/icons/icon_avatar.svg"
+		anon-avatar-href="https://www.wikia.com/join"
+		user-name="Wikia User"
+		user-logged-in>
+		<li><a href="/profile">Profile</a></li>
+		<li><a href="/logout">Log out</a></li>
+	</user-status>
+
+The `userLoggedIn` attribute will control whether the registration/signin callout or the user avatar is shown.
+-->
+
 <dom-module id="user-status">
 	<template>
 		<style>
@@ -96,7 +117,7 @@
 			}
 
 			/* Don't black out the rest of the screen on larger devices */
-			@media only screen and (min-width: 721px) {
+			@media only screen and (min-width: 769px) {
 				:host(.visible) .overlay {
 					opacity: 0;
 				}
@@ -104,7 +125,7 @@
 				.drawer {
 					position: absolute;
 					right: 0;
-					top: 35px;
+					top: 32px;
 					width: 150px;
 				}
 
