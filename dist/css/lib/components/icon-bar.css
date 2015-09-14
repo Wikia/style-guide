@@ -10,16 +10,16 @@ meta.foundation-mq-medium {
   width: 321px; }
 
 meta.foundation-mq-large {
-  font-family: "/only screen and (min-width:769px)/";
-  width: 769px; }
+  font-family: "/only screen and (min-width:768px)/";
+  width: 768px; }
 
 meta.foundation-mq-xlarge {
-  font-family: "/only screen and (min-width:1025px)/";
-  width: 1025px; }
+  font-family: "/only screen and (min-width:1064px)/";
+  width: 1064px; }
 
 meta.foundation-mq-xxlarge {
-  font-family: "/only screen and (min-width:1157px)/";
-  width: 1157px; }
+  font-family: "/only screen and (min-width:1575px)/";
+  width: 1575px; }
 
 meta.foundation-data-attribute-namespace {
   font-family: false; }
@@ -146,7 +146,7 @@ select {
         width: auto;
         margin: auto;
         float: none; } }
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 768px) {
     .icon-bar.large-vertical {
       height: 100%;
       width: auto; }
@@ -181,7 +181,7 @@ select {
   .icon-bar.two-up.medium-vertical .item {
     width: auto; } }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .icon-bar.two-up.large-vertical .item {
     width: auto; } }
 
@@ -195,7 +195,7 @@ select {
   .icon-bar.three-up.medium-vertical .item {
     width: auto; } }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .icon-bar.three-up.large-vertical .item {
     width: auto; } }
 
@@ -209,7 +209,7 @@ select {
   .icon-bar.four-up.medium-vertical .item {
     width: auto; } }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .icon-bar.four-up.large-vertical .item {
     width: auto; } }
 
@@ -223,7 +223,7 @@ select {
   .icon-bar.five-up.medium-vertical .item {
     width: auto; } }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .icon-bar.five-up.large-vertical .item {
     width: auto; } }
 
@@ -237,6 +237,6 @@ select {
   .icon-bar.six-up.medium-vertical .item {
     width: auto; } }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .icon-bar.six-up.large-vertical .item {
     width: auto; } }
