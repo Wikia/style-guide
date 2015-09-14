@@ -10,16 +10,16 @@ meta.foundation-mq-medium {
   width: 321px; }
 
 meta.foundation-mq-large {
-  font-family: "/only screen and (min-width:769px)/";
-  width: 769px; }
+  font-family: "/only screen and (min-width:768px)/";
+  width: 768px; }
 
 meta.foundation-mq-xlarge {
-  font-family: "/only screen and (min-width:1025px)/";
-  width: 1025px; }
+  font-family: "/only screen and (min-width:1064px)/";
+  width: 1064px; }
 
 meta.foundation-mq-xxlarge {
-  font-family: "/only screen and (min-width:1157px)/";
-  width: 1157px; }
+  font-family: "/only screen and (min-width:1575px)/";
+  width: 1575px; }
 
 meta.foundation-data-attribute-namespace {
   font-family: false; }
@@ -111,16 +111,16 @@ meta.foundation-mq-medium {
   width: 321px; }
 
 meta.foundation-mq-large {
-  font-family: "/only screen and (min-width:769px)/";
-  width: 769px; }
+  font-family: "/only screen and (min-width:768px)/";
+  width: 768px; }
 
 meta.foundation-mq-xlarge {
-  font-family: "/only screen and (min-width:1025px)/";
-  width: 1025px; }
+  font-family: "/only screen and (min-width:1064px)/";
+  width: 1064px; }
 
 meta.foundation-mq-xxlarge {
-  font-family: "/only screen and (min-width:1157px)/";
-  width: 1157px; }
+  font-family: "/only screen and (min-width:1575px)/";
+  width: 1575px; }
 
 meta.foundation-data-attribute-namespace {
   font-family: false; }
@@ -232,7 +232,7 @@ select {
   .small-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width: 321px) and (max-width: 768px) {
+@media only screen and (min-width: 321px) and (max-width: 767px) {
   .medium-only-text-left {
     text-align: left !important; }
   .medium-only-text-right {
@@ -252,7 +252,7 @@ select {
   .medium-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1063px) {
   .large-only-text-left {
     text-align: left !important; }
   .large-only-text-right {
@@ -262,7 +262,7 @@ select {
   .large-only-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .large-text-left {
     text-align: left !important; }
   .large-text-right {
@@ -272,7 +272,7 @@ select {
   .large-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width: 1025px) and (max-width: 1156px) {
+@media only screen and (min-width: 1064px) and (max-width: 1574px) {
   .xlarge-only-text-left {
     text-align: left !important; }
   .xlarge-only-text-right {
@@ -282,7 +282,7 @@ select {
   .xlarge-only-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1064px) {
   .xlarge-text-left {
     text-align: left !important; }
   .xlarge-text-right {
@@ -292,7 +292,7 @@ select {
   .xlarge-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width: 1157px) and (max-width: 99999px) {
+@media only screen and (min-width: 1575px) and (max-width: 99999px) {
   .xxlarge-only-text-left {
     text-align: left !important; }
   .xxlarge-only-text-right {
@@ -302,7 +302,7 @@ select {
   .xxlarge-only-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width: 1157px) {
+@media only screen and (min-width: 1575px) {
   .xxlarge-text-left {
     text-align: left !important; }
   .xxlarge-text-right {
@@ -317,7 +317,7 @@ body {
   color: #39424D;
   font-size: 16px; }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1064px) {
   html,
   body {
     font-size: 18px; } }
@@ -435,7 +435,7 @@ h6 {
     font-size: 0.875rem;
     line-height: 1.25rem; } }
 
-@media only screen and (min-width: 321px) and (max-width: 768px) {
+@media only screen and (min-width: 321px) and (max-width: 767px) {
   h1 {
     font-size: 2.25rem;
     line-height: 2.25rem; }

@@ -119,6 +119,7 @@ $alert-color     : #ff3500;
 $success-color   : #43AC6A;
 $warning-color   : #f08a24;
 $info-color      : #a0d3e8;
+$border-color    : #cccccc;
 
 // We use these to control various global styles
 $body-background: $white;
@@ -151,10 +152,10 @@ $shiny-edge-active-color: rgba($black, .2);
 $screen-sizes: small, medium, large, xlarge, xxlarge;
 
 $small-range: (0px, 320px);
-$medium-range: (321px, 768px);
-$large-range: (769px, 1024px);
-$xlarge-range: (1025px, 1156px);
-$xxlarge-range: (1157px, 99999px);
+$medium-range: (321px, 767px);
+$large-range: (768px, 1063px);
+$xlarge-range: (1064px, 1574px);
+$xxlarge-range: (1575px, 99999px);
 
 $screen: "only screen";
 
@@ -175,6 +176,9 @@ $xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max
 
 $xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})";
 $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})";
+
+$mobile-range: "#{$screen} and (max-width:#{upper-bound($large-range)})";
+$desktop-range: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})";
 
 // Legacy
 $small: $medium-up;
