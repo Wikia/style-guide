@@ -6356,6 +6356,16 @@ this.fire('dom-change');
 				position: relative;
 			}
 
+			a {
+				color: #1A5EB8;
+				text-decoration: none;
+				line-height: inherit;
+			}
+
+			a:hover, a:focus {
+				color: #081e3a;
+			}
+
 			figure {
 				border-radius: 50%;
 				margin: 0;
@@ -6458,7 +6468,7 @@ this.fire('dom-change');
 					width: 150px;
 				}
 
-				.register-cta span {
+				.register-cta .long-text {
 					display: inline-block;
 				}
 
@@ -6483,7 +6493,9 @@ this.fire('dom-change');
 
 		<template is="dom-if" if="{{!userLoggedIn}}">
 			<div class="register-cta">
-				<span><a href="#">Register</a> or <a href="#">Log in</a></span>
+				<span class="long-text">
+					<content select=".register-cta-text"></content>
+				</span>
 				<figure>
 					<a href="{{anonAvatarHref}}">
 						<img src="{{anonAvatarSrc}}" alt="Register or log in">
