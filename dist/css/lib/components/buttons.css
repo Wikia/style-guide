@@ -228,7 +228,7 @@ button, .button, input[type="submit"] {
     background-color: #656E78;
     border-color: #656E78;
     color: #FFFFFF;
-    color: #F2F6FA;
+    color: #F6F6F6;
     cursor: default;
     opacity: 0.5;
     box-shadow: none; }
@@ -238,7 +238,7 @@ button, .button, input[type="submit"] {
     button.disabled.secondary, button[disabled].secondary, .button.disabled.secondary, .button[disabled].secondary, input[type="submit"].disabled.secondary, input[type="submit"][disabled].secondary {
       background-color: transparent;
       color: #1A5EB8;
-      color: #F2F6FA;
+      color: #F6F6F6;
       cursor: default;
       opacity: 0.5;
       box-shadow: none; }
@@ -249,7 +249,7 @@ button, .button, input[type="submit"] {
       background-color: #43AC6A;
       border-color: #368a55;
       color: #FFFFFF;
-      color: #F2F6FA;
+      color: #F6F6F6;
       cursor: default;
       opacity: 0.5;
       box-shadow: none; }
@@ -278,7 +278,7 @@ button, .button, input[type="submit"] {
       background-color: #ff3500;
       border-color: #cc2a00;
       color: #FFFFFF;
-      color: #F2F6FA;
+      color: #F6F6F6;
       cursor: default;
       opacity: 0.5;
       box-shadow: none; }
@@ -307,7 +307,7 @@ button, .button, input[type="submit"] {
       background-color: #f08a24;
       border-color: #cf6e0e;
       color: #FFFFFF;
-      color: #F2F6FA;
+      color: #F6F6F6;
       cursor: default;
       opacity: 0.5;
       box-shadow: none; }
@@ -336,7 +336,7 @@ button, .button, input[type="submit"] {
       background-color: #a0d3e8;
       border-color: #61b6d9;
       color: #FFFFFF;
-      color: #F2F6FA;
+      color: #F6F6F6;
       cursor: default;
       opacity: 0.5;
       box-shadow: none; }
