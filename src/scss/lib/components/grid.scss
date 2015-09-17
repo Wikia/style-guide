@@ -263,3 +263,15 @@
     }
   }
 }
+
+@media #{$xlarge-up} {
+	.row {
+		max-width: ($total-columns * $column-width-xlarge) + (($total-columns - 1) * $gutter-width-xlarge);
+	}
+}
+
+@media #{$xxlarge-up} {
+	.row {
+		max-width: ($total-columns * $column-width-xxlarge) + (($total-columns - 1) * $gutter-width-xxlarge);
+	}
+}
