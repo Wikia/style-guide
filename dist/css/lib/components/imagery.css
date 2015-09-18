@@ -140,25 +140,25 @@ figure.avatar img {
 
 @media only screen and (min-width: 1064px) and (max-width: 1574px) {
   figure.landscape.xlarge, figure.video.xlarge {
-    width: 960px; }
+    width: 900px; }
     figure.landscape.xlarge img, figure.landscape.xlarge .overlay, figure.video.xlarge img, figure.video.xlarge .overlay {
-      height: 540px; }
+      height: 506.25px; }
     figure.landscape.xlarge .icon-play, figure.video.xlarge .icon-play {
-      bottom: 32px;
-      height: 96px;
-      left: 32px;
-      width: 96px; } }
+      bottom: 30px;
+      height: 90px;
+      left: 30px;
+      width: 90px; } }
 
 @media only screen and (min-width: 1575px) {
   figure.landscape.xlarge, figure.video.xlarge {
-    width: 1080px; }
+    width: 1044px; }
     figure.landscape.xlarge img, figure.landscape.xlarge .overlay, figure.video.xlarge img, figure.video.xlarge .overlay {
-      height: 607.5px; }
+      height: 587.25px; }
     figure.landscape.xlarge .icon-play, figure.video.xlarge .icon-play {
-      bottom: 36px;
-      height: 108px;
-      left: 36px;
-      width: 108px; } }
+      bottom: 34.8px;
+      height: 104.4px;
+      left: 34.8px;
+      width: 104.4px; } }
 
 @media only screen and (max-width: 320px) {
   figure.landscape.large, figure.video.large {
@@ -195,25 +195,25 @@ figure.avatar img {
 
 @media only screen and (min-width: 1064px) and (max-width: 1574px) {
   figure.landscape.large, figure.video.large {
-    width: 640px; }
+    width: 600px; }
     figure.landscape.large img, figure.landscape.large .overlay, figure.video.large img, figure.video.large .overlay {
-      height: 360px; }
+      height: 337.5px; }
     figure.landscape.large .icon-play, figure.video.large .icon-play {
-      bottom: 21.33333px;
-      height: 64px;
-      left: 21.33333px;
-      width: 64px; } }
+      bottom: 20px;
+      height: 60px;
+      left: 20px;
+      width: 60px; } }
 
 @media only screen and (min-width: 1575px) {
   figure.landscape.large, figure.video.large {
-    width: 720px; }
+    width: 696px; }
     figure.landscape.large img, figure.landscape.large .overlay, figure.video.large img, figure.video.large .overlay {
-      height: 405px; }
+      height: 391.5px; }
     figure.landscape.large .icon-play, figure.video.large .icon-play {
-      bottom: 24px;
-      height: 72px;
-      left: 24px;
-      width: 72px; } }
+      bottom: 23.2px;
+      height: 69.6px;
+      left: 23.2px;
+      width: 69.6px; } }
 
 @media only screen and (max-width: 320px) {
   figure.landscape.medium, figure.video.medium {
@@ -250,25 +250,25 @@ figure.avatar img {
 
 @media only screen and (min-width: 1064px) and (max-width: 1574px) {
   figure.landscape.medium, figure.video.medium {
-    width: 480px; }
+    width: 450px; }
     figure.landscape.medium img, figure.landscape.medium .overlay, figure.video.medium img, figure.video.medium .overlay {
-      height: 270px; }
+      height: 253.125px; }
     figure.landscape.medium .icon-play, figure.video.medium .icon-play {
-      bottom: 16px;
-      height: 48px;
-      left: 16px;
-      width: 48px; } }
+      bottom: 15px;
+      height: 45px;
+      left: 15px;
+      width: 45px; } }
 
 @media only screen and (min-width: 1575px) {
   figure.landscape.medium, figure.video.medium {
-    width: 540px; }
+    width: 522px; }
     figure.landscape.medium img, figure.landscape.medium .overlay, figure.video.medium img, figure.video.medium .overlay {
-      height: 303.75px; }
+      height: 293.625px; }
     figure.landscape.medium .icon-play, figure.video.medium .icon-play {
-      bottom: 18px;
-      height: 54px;
-      left: 18px;
-      width: 54px; } }
+      bottom: 17.4px;
+      height: 52.2px;
+      left: 17.4px;
+      width: 52.2px; } }
 
 @media only screen and (max-width: 320px) {
   figure.landscape.small, figure.video.small {
@@ -305,25 +305,25 @@ figure.avatar img {
 
 @media only screen and (min-width: 1064px) and (max-width: 1574px) {
   figure.landscape.small, figure.video.small {
-    width: 320px; }
+    width: 300px; }
     figure.landscape.small img, figure.landscape.small .overlay, figure.video.small img, figure.video.small .overlay {
-      height: 180px; }
+      height: 168.75px; }
     figure.landscape.small .icon-play, figure.video.small .icon-play {
-      bottom: 10.66667px;
-      height: 32px;
-      left: 10.66667px;
-      width: 32px; } }
+      bottom: 10px;
+      height: 30px;
+      left: 10px;
+      width: 30px; } }
 
 @media only screen and (min-width: 1575px) {
   figure.landscape.small, figure.video.small {
-    width: 360px; }
+    width: 348px; }
     figure.landscape.small img, figure.landscape.small .overlay, figure.video.small img, figure.video.small .overlay {
-      height: 202.5px; }
+      height: 195.75px; }
     figure.landscape.small .icon-play, figure.video.small .icon-play {
-      bottom: 12px;
-      height: 36px;
-      left: 12px;
-      width: 36px; } }
+      bottom: 11.6px;
+      height: 34.8px;
+      left: 11.6px;
+      width: 34.8px; } }
 
 @media only screen and (max-width: 320px) {
   figure.landscape.xsmall, figure.video.xsmall {
@@ -360,25 +360,25 @@ figure.avatar img {
 
 @media only screen and (min-width: 1064px) and (max-width: 1574px) {
   figure.landscape.xsmall, figure.video.xsmall {
-    width: 240px; }
+    width: 225px; }
     figure.landscape.xsmall img, figure.landscape.xsmall .overlay, figure.video.xsmall img, figure.video.xsmall .overlay {
-      height: 135px; }
+      height: 126.5625px; }
     figure.landscape.xsmall .icon-play, figure.video.xsmall .icon-play {
-      bottom: 8px;
-      height: 24px;
-      left: 8px;
-      width: 24px; } }
+      bottom: 7.5px;
+      height: 22.5px;
+      left: 7.5px;
+      width: 22.5px; } }
 
 @media only screen and (min-width: 1575px) {
   figure.landscape.xsmall, figure.video.xsmall {
-    width: 270px; }
+    width: 261px; }
     figure.landscape.xsmall img, figure.landscape.xsmall .overlay, figure.video.xsmall img, figure.video.xsmall .overlay {
-      height: 151.875px; }
+      height: 146.8125px; }
     figure.landscape.xsmall .icon-play, figure.video.xsmall .icon-play {
-      bottom: 9px;
-      height: 27px;
-      left: 9px;
-      width: 27px; } }
+      bottom: 8.7px;
+      height: 26.1px;
+      left: 8.7px;
+      width: 26.1px; } }
 
 @media only screen and (max-width: 320px) {
   figure.landscape.thumb, figure.video.thumb {
@@ -415,25 +415,25 @@ figure.avatar img {
 
 @media only screen and (min-width: 1064px) and (max-width: 1574px) {
   figure.landscape.thumb, figure.video.thumb {
-    width: 160px; }
+    width: 150px; }
     figure.landscape.thumb img, figure.landscape.thumb .overlay, figure.video.thumb img, figure.video.thumb .overlay {
-      height: 90px; }
+      height: 84.375px; }
     figure.landscape.thumb .icon-play, figure.video.thumb .icon-play {
-      bottom: 5.33333px;
-      height: 16px;
-      left: 5.33333px;
-      width: 16px; } }
+      bottom: 5px;
+      height: 15px;
+      left: 5px;
+      width: 15px; } }
 
 @media only screen and (min-width: 1575px) {
   figure.landscape.thumb, figure.video.thumb {
-    width: 180px; }
+    width: 174px; }
     figure.landscape.thumb img, figure.landscape.thumb .overlay, figure.video.thumb img, figure.video.thumb .overlay {
-      height: 101.25px; }
+      height: 97.875px; }
     figure.landscape.thumb .icon-play, figure.video.thumb .icon-play {
-      bottom: 6px;
-      height: 18px;
-      left: 6px;
-      width: 18px; } }
+      bottom: 5.8px;
+      height: 17.4px;
+      left: 5.8px;
+      width: 17.4px; } }
 
 @media only screen and (max-width: 320px) {
   figure.portrait.medium {
@@ -455,15 +455,15 @@ figure.avatar img {
 
 @media only screen and (min-width: 1064px) and (max-width: 1574px) {
   figure.portrait.medium {
-    width: 320px; }
+    width: 300px; }
     figure.portrait.medium img, figure.portrait.medium .overlay {
-      height: 448px; } }
+      height: 420px; } }
 
 @media only screen and (min-width: 1575px) {
   figure.portrait.medium {
-    width: 360px; }
+    width: 348px; }
     figure.portrait.medium img, figure.portrait.medium .overlay {
-      height: 504px; } }
+      height: 487.2px; } }
 
 @media only screen and (max-width: 320px) {
   figure.portrait.small {
@@ -485,15 +485,15 @@ figure.avatar img {
 
 @media only screen and (min-width: 1064px) and (max-width: 1574px) {
   figure.portrait.small {
-    width: 240px; }
+    width: 225px; }
     figure.portrait.small img, figure.portrait.small .overlay {
-      height: 336px; } }
+      height: 315px; } }
 
 @media only screen and (min-width: 1575px) {
   figure.portrait.small {
-    width: 270px; }
+    width: 261px; }
     figure.portrait.small img, figure.portrait.small .overlay {
-      height: 378px; } }
+      height: 365.4px; } }
 
 @media only screen and (max-width: 320px) {
   figure.portrait.thumb {
@@ -515,15 +515,15 @@ figure.avatar img {
 
 @media only screen and (min-width: 1064px) and (max-width: 1574px) {
   figure.portrait.thumb {
-    width: 160px; }
+    width: 150px; }
     figure.portrait.thumb img, figure.portrait.thumb .overlay {
-      height: 224px; } }
+      height: 210px; } }
 
 @media only screen and (min-width: 1575px) {
   figure.portrait.thumb {
-    width: 180px; }
+    width: 174px; }
     figure.portrait.thumb img, figure.portrait.thumb .overlay {
-      height: 252px; } }
+      height: 243.6px; } }
 
 figure.video {
   position: relative; }

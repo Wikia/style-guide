@@ -875,3 +875,11 @@ select {
     position: relative;
     right: 91.66667%;
     left: auto; } }
+
+@media only screen and (min-width: 1064px) {
+  .row {
+    max-width: 1021px; } }
+
+@media only screen and (min-width: 1575px) {
+  .row {
+    max-width: 1176px; } }

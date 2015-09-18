@@ -60,6 +60,15 @@ $row-width: rem-calc(1000);
 $total-columns: 12;
 $column-gutter: rem-calc(30);
 
+$column-width-small:   26px;
+$column-width-medium:  50px;
+$column-width-large:   60px;
+$column-width-xlarge:  75px;
+$column-width-xxlarge: 87px;
+
+$gutter-width-xlarge: 11px;
+$gutter-width-xxlarge: 12px;
+
 // c. Global
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -154,8 +163,8 @@ $screen-sizes: small, medium, large, xlarge, xxlarge;
 $small-range: (0px, 320px);
 $medium-range: (321px, 767px);
 $large-range: (768px, 1063px);
-$xlarge-range: (1064px, 1574px);
-$xxlarge-range: (1575px, 99999px);
+$xlarge-range: (1064px, 1574px); // Desktop
+$xxlarge-range: (1575px, 99999px); // Desktop XL
 
 $screen: "only screen";
 
@@ -682,18 +691,6 @@ $image-size-xlarge: 6;
 
 $landscape-image-columns: 2, 3, 4, 6, 8, 12;
 $portrait-image-columns: 2, 3, 4;
-
-$landscape-column-width-small:   26px;
-$landscape-column-width-medium:  50px;
-$landscape-column-width-large:   60px;
-$landscape-column-width-xlarge:  80px;
-$landscape-column-width-xxlarge: 90px;
-
-$portrait-column-width-small:   26px;
-$portrait-column-width-medium:  50px;
-$portrait-column-width-large:   60px;
-$portrait-column-width-xlarge:  80px;
-$portrait-column-width-xxlarge: 90px;
 
 // Z-Index Scale
 // - - - - - - - - - - - - - - - - - - - - - - - - -

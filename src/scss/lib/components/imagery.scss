@@ -5,7 +5,7 @@
 
 @mixin landscape-image-dimensions($image-size) {
 	@media #{$small-only} {
-		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-small);
+		$image-width: (nth($landscape-image-columns, $image-size) * $column-width-small);
 		$icon-size: $image-width * 0.1;
 
 		width: $image-width;
@@ -23,7 +23,7 @@
 	}
 
 	@media #{$medium-only} {
-		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-medium);
+		$image-width: (nth($landscape-image-columns, $image-size) * $column-width-medium);
 		$icon-size: $image-width * 0.1;
 
 		width: $image-width;
@@ -41,7 +41,7 @@
 	}
 
 	@media #{$large-only} {
-		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-large);
+		$image-width: (nth($landscape-image-columns, $image-size) * $column-width-large);
 		$icon-size: $image-width * 0.1;
 
 		width: $image-width;
@@ -59,7 +59,7 @@
 	}
 
 	@media #{$xlarge-only} {
-		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-xlarge);
+		$image-width: (nth($landscape-image-columns, $image-size) * $column-width-xlarge);
 		$icon-size: $image-width * 0.1;
 
 		width: $image-width;
@@ -77,7 +77,7 @@
 	}
 
 	@media #{$xxlarge-up} {
-		$image-width: (nth($landscape-image-columns, $image-size) * $landscape-column-width-xxlarge);
+		$image-width: (nth($landscape-image-columns, $image-size) * $column-width-xxlarge);
 		$icon-size: $image-width * 0.1;
 
 		width: $image-width;
@@ -97,7 +97,7 @@
 
 @mixin portrait-image-dimensions($image-size) {
 	@media #{$small-only} {
-		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-small);
+		$image-width: (nth($portrait-image-columns, $image-size) * $column-width-small);
 
 		width: $image-width;
 
@@ -107,7 +107,7 @@
 	}
 
 	@media #{$medium-only} {
-		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-medium);
+		$image-width: (nth($portrait-image-columns, $image-size) * $column-width-medium);
 
 		width: $image-width;
 
@@ -117,7 +117,7 @@
 	}
 
 	@media #{$large-only} {
-		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-large);
+		$image-width: (nth($portrait-image-columns, $image-size) * $column-width-large);
 
 		width: $image-width;
 
@@ -127,7 +127,7 @@
 	}
 
 	@media #{$xlarge-only} {
-		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-xlarge);
+		$image-width: (nth($portrait-image-columns, $image-size) * $column-width-xlarge);
 
 		width: $image-width;
 
@@ -137,7 +137,7 @@
 	}
 
 	@media #{$xxlarge-up} {
-		$image-width: (nth($portrait-image-columns, $image-size) * $portrait-column-width-xxlarge);
+		$image-width: (nth($portrait-image-columns, $image-size) * $column-width-xxlarge);
 
 		width: $image-width;
 
