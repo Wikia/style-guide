@@ -5569,3 +5569,11 @@ th.hide-for-touch {
     display: table-cell !important; }
   th.show-for-print {
     display: table-cell !important; } }
+
+@media only screen and (max-width: 1063px) {
+  .mobile-hidden {
+    display: none; } }
+
+@media only screen and (min-width: 1064px) {
+  .desktop-hidden {
+    display: none; } }
