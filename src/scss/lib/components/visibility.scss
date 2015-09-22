@@ -383,7 +383,6 @@ $visibility-breakpoint-queries:
   th.hide-for-touch { display: table-cell !important; }
   .touch th.show-for-touch { display: table-cell !important; }
 
-
   /* Print visibility */
   @media print {
     .show-for-print { display: block; }
@@ -397,5 +396,16 @@ $visibility-breakpoint-queries:
     th.show-for-print { display: table-cell !important; }
 
   }
+}
 
+@media #{$mobile-range} {
+	.mobile-hidden {
+		display: none;
+	}
+}
+
+@media #{$desktop-range} {
+	.desktop-hidden {
+		display: none;
+	}
 }
