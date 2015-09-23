@@ -6553,7 +6553,7 @@ this.fire('dom-change');
 			.inner {
 				align-items: center;
 				display: flex;
-				padding: 0 0.9375rem;
+				padding: 0 15px;
 				width: 100%;
 			}
 
@@ -6577,6 +6577,19 @@ this.fire('dom-change');
 					flex-grow: 0;
 				}
 			}
+
+			@media only screen and (min-width: 1064px) {
+				.wrapper {
+					max-width: 1021px;
+				}
+			}
+
+			@media only screen and (min-width: 1575px) {
+				.wrapper {
+					max-width: 1176px;
+				}
+			}
+
 		</style>
 
 		<div class="wrapper">
