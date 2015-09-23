@@ -120,30 +120,28 @@ select {
     margin-right: 0; }
   .row .row {
     width: auto;
-    margin-left: -0.9375rem;
-    margin-right: -0.9375rem;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
     max-width: none; }
     .row .row:before, .row .row:after {
       content: " ";
       display: table; }
     .row .row:after {
       clear: both; }
-    .row .row.collapse {
+    .row .row.nocollapse {
       width: auto;
-      margin: 0;
+      margin-left: -0.9375rem;
+      margin-right: -0.9375rem;
+      margin-top: 0;
+      margin-bottom: 0;
       max-width: none; }
-      .row .row.collapse:before, .row .row.collapse:after {
+      .row .row.nocollapse:before, .row .row.nocollapse:after {
         content: " ";
         display: table; }
-      .row .row.collapse:after {
+      .row .row.nocollapse:after {
         clear: both; }
 
 .column,
 .columns {
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
   width: 100%;
   float: left; }
 
@@ -253,8 +251,6 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
     float: left; }
   .small-1 {
     width: 8.33333%; }
@@ -330,7 +326,7 @@ select {
   .columns.small-uncentered.opposite {
     float: right; } }
 
-@media only screen and (min-width: 321px) {
+@media only screen and (min-width: 768px) {
   .medium-push-0 {
     position: relative;
     left: 0%;
@@ -430,8 +426,6 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
     float: left; }
   .medium-1 {
     width: 8.33333%; }
@@ -603,7 +597,7 @@ select {
     right: 91.66667%;
     left: auto; } }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1064px) {
   .large-push-0 {
     position: relative;
     left: 0%;
@@ -703,8 +697,6 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
     float: left; }
   .large-1 {
     width: 8.33333%; }
