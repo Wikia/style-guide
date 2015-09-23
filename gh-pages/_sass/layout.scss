@@ -39,6 +39,12 @@ $page-padding: 15px;
 		width: 82px;
 	}
 
+	&::shadow {
+		.inner {
+			padding: 0 $page-padding;
+		}
+	}
+
 	.menu-icon {
 		height: 16px;
 		margin-left: 20px;
