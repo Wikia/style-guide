@@ -87,7 +87,7 @@
   $offset:false,
   $push:false,
   $pull:false,
-  $collapse:false,
+  $collapse:null,
   $float:true,
   $position:false) {
 
@@ -215,8 +215,8 @@
         .row {margin-left:0; margin-right:0;}
       }
 
-      .row { @include grid-row($behavior:nest);
-        &.collapse { @include grid-row($behavior:nest-collapse); }
+      .row { @include grid-row($behavior:nest-collapse);
+        &.nocollapse { @include grid-row($behavior:nest); }
       }
     }
 
@@ -226,11 +226,11 @@
     [class*="column"] + [class*="column"]:last-child { float: $last-child-float; }
     [class*="column"] + [class*="column"].end { float: $default-float; }
 
-    @media #{$small-up} {
+    @media #{$small-up} { // Mobile
       @include grid-html-classes($size:small);
     }
 
-    @media #{$medium-up} {
+    @media #{$large-up} { // Tablet
       @include grid-html-classes($size:medium);
       // Old push and pull classes
       @for $i from 0 through $total-columns - 1 {
@@ -242,7 +242,7 @@
         }
       }
     }
-    @media #{$large-up} {
+    @media #{$xlarge-up} { // Desktop
       @include grid-html-classes($size:large);
       @for $i from 0 through $total-columns - 1 {
         .push-#{$i} {
