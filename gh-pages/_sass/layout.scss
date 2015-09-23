@@ -1,5 +1,6 @@
 $avatar-size: 36px;
 $site-nav-width: 300px;
+$page-padding: 15px;
 
 /**
  * Site header
@@ -91,12 +92,12 @@ $site-nav-width: 300px;
 .page-content {
 	background: white;
 	margin: 90px 0 40px 0;
-	padding-bottom: 30px;
+	padding: 0 $page-padding 30px;
 
 	.hero {
 		background: #fff url(../assets/images/bg_universe.png) center top;
 		color: #fff;
-		margin-bottom: 20px;
+		margin: 0 ($page-padding * -1) 20px;
 		padding: 50px 30px;
 
 		* {
