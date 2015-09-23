@@ -6366,7 +6366,11 @@ this.fire('dom-change');
 				color: #081e3a;
 			}
 
-			figure {
+			.logged-in-wrapper {
+				cursor: pointer;
+			}
+
+			.logged-in-wrapper figure {
 				border-radius: 50%;
 				margin: 0;
 				height: 25px;
@@ -6374,17 +6378,18 @@ this.fire('dom-change');
 				width: 25px;
 			}
 
-			figure a {
+			.logged-in-wrapper figure a {
 				display: block;
 			}
 
-			figure img {
+			.logged-in-wrapper figure img {
 				height: auto;
 				width: 100%;
 			}
 
-			.logged-in-wrapper {
-				cursor: pointer;
+			.logged-out-wrapper ::content figure {
+				height: 25px;
+				width: 25px;
 			}
 
 			.drawer {
@@ -6447,14 +6452,6 @@ this.fire('dom-change');
 				visibility: visible;
 			}
 
-			.register-cta span {
-				display: none;
-			}
-
-			.register-cta figure {
-				display: inline-block;
-			}
-
 			/* Don't black out the rest of the screen on larger devices */
 			@media only screen and (min-width: 769px) {
 				:host(.visible) .overlay {
@@ -6466,14 +6463,6 @@ this.fire('dom-change');
 					right: 0;
 					top: 32px;
 					width: 150px;
-				}
-
-				.register-cta .long-text {
-					display: inline-block;
-				}
-
-				.register-cta figure {
-					display: none;
 				}
 			}
 
@@ -6492,15 +6481,9 @@ this.fire('dom-change');
 		</template>
 
 		<template is="dom-if" if="{{!userLoggedIn}}">
-			<div class="register-cta">
-				<span class="long-text">
-					<content select=".register-cta-text"></content>
-				</span>
-				<figure>
-					<a href="{{anonAvatarHref}}">
-						<img src="{{anonAvatarSrc}}" alt="Register or log in">
-					</a>
-				</figure>
+			<div class="logged-out-wrapper">
+				<content select=".show-for-large-up"></content>
+				<content select=".show-for-medium-down"></content>
 			</div>
 		</template>
 	</template>
@@ -6514,8 +6497,6 @@ this.fire('dom-change');
 			properties: {
 				userAvatarSrc: String,
 				userName: String,
-				anonAvatarSrc: String,
-				anonAvatarHref: String,
 				userLoggedIn: {
 					type: Boolean,
 					value: false,
