@@ -58,9 +58,17 @@ The `userLoggedIn` attribute will control whether the registration/signin callou
 				width: 100%;
 			}
 
+			.logged-out-wrapper {
+				display: flex;
+			}
+
 			.logged-out-wrapper ::content figure {
 				height: 25px;
 				width: 25px;
+			}
+
+			::content .register-cta {
+				display: none;
 			}
 
 			.drawer {
@@ -77,7 +85,7 @@ The `userLoggedIn` attribute will control whether the registration/signin callou
 				z-index: 1000;
 			}
 
-			:host(.visible) .drawer {
+			.logged-in-wrapper:hover .drawer, .drawer:hover {
 				/* This is an arbitrary number larger than the combined height of the
 				li children, so that transition animation works. With max-height: auto,
 				it wouldn't be guaranteed to work. */
@@ -94,14 +102,18 @@ The `userLoggedIn` attribute will control whether the registration/signin callou
 				width: 100%;
 			}
 
-			.drawer ::content a:active {
-				background-color: #F2F6FA;
-			}
-
 			.drawer ::content li {
 				background-color: #fff;
 				border: solid #d0d0d0;
 				border-width: 0 1px 1px 1px;
+			}
+
+			.drawer ::content li:hover {
+				background: #0a5fa3;
+			}
+
+			.drawer ::content li:hover a {
+				color: #FFF;
 			}
 
 			.overlay {
@@ -110,23 +122,24 @@ The `userLoggedIn` attribute will control whether the registration/signin callou
 				left: 0;
 				opacity: 0;
 				position: fixed;
-				top: 0;
+				/* top of overlay should be just below logged in wrapper so touch events don't conflict */
+				top: 30px;
 				transition: visibility 0s 0.3s, opacity 0.3s;
 				visibility: hidden;
 				width: 100%;
 				z-index: 800;
 			}
 
-			:host(.visible) .overlay {
+			.logged-in-wrapper:hover + .overlay {
 				opacity: 0.5;
 				transition: opacity 0.3s;
 				visibility: visible;
 			}
 
-			/* Don't black out the rest of the screen on larger devices */
 			@media only screen and (min-width: 769px) {
-				:host(.visible) .overlay {
-					opacity: 0;
+				/* Don't black out the rest of the screen on larger devices */
+				.logged-in-wrapper:hover + .overlay {
+					display: none;
 				}
 
 				.drawer {
@@ -135,26 +148,30 @@ The `userLoggedIn` attribute will control whether the registration/signin callou
 					top: 32px;
 					width: 150px;
 				}
+
+				::content .register-cta {
+					display: inline-block;
+					padding-left: 10px;
+				}
 			}
 
 		</style>
 
 		<template is="dom-if" if="{{userLoggedIn}}">
 			<div class="logged-in-wrapper">
-				<figure id="special" on-click="toggleDropdown">
+				<figure>
 					<img src="{{userAvatarSrc}}" alt="{{userName}}">
 				</figure>
-				<div class="overlay" on-click="toggleDropdown"></div>
 				<ul class="drawer">
 					<content></content>
 				</ul>
 			</div>
+			<div class="overlay"></div>
 		</template>
 
 		<template is="dom-if" if="{{!userLoggedIn}}">
 			<div class="logged-out-wrapper">
-				<content select=".show-for-large-up"></content>
-				<content select=".show-for-medium-down"></content>
+				<content></content>
 			</div>
 		</template>
 	</template>
@@ -172,16 +189,7 @@ The `userLoggedIn` attribute will control whether the registration/signin callou
 					type: Boolean,
 					value: false,
 					reflectToAttribute: true
-				},
-				collapsed: {
-					type: Boolean,
-					value: true,
-					reflectToAttribute: true
 				}
-			},
-			toggleDropdown: function () {
-				var isVisible = Array.prototype.indexOf.call(this.classList, 'visible') > -1;
-				this.toggleClass('visible', !isVisible);
 			}
 		});
 	}());
