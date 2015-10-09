@@ -8,7 +8,7 @@
     "bump-major": "bower version major && git push --tags",
     "bump-minor": "bower version minor && git push --tags",
     "bump-patch": "bower version patch && git push --tags",
-    "build-dist": "gulp update-static && (cd src && node ../node_modules/vulcanize/bin/vulcanize -p $PWD components/import.html > ../dist/components/import-built.html)"
+    "build-dist": "gulp update-static && mkdir -p tmp && cd src && node ../node_modules/vulcanize/bin/vulcanize -p $PWD components/import.html > ../tmp/import-built.html && cd .. && gulp minify && rm -rf ./tmp"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,8 @@
   "devDependencies": {
     "del": "^1.1.1",
     "gulp-if": "^1.2.5",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-minify-inline": "^0.1.1",
     "gulp-preprocess": "^1.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",

@@ -1,11 +1,14 @@
 'use strict';
-var gulp = require('gulp'),
-	sass = require('gulp-sass'),
-	del = require('del'),
+
+var del = require('del'),
+	gulp = require('gulp'),
 	gulpif = require('gulp-if'),
+	minifyHTML = require('gulp-minify-html'),
+	minifyInline = require('gulp-minify-inline'),
 	preprocess = require('gulp-preprocess'),
-	uglify = require('gulp-uglify'),
-	rename = require("gulp-rename");
+	rename = require("gulp-rename"),
+	sass = require('gulp-sass'),
+	uglify = require('gulp-uglify');
 
 gulp.task('sass', function () {
 	return gulp.src('./src/scss/**/*.scss')
@@ -99,4 +102,17 @@ gulp.task('watch', ['update-static'], function () {
 		.on('change', function () {
 			gulp.start('update-static');
 		});
+});
+
+gulp.task('minify', function () {
+	var minifyHTMLOptions = {
+		conditionals: true,
+		spare: true,
+		quotes: true
+	};
+
+	return gulp.src('./tmp/import-built.html')
+		.pipe(minifyHTML(minifyHTMLOptions))
+		.pipe(minifyInline())
+		.pipe(gulp.dest('./dist/components'));
 });
