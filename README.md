@@ -4,6 +4,7 @@ Wikia Style Guide
 1. [Using the Style Guide in your projects](#using-the-style-guide-in-your-projects)
 2. [Development Workflow](#development-workflow)
 3. [Contributing](#contributing)
+4. [Releasing new version](#releasing-new-version)
 
 ## Using the Style Guide in your projects
 This style guide has been built to easily integrate into your applications through [bower](http://bower.io/) or manually as a compiled package of all the components, individual components or as SCSS source files. We recommend using bower, as then your application will gain access to easy dependency management, versioning and future upgrades will be predictable and easy to integrate.
@@ -55,3 +56,12 @@ Bumping the version of package is important to making sure users of the style gu
 
 ## Contributing
 If you’re thinking of contributing to the style guide (which you totally absolutely should!), then check out our handy [contribution guidelines](https://github.com/Wikia/style-guide/blob/dev/CONTRIBUTING.md)!
+
+## Releasing new version
+1. Open `package.json`, edit version number e.g. 1.7.2
+2. Open `bower.json`, edit version number e.g. 1.7.2
+3. Commit your changes: `git add package.json`, `git add bower.json` and `git commit -m "v1.7.2"`
+4. Create tag: `git tag v1.7.2`
+5. Push your changes: `git push`and `git push --tags`
+6. Create new release [here](https://github.com/Wikia/style-guide/releases/new), use tag you created
+7. Publish release, it should be visible [here](https://github.com/Wikia/style-guide/releases)
