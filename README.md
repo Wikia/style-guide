@@ -29,10 +29,12 @@ Development involves the following:
 
 ### Living Documentation
 The living documentation can be found in the `gh-pages/` folder of the project. To get started with development, you can start the server by:
-* install jekyll (http://jekyllrb.com/) e.g. by running `gem jekyll`
-* (from project root) `npm install` to install dependencies
-* `$ cd gh-pages/`
-* `$ jekyll serve --baseUrl=''`
+
+1. Clone this repository locally: `git clone git@github.com:Wikia/style-guide.git`
+2. Install jekyll (http://jekyllrb.com/): `sudo gem install jekyll`
+3. From project root, install dependencies: `npm install`
+4. Start the server: `cd gh-pages; jekyll serve --baseUrl=''`
+
 This will start the Jekyll server on the default port of 4000. If you need a different port, use the `--port XXXX` flag when running `jekyll serve`. You can then visit [localhost:4000](http://localhost:4000) to view the living documentation.
 
 #### Troubleshooting
