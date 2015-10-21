@@ -257,10 +257,12 @@ textarea {
 
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ * Outline fix for Chrome
  */
 
 button {
   overflow: visible;
+  outline: none;
 }
 
 /**
