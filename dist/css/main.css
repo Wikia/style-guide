@@ -3954,7 +3954,7 @@ textarea {
 select {
   width: 100%; }
 
-figure.avatar img {
+figure.avatar img, figure.avatar svg {
   border: 2px solid #fff;
   border-radius: 50%;
   height: 36px;
