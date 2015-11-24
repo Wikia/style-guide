@@ -370,47 +370,20 @@ $align-class-breakpoints:
     }
 
     /* Blockquotes */
-
-    // border above blockquotes
-    blockquote:before {
-        border-bottom: 5px solid $blockquote-font-color;
-        content: '';
-        display: block;
-        font-size: 80px;
-        height: 31px;
-        left: 40px;
-        margin-bottom: 5px;
-        position: absolute;
-        top: 0;
-        width: 93%;
-    }
-
-    // decorative quote
-    blockquote:after {
-        content: '\201C';
-        display: block;
-        font-size: 70px;
-        left: 0;
-        margin-left: -5px;
-        margin-top: -10px;
-        position: absolute;
-        top: 0;
-    }
-
     blockquote {
+        border-left: $blockquote-border;
         font-size: $blockquote-font-size;
+        font-style: $blockquote-font-style;
         font-weight: $blockquote-font-weight;
-        display: block;
-        padding: 0;
-        padding-top: 40px;
-        position: relative;
+        padding: $blockquote-padding;
 
       cite {
         display: block;
-        font-size: $blockquote-cite-font-size * 0.9;
-        font-weight: normal;
+        font-size: $blockquote-cite-font-size;
         font-style: $blockquote-cite-font-style;
-        color: $blockquote-cite-font-color;
+        line-height: $blackquote-cite-line-height;
+        padding-top: $blockquote-cite-padding;
+
         &:before {
           content: "\2014 \0020";
         }

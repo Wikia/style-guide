@@ -350,8 +350,7 @@ a {
   color: #1A5EB8;
   text-decoration: none;
   line-height: inherit; }
-  a:hover,
-  a:focus {
+  a:hover, a:focus {
     color: #081e3a; }
   a img {
     border: none; }
@@ -520,9 +519,7 @@ ul li ol {
   margin-left: 1.25rem;
   margin-bottom: 0; }
 
-ul.square li ul,
-ul.circle li ul,
-ul.disc li ul {
+ul.square li ul, ul.circle li ul, ul.disc li ul {
   list-style: inherit; }
 
 ul.square {
@@ -570,41 +567,18 @@ abbr {
     border-bottom: 1px dotted #DDDDDD; }
 
 /* Blockquotes */
-blockquote:before {
-  border-bottom: 5px solid #000000;
-  content: '';
-  display: block;
-  font-size: 80px;
-  height: 31px;
-  left: 40px;
-  margin-bottom: 5px;
-  position: absolute;
-  top: 0;
-  width: 93%; }
-
-blockquote:after {
-  content: '\201C';
-  display: block;
-  font-size: 70px;
-  left: 0;
-  margin-left: -5px;
-  margin-top: -10px;
-  position: absolute;
-  top: 0; }
-
 blockquote {
-  font-size: 1.6875rem;
-  font-weight: 700;
-  display: block;
-  padding: 0;
-  padding-top: 40px;
-  position: relative; }
+  border-left: 0.25rem solid rgba(26, 94, 184, 0.3);
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  padding: 0.25rem 0 0.25rem 1rem; }
   blockquote cite {
     display: block;
-    font-size: 1.0125rem;
-    font-weight: normal;
+    font-size: 0.875rem;
     font-style: normal;
-    color: #555555; }
+    line-height: 1.25rem;
+    padding-top: 0.875rem; }
     blockquote cite:before {
       content: "\2014 \0020"; }
     blockquote cite a,
@@ -613,8 +587,8 @@ blockquote {
 
 blockquote,
 blockquote p {
-  line-height: 1.2;
-  color: #000000; }
+  line-height: 1.625rem;
+  color: #3a3a3a; }
 
 /*
        * Print styles.
@@ -837,8 +811,7 @@ blockquote p {
     cursor: pointer;
     line-height: 1.125rem;
     margin: 0; }
-    .f-dropdown li:hover,
-    .f-dropdown li:focus {
+    .f-dropdown li:hover, .f-dropdown li:focus {
       background: #1A5EB8;
       color: #FFFFFF; }
     .f-dropdown li.radius {
