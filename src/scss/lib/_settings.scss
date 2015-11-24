@@ -351,17 +351,18 @@ $definition-list-header-margin-bottom: .3rem !default;
 $definition-list-margin-bottom: rem-calc(12);
 
 // We use these to style blockquotes
-$blockquote-font-size: $type-large;
-$blockquote-font-color: $color-black;
-$blockquote-font-weight: $font-weight-bold;
-$blockquote-line-height: 1.2;
-$blockquote-padding: rem-calc(9 20 0 19);
-$blockquote-border: 1px solid $gainsboro;
-$blockquote-cite-font-size: $type-smaller;
+$blockquote-font-size: $type-base;
+$blockquote-font-style: italic;
+$blockquote-font-color: #3a3a3a;
+$blockquote-font-weight: $font-weight-normal;
+$blockquote-line-height: rem-calc(26);
+$blockquote-padding: rem-calc(4 0 4 16);
+$blockquote-border: rem-calc(4) solid transparentize($color-blue-light, .7);
+$blockquote-cite-font-size: $type-smallest;
+$blackquote-cite-line-height: $line-height-smallest;
 $blockquote-cite-font-style: normal;
-$blockquote-cite-font-weight: $font-weight-normal;
-$blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%);
 $blockquote-cite-link-color: $anchor-font-color;
+$blockquote-cite-padding: rem-calc(14);
 
 // Acronym styles
 $acronym-underline: 1px dotted $gainsboro;
