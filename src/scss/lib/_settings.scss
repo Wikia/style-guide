@@ -357,6 +357,7 @@ $blockquote-font-color: #3a3a3a;
 $blockquote-font-weight: $font-weight-normal;
 $blockquote-line-height: rem-calc(26);
 $blockquote-padding: rem-calc(4 0 4 16);
+$blockquote-margin: $type-base;
 $blockquote-border: rem-calc(4) solid transparentize($color-blue-light, .7);
 $blockquote-cite-font-size: $type-smallest;
 $blackquote-cite-line-height: $line-height-smallest;

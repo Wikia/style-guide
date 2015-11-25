@@ -572,6 +572,7 @@ blockquote {
   font-size: 1rem;
   font-style: italic;
   font-weight: 400;
+  margin-bottom: 1rem;
   padding: 0.25rem 0 0.25rem 1rem; }
   blockquote cite {
     display: block;
