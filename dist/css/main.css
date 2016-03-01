@@ -1849,11 +1849,6 @@ body {
   color: #39424D;
   font-size: 16px; }
 
-@media only screen and (min-width: 1064px) {
-  html,
-  body {
-    font-size: 18px; } }
-
 /* Typography resets */
 div,
 dl,
@@ -4637,11 +4632,6 @@ html,
 body {
   color: #39424D;
   font-size: 16px; }
-
-@media only screen and (min-width: 1064px) {
-  html,
-  body {
-    font-size: 18px; } }
 
 /* Typography resets */
 div,
