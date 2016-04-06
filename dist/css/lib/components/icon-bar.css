@@ -123,7 +123,7 @@ select {
       width: 2.375rem;
       height: 2.375rem; }
   .icon-bar.label-right > * i, .icon-bar.label-right > * img {
-    margin: 0 .0625rem 0 0;
+    margin: 0 0.0625rem 0 0;
     display: inline-block; }
     .icon-bar.label-right > * i + label, .icon-bar.label-right > * img + label {
       margin-top: 0; }

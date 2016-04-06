@@ -123,7 +123,8 @@ ul.pagination {
     ul.pagination li:hover a,
     ul.pagination li a:focus,
     ul.pagination li:hover button,
-    ul.pagination li button:focus {
+    ul.pagination li
+button:focus {
       background: transparent; }
     ul.pagination li.unavailable a, ul.pagination li.unavailable button {
       cursor: default;
@@ -138,7 +139,9 @@ ul.pagination {
       color: #39424D;
       font-weight: 700;
       cursor: default; }
-      ul.pagination li.current a:hover, ul.pagination li.current a:focus, ul.pagination li.current button:hover, ul.pagination li.current button:focus {
+      ul.pagination li.current a:hover,
+      ul.pagination li.current a:focus, ul.pagination li.current button:hover,
+      ul.pagination li.current button:focus {
         background: transparent; }
   ul.pagination li {
     float: left;
