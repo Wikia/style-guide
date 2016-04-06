@@ -244,8 +244,7 @@ a {
   color: #1A5EB8;
   text-decoration: none;
   line-height: inherit; }
-  a:hover,
-  a:focus {
+  a:hover, a:focus {
     color: #081e3a; }
   a img {
     border: none; }
@@ -414,9 +413,7 @@ ul li ol {
   margin-left: 1.25rem;
   margin-bottom: 0; }
 
-ul.square li ul,
-ul.circle li ul,
-ul.disc li ul {
+ul.square li ul, ul.circle li ul, ul.disc li ul {
   list-style: inherit; }
 
 ul.square {
